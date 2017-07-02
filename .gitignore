@@ -1,0 +1,5 @@
+#Ignore files
+cache
+cache/*.*
+twenty-em-all.sublime-project
+twenty-em-all.sublime-workspace
