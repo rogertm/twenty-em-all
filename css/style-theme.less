@@ -1,0 +1,75 @@
+/**
+ * Twenty'em All
+ *
+ * @package			WordPress
+ * @subpackage		Twenty'em All: LESS
+ * @author			RogerTM
+ * @license			license.txt
+ * @link			https://twenty-em.themingisprose.com
+ * @since 			Twenty'em All 1.0
+ */
+
+/** Import Bootstrap Less */
+@import "../../twenty-em/css/style.less";
+@import "style-scheme.less";
+
+/* =Scaffolding
+------------------------------------------------------------------------------------------------- */
+*{
+	outline: none;
+	.transition(250ms);
+}
+
+/* =Header
+------------------------------------------------------------------------------------------------- */
+#header{
+	.text-center;
+}
+
+/* =Front Page
+------------------------------------------------------------------------------------------------- */
+#featured-widget-area{
+	.front-page-widget{
+		display: table;
+		margin-bottom: 30px;
+		.text-center;
+		@media (min-width: @screen-sm-min){
+			margin-bottom: 50px;
+			.text-left;
+		}
+		h2{
+			.h1;
+			.page-header;
+			@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max){
+				margin-top: 0;
+			}
+		}
+		.front-page-widget-content{
+			.lead;
+		}
+		.primary-button{
+			.icomoon{
+				.hidden;
+			}
+		}
+		img{
+			@media (min-width: @screen-sm-min) {
+				.size( 100%, auto );
+			}
+			.size( 75%, auto );
+			margin: @line-height-computed auto;
+		}
+		@media (min-width: @screen-sm-min){
+			&:nth-child(odd){
+				.widget-thumbnail{
+					.pull-left;
+				}
+			}
+			&:nth-child(even){
+				.widget-thumbnail{
+					.pull-right;
+				}
+			}
+		}
+	}
+}
