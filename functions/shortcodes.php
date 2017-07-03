@@ -11,7 +11,7 @@
  */
 
 /**
- * Add a class .branding to Twenty'em
+ * ad a class .branding to Twenty'em
  */
 function t_em_all_shortcode_t_em( $atts, $content = null ){
 	return '<span class="branding">'. T_EM_FRAMEWORK_NAME .'</span>';

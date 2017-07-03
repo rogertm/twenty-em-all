@@ -14,5 +14,6 @@
  * Silents is gold... But we call the others
  */
 
-// require( get_stylesheet_directory() . '/functions/functions.php' );
+require( get_stylesheet_directory() . '/admin/functions.php' );
+require( get_stylesheet_directory() . '/admin/templates.php' );
 ?>

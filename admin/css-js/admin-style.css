@@ -1,0 +1,27 @@
+/**
+ * Twenty'em All
+ *
+ * @package			WordPress
+ * @subpackage		Twenty'em All: Admin Style
+ * @author			RogerTM
+ * @license			license.txt
+ * @link			https://twenty-em.themingisprose.com
+ * @since 			Twenty'em All 1.0
+ */
+
+#t-em-all-features-ads{
+	display: block;
+	overflow: hidden;
+}
+#t-em-all-features-ads .text-option{
+	padding-right: 15px;
+}
+#t-em-all-features-ads .option-group{
+	width: 25%;
+	display: inline-block;
+	float: left;
+	clear: unset !important;
+}
+#t-em-all-features-ads .regular-text{
+	width: 99%;
+}

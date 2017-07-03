@@ -80,74 +80,74 @@ function t_em_front_page_widgets(){
 }
 
 /**
- * Small features add
+ * Small features ad
  */
-function t_em_all_features_add(){
+function t_em_all_features_ad(){
 ?>
 	<div class="wrapper container text-center">
-		<h3><?php _e( 'Features small adds: easy to config; powerful for end users, free, extensive docs', 't_em_all' ) ?></h3>
+		<h3><?php _e( 'Features small ads: easy to config; powerful for end users, free, extensive docs', 't_em_all' ) ?></h3>
 	</div>
 <?php
 }
-add_action( 't_em_action_main_before', 't_em_all_features_add' );
+add_action( 't_em_action_main_before', 't_em_all_features_ad' );
 
 /**
- * Big neon add
+ * Big neon ad
  */
-function t_em_all_neon_add(){
+function t_em_all_neon_ad(){
 ?>
 	<div class="wrapper container text-center">
-		<h3><?php _e( 'Big neon add block, Twenty\'em is awesome... So download it', 't_em_all' ) ?></h3>
+		<h3><?php _e( 'Big neon ad block, Twenty\'em is awesome... So download it', 't_em_all' ) ?></h3>
 	</div>
 <?php
 }
-add_action( 't_em_action_main_after', 't_em_all_neon_add' );
+add_action( 't_em_action_main_after', 't_em_all_neon_ad' );
 
 /**
- * GitHub add
+ * GitHub ad
  */
-function t_em_all_github_add(){
+function t_em_all_github_ad(){
 ?>
 	<div class="wrapper container text-center">
 		<h3><?php _e( 'GitHub commit rss', 't_em_all' ) ?></h3>
 	</div>
 <?php
 }
-add_action( 't_em_action_main_after', 't_em_all_github_add' );
+add_action( 't_em_action_main_after', 't_em_all_github_ad' );
 
 /**
- * Fun facts add
+ * Fun facts ad
  */
-function t_em_all_fun_add(){
+function t_em_all_fun_ad(){
 ?>
 	<div class="wrapper container text-center">
 		<h3><?php _e( 'Fun facts, lines of code, coffee, nights, etc...', 't_em_all' ) ?></h3>
 	</div>
 <?php
 }
-add_action( 't_em_action_main_after', 't_em_all_fun_add' );
+add_action( 't_em_action_main_after', 't_em_all_fun_ad' );
 
 /**
- * Latest news add
+ * Latest news ad
  */
-function t_em_all_latests_news_add(){
+function t_em_all_latests_news_ad(){
 ?>
 	<div class="wrapper container text-center">
 		<h3><?php _e( 'Latests news from parent site, if any', 't_em_all' ) ?></h3>
 	</div>
 <?php
 }
-add_action( 't_em_action_main_after', 't_em_all_latests_news_add' );
+add_action( 't_em_action_main_after', 't_em_all_latests_news_ad' );
 
 /**
- * Donate add
+ * Donate ad
  */
-function t_em_all_donate_add(){
+function t_em_all_donate_ad(){
 ?>
 	<div class="wrapper container text-center">
 		<h3><?php _e( 'I\'am just a WordPress theme/framework, please give some money...', 't_em_all' ) ?></h3>
 	</div>
 <?php
 }
-add_action( 't_em_action_main_after', 't_em_all_donate_add' );
+add_action( 't_em_action_main_after', 't_em_all_donate_ad' );
 ?>
