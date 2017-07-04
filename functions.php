@@ -16,5 +16,5 @@
  * @since Twenty'em All 1.0
  */
 require( get_stylesheet_directory() . '/admin/index.php' );
-require( get_stylesheet_directory() . '/functions/index.php' );
+require( get_stylesheet_directory() . '/inc/index.php' );
 ?>

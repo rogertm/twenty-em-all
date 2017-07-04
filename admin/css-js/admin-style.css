@@ -9,19 +9,23 @@
  * @since 			Twenty'em All 1.0
  */
 
-#t-em-all-features-ads{
+#t-em-all-features-ads,
+#t-em-all-funs-ads{
 	display: block;
 	overflow: hidden;
 }
-#t-em-all-features-ads .text-option{
+#t-em-all-features-ads .text-option,
+#t-em-all-funs-ads .text-option{
 	padding-right: 15px;
 }
-#t-em-all-features-ads .option-group{
+#t-em-all-features-ads .option-group,
+#t-em-all-funs-ads .option-group{
 	width: 25%;
 	display: inline-block;
 	float: left;
 	clear: unset !important;
 }
-#t-em-all-features-ads .regular-text{
+#t-em-all-features-ads .regular-text,
+#t-em-all-funs-ads .regular-text{
 	width: 99%;
 }

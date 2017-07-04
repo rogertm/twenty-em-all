@@ -186,6 +186,87 @@ function t_em_all_render_front_page_github_commints(){
 add_action( 't_em_admin_action_from_page_option_widgets-front-page_after', 't_em_all_render_front_page_github_commints' );
 
 /**
+ * Fun facts options
+ * @return array  	Array of options
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_fun_facts_options(){
+	$funs = array(
+		'lines_of_code'	=> array(
+			'value'		=> 'lines_of_code',
+			'label'		=> __( 'Lines of Code', 't_em_all' ),
+			'description'	=> __( '<code>$ find . -name "*.php" | xargs wc -l</code>', 't_em_all' ),
+			'icon' 		=> 'lines_of_code_icofont',
+		),
+		'kilobytes'	=> array(
+			'value'		=> 'kilobytes',
+			'label'		=> __( 'Kilobytes', 't_em_all' ),
+			'description'	=> __( 'Kilobytes of this project', 't_em_all' ),
+			'icon' 		=> 'kilobytes_icofont',
+		),
+		'files'	=> array(
+			'value'		=> 'files',
+			'label'		=> __( 'Files', 't_em_all' ),
+			'description'	=> __( 'Amount of files of this project', 't_em_all' ),
+			'icon' 		=> 'files_icofont',
+		),
+		'hours_of_coding'	=> array(
+			'value'		=> 'hours_of_coding',
+			'label'		=> __( 'Hours of Coding', 't_em_all' ),
+			'description'	=> __( 'First commit date, in format <code>YYYY-MM-DD</code>', 't_em_all' ),
+			'icon' 		=> 'hours_of_coding_icofont',
+		),
+	);
+	/**
+	 * Filter the fun facts in front page
+	 * @param array $funs 	Array of fun facts
+	 *
+	 * @since Twenty'em All 1.0
+	 */
+	return apply_filters( 't_em_all_admin_filter_fun_facts', $funs );
+}
+
+/**
+ * Add fun fact "lines of code" to general options admin panel
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_general_options_fun_facts(){
+	global $t_em;
+	$funs = t_em_all_fun_facts_options();
+?>
+	<div id="t-em-all-funs-ads">
+		<h3><?php _e( 'Features ads', 't_em_all' ) ?></h3>
+<?php
+	foreach ( $funs as $fun ) :
+?>
+	<div class="sub-extend option-group">
+		<div class="layou text-option front-page">
+			<header><?php echo $fun['label']; ?></header>
+			<p>
+			<label class="description single-option">
+				<p class="description"><?php echo $fun['description']; ?></p>
+				<input type="text" class="regular-text" name="t_em_theme_options[<?php echo $fun['value'] ?>]" value="<?php echo $t_em[$fun['value']] ?>">
+			</label>
+			</p>
+			<p>
+			<label class="description single-option">
+				<p><?php _e( 'IcoFont', 't_em_all' ) ?></p>
+				<input type="text" class="regular-text" name="t_em_theme_options[<?php echo $fun['icon'] ?>]" value="<?php echo $t_em[$fun['icon']] ?>">
+			</label>
+			</p>
+		</div>
+	</div>
+<?php
+	endforeach;
+?>
+	</div>
+<?php
+}
+add_action( 't_em_admin_action_from_page_option_widgets-front-page_after', 't_em_all_general_options_fun_facts' );
+
+/**
  * Render the donate ad in admin front page panel
  *
  * @since Twenty'em All 1.0
@@ -223,23 +304,4 @@ function t_em_all_render_front_page_donate_ad(){
 <?php
 }
 add_action( 't_em_admin_action_from_page_option_widgets-front-page_after', 't_em_all_render_front_page_donate_ad' );
-
-/**
- * Add fun fact "lines of code" to general options admin panel
- *
- * @since Twenty'em All 1.0
- */
-function t_em_all_general_options_fun_facts(){
-	global $t_em;
-?>
-	<div class="sub-layout text-option general">
-		<label class="description single-option">
-			<p><?php _e( 'Lines of Code', 't_em_all' ); ?></p>
-			<p class="description"><?php _e( 'Count the amount of lines of code in this project. <code>$ find . -name "*.php" | xargs wc -l</code>', 't_em_all' ); ?></p>
-			<input type="text" class="regular-text" name="t_em_theme_options[lines_of_code]" value="<?php echo $t_em['lines_of_code'] ?>">
-		</label>
-	</div>
-<?php
-}
-add_action( 't_em_admin_action_general_options_after', 't_em_all_general_options_fun_facts', 15 );
 ?>

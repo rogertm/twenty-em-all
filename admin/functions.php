@@ -62,6 +62,12 @@ function t_em_all_default_theme_options( $default_theme_options ){
 		$t_em_all_default_options = array_merge( $t_em_all_default_options, $key );
 	endforeach;
 
+	$funs = t_em_all_fun_facts_options();
+	foreach ( $funs as $fun => $value ) :
+		$key = array( $value['value'] => '' );
+		$t_em_all_default_options = array_merge( $t_em_all_default_options, array_slice( $key, -1 ) );
+	endforeach;
+
 	$default_options = array_merge( $default_theme_options, $t_em_all_default_options );
 
 	return $default_options;
@@ -96,6 +102,7 @@ function t_em_all_theme_options_validate( $input ){
 	) as $text_field ) :
 		$input[$text_field] = ( isset( $input[$text_field] ) ) ? trim( $input[$text_field] ) : '';
 	endforeach;
+
 	$ads_fields = array();
 	$ads = t_em_all_front_page_ads_features_options();
 	foreach ( $ads as $ad => $value ) :
@@ -104,6 +111,28 @@ function t_em_all_theme_options_validate( $input ){
 	endforeach;
 	$ads_fields = array_keys( $ads_fields );
 	foreach ( $ads_fields as $text_field ) :
+		$input[$text_field] = ( isset( $input[$text_field] ) ) ? trim( $input[$text_field] ) : '';
+	endforeach;
+
+	$fun_fields = array();
+	$funs = t_em_all_fun_facts_options();
+	foreach ( $funs as $fun => $value ) :
+		$key = array( $value['value'] => '' );
+		$fun_fields = array_merge( $fun_fields, array_slice( $key, -1 ) );
+	endforeach;
+	$fun_fields = array_keys( $fun_fields );
+	foreach ( $fun_fields as $text_field ) :
+		$input[$text_field] = ( isset( $input[$text_field] ) ) ? trim( $input[$text_field] ) : '';
+	endforeach;
+
+	$fun_icons = array();
+	$funs = t_em_all_fun_facts_options();
+	foreach ( $funs as $fun => $value ) :
+		$key = array( $value['icon'] => '' );
+		$fun_icons = array_merge( $fun_icons, array_slice( $key, -1 ) );
+	endforeach;
+	$fun_icons = array_keys( $fun_icons );
+	foreach ( $fun_icons as $text_field ) :
 		$input[$text_field] = ( isset( $input[$text_field] ) ) ? trim( $input[$text_field] ) : '';
 	endforeach;
 
