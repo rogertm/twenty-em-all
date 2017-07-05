@@ -48,7 +48,7 @@ add_action( 'wp_enqueue_scripts', 't_em_all_enqueue' );
  * @since Twenty'em All 1.0
  */
 function t_em_all_embed_google_fonts(){
-	echo '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Titillium+Web|Lato">';
+	echo '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto+Condensed|Lato">';
 }
 
 /**

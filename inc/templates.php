@@ -321,9 +321,8 @@ function t_em_all_subscribe_ad(){
 				<?php echo t_em_wrap_paragraph( $t_em['feedburner_content'] ) ?>
 				<form class="form-inline" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $t_em['feedburner_id'] ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
 					<div class="form-group">
-						<input type="email" class="form-control subscribe-input" placeholder="<?php echo $t_em['feedburner_button_placeholder'] ?>" required>
+						<input type="email" name="email" class="form-control subscribe-input" placeholder="<?php echo $t_em['feedburner_button_placeholder'] ?>" required>
 						<input type="hidden" value="<?php echo $t_em['feedburner_id']; ?>" name="uri"/>
-						<input type="hidden" value="fulano@detal.com" name="email"/>
 						<input type="hidden" name="loc" value="en_US"/>
 					</div>
 					<button class="btn" type="submit"><?php echo $t_em['feedburner_button_label'] ?></button>
