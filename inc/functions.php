@@ -29,6 +29,9 @@ add_action( 'after_setup_theme', 't_em_all_setup' );
 function t_em_all_enqueue(){
 	global $t_em_theme_data;
 
+	wp_register_style( 'google-fonts', t_em_all_embed_google_fonts(), array(), $t_em_theme_data['Version'], 'all' );
+	wp_enqueue_style( 'google-fonts' );
+
 	$less_files = array( T_EM_CHILD_THEME_DIR_PATH . '/css/style-theme.less' => T_EM_CHILD_THEME_DIR_URL . '/css' );
 	$options = array( 'compress' => true );
 	wp_enqueue_style( 'child-style-less', t_em_lessphp_compiler( $less_files, $options ), '', $t_em_theme_data['Version'], 'all' );
@@ -38,6 +41,15 @@ function t_em_all_enqueue(){
 
 }
 add_action( 'wp_enqueue_scripts', 't_em_all_enqueue' );
+
+/**
+ * Google Fonts
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_embed_google_fonts(){
+	echo '<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Titillium+Web|Lato">';
+}
 
 /**
  * Get cups of coffee consumed as a fun facts :P
@@ -57,7 +69,7 @@ function t_em_all_coffee(){
 	$interval = $start_date->diff( $end_date );
 
 	$coffee = array(
-		'cups' 	=> round( ( $lines + $kilos + $files + $interval->days ) / 100 ),
+		'cups' 	=> round( ( $lines + $kilos + $files + $interval->days ) / 10 ),
 		'label'		=> __( 'Cups of Coffee', 't_em_all' ),
 	);
 	return $coffee;

@@ -19,6 +19,13 @@
 	outline: none;
 	.transition(250ms);
 }
+body{
+	&:not(.home){
+		#main{
+			margin-top: 100px;
+		}
+	}
+}
 figure{
 	figcaption{
 		.sr-only;
@@ -29,6 +36,47 @@ figure{
 ------------------------------------------------------------------------------------------------- */
 #header{
 	.text-center;
+	background-image: url("../images/jumbo-content-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	&:before{
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		content: "";
+		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .8);
+	}
+	#static-header{
+		padding: 150px 50px 100px;
+		#static-header-inner{
+			background-color: transparent;
+			color: #fff;
+		}
+		#static-header-text{
+			header h2{
+				.h-hero;
+			}
+			.static-header-content{
+				margin: 25px 0 75px;
+				p{
+					font-weight: 500;
+				}
+			}
+			.actions{
+				.btn{
+					.btn-hero;
+					.btn-transparent;
+					@media (min-width: @screen-md-min){
+						margin: 0 15px;
+					}
+				}
+			}
+		}
+	}
 }
 
 /* =Navigation
@@ -44,10 +92,69 @@ body.admin-bar{
 	left: 0;
 	right: 0;
 	z-index: @zindex-navbar;
+	background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .9);
+	// background-color: rgba(255, 255, 255, .8);
+	color: #fff;
+	// color: @brand-primary;
+	padding: 15px 0;
+	.navbar{
+		border-width: 0;
+		background-color: transparent;
+		a{
+			color: #fff !important;
+			// color: @brand-primary !important;
+		}
+	}
+	.navbar-brand{
+		// font-size: @font-size-h3;
+	}
+	.custom-logo-link.navbar-brand{
+		padding: 5px 0;
+		img{
+			.size( auto; 40px );
+		}
+	}
 }
 
 /* =Front Page
 ------------------------------------------------------------------------------------------------- */
+.jumbo-content{
+	.jumbo-content-inner{
+		padding: @jumbo-padding 0;
+		overflow: hidden;
+		position: relative;
+		.jumbo-header{
+			.h1;
+		}
+		.actions{
+			margin: 50px 0 25px;
+			.btn{
+				.btn-hero;
+				@media (min-width: @screen-md-min){
+					margin: 0 15px;
+				}
+			}
+		}
+	}
+}
+#twenty-em-neon,
+#twenty-em-donate{
+	background-image: url("../images/jumbo-content-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	.jumbo-content-inner{
+		// #gradient > .directional(rgba(red(@purple), green(@purple), blue(@purple), .8); rgba(red(@deep-purple), green(@deep-purple), blue(@deep-purple), .8); 45deg);
+		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .8);
+	}
+	color: #fff;
+	p{
+		.lead;
+	}
+	.btn{
+		.btn-transparent;
+	}
+}
 #featured-widget-area{
 	.front-page-widget{
 		display: table;
@@ -93,13 +200,18 @@ body.admin-bar{
 		}
 	}
 }
+#twenty-em-features{
+	background-color: @gray-lighter;
+}
 #twenty-em-fun{
+	.jumbo-content-inner{
+		padding: 0;
+	}
 	.fun-fact{
 		color: #fff;
 		padding: 60px 15px;
 		.pull-left;
 		width: 100%;
-		height: 325px;
 		display: table;
 		@media (min-width: @screen-md-min){
 			width: 20%;
@@ -121,7 +233,65 @@ body.admin-bar{
 		}
 		.fun-fact-inner{
 			display: table-cell;
-			vertical-align: middlem;
+			vertical-align: middle;
+		}
+	}
+}
+#twenty-em-subscribe{
+	background-image: url("../images/world-map-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: @gray-lighter;
+	.jumbo-content-inner{
+		padding: ( @jumbo-padding * 2 ) 0 ( @jumbo-padding * 3 );
+		background-color: rgba(0,0,0,.7);
+		p{
+			.lead;
+		}
+		.subscribe-input{
+			border: 0;
+			border-bottom: solid 2px #fff;
+			border-radius: 0;
+			box-shadow: unset;
+			background-color: transparent;
+			color: @gray-lighter;
+			.input-lg;
+		}
+		.btn{
+			.btn-warning;
+			.btn-lg;
+		}
+	}
+}
+
+/* =Footer
+------------------------------------------------------------------------------------------------- */
+#footer{
+	background-color: @gray-dark;
+	color: @gray-lighter;
+	a{
+		color: @gray-lighter;
+	}
+	.wrapper.container{
+		border-top: 0;
+	}
+	#colophon{
+		padding: ( @jumbotron-padding * 3 ) 0;
+		.widget-title{
+			border: 0;
+		}
+	}
+	#site-info{
+		background-color: @gray-lighter;
+		color: @gray-dark;
+		a{
+			color: @gray-dark;
+		}
+		#twenty-em-credit{
+			@media (min-width: @screen-md-min){
+				.text-left;
+			}
 		}
 	}
 }

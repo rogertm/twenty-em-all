@@ -42,19 +42,24 @@ add_action( 'admin_enqueue_scripts', 't_em_all_admin_enqueue' );
  */
 function t_em_all_default_theme_options( $default_theme_options ){
 	$t_em_all_default_options = array(
-		'neon_ad_headline'			=> '',
-		'neon_ad_content'			=> '',
-		'neon_ad_button_one_label'	=> '',
-		'neon_ad_button_one_link'	=> '',
-		'neon_ad_button_two_label'	=> '',
-		'neon_ad_button_two_link'	=> '',
-		'github_commits_headline'	=> '',
-		'github_commits_rss'		=> '',
-		'donate_ad_headline'		=> '',
-		'donate_ad_content'			=> '',
-		'donate_ad_button_label'	=> '',
-		'donate_ad_button_link'		=> '',
-		'lines_of_code'				=> '',
+		'neon_headline'						=> '',
+		'neon_content'						=> '',
+		'neon_button_one_label'				=> '',
+		'neon_button_one_link'				=> '',
+		'neon_button_two_label'				=> '',
+		'neon_button_two_link'				=> '',
+		'github_commits_headline'			=> '',
+		'github_commits_rss'				=> '',
+		'donate_headline'					=> '',
+		'donate_content'					=> '',
+		'donate_button_label'				=> '',
+		'donate_button_link'				=> '',
+		'lines_of_code'						=> '',
+		'feedburner_headline'				=> '',
+		'feedburner_content'				=> '',
+		'feedburner_button_label'			=> '',
+		'feedburner_button_placeholder'	=> '',
+		'feedburner_id'					=> '',
 	);
 	$ads = t_em_all_front_page_ads_features_options();
 	foreach ( $ads as $ad => $value ) :
@@ -90,15 +95,20 @@ function t_em_all_theme_options_validate( $input ){
 
 	// Text inputs
 	foreach ( array(
-		'neon_ad_headline',
-		'neon_ad_content',
-		'neon_ad_button_one_label',
-		'neon_ad_button_two_label',
+		'neon_headline',
+		'neon_content',
+		'neon_button_one_label',
+		'neon_button_two_label',
 		'github_commits_headline',
-		'donate_ad_headline',
-		'donate_ad_content',
-		'donate_ad_button_label',
+		'donate_headline',
+		'donate_content',
+		'donate_button_label',
 		'lines_of_code',
+		'feedburner_headline',
+		'feedburner_content',
+		'feedburner_button_label',
+		'feedburner_button_placeholder',
+		'feedburner_id',
 	) as $text_field ) :
 		$input[$text_field] = ( isset( $input[$text_field] ) ) ? trim( $input[$text_field] ) : '';
 	endforeach;
@@ -138,10 +148,10 @@ function t_em_all_theme_options_validate( $input ){
 
 	// URLs
 	foreach ( array(
-		'neon_ad_button_one_link',
-		'neon_ad_button_two_link',
+		'neon_button_one_link',
+		'neon_button_two_link',
 		'github_commits_rss',
-		'donate_ad_button_link',
+		'donate_button_link',
 	) as $url_field ) :
 		$input[$url_field] = ( isset( $input[$url_field] ) ) ? esc_url_raw( $input[$url_field] ) : '';
 	endforeach;

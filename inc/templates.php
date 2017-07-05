@@ -93,18 +93,20 @@ function t_em_all_features_ad(){
 	$ads = t_em_all_front_page_ads_features_options();
 ?>
 	<section id="twenty-em-features" class="jumbo-content">
-		<div class="wrapper container text-center">
-			<div class="row">
+		<div class="jumbo-content-inner">
+			<div class="wrapper container text-center">
+				<div class="row">
 <?php foreach ( $ads as $ad => $value ) :
 		$data = $value['data'];
 		$data = array_keys( $data );
 ?>
-				<div class="col-sm-3">
-					<i class="<?php echo $t_em[$data[1]] ?> h1"></i>
-					<h3 class="h4"><?php echo $t_em[$data[0]] ?></h3>
-					<?php echo t_em_wrap_paragraph( do_shortcode( $t_em[$data[2]] ) ) ?>
-				</div>
+					<div class="col-sm-3">
+						<i class="<?php echo $t_em[$data[1]] ?> h1"></i>
+						<h3 class="h4"><?php echo $t_em[$data[0]] ?></h3>
+						<?php echo t_em_wrap_paragraph( do_shortcode( $t_em[$data[2]] ) ) ?>
+					</div>
 <?php endforeach; ?>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -122,20 +124,22 @@ function t_em_all_neon_ad(){
 	if ( ! is_front_page() || basename( $template ) != 'custom-front-page.php' )
 		return;
 
-	$btn_one = ( $t_em['neon_ad_button_one_label'] && $t_em['neon_ad_button_one_link'] )
-				? '<a href="'. $t_em['neon_ad_button_one_link'] .'" class="btn btn-default">'. $t_em['neon_ad_button_one_label'] .'</a>'
+	$btn_one = ( $t_em['neon_button_one_label'] && $t_em['neon_button_one_link'] )
+				? '<a href="'. $t_em['neon_button_one_link'] .'" class="btn btn-default">'. $t_em['neon_button_one_label'] .'</a>'
 				: null;
 
-	$btn_two = ( $t_em['neon_ad_button_two_label'] && $t_em['neon_ad_button_two_link'] )
-				? '<a href="'. $t_em['neon_ad_button_two_link'] .'" class="btn btn-default">'. $t_em['neon_ad_button_two_label'] .'</a>'
+	$btn_two = ( $t_em['neon_button_two_label'] && $t_em['neon_button_two_link'] )
+				? '<a href="'. $t_em['neon_button_two_link'] .'" class="btn btn-default">'. $t_em['neon_button_two_label'] .'</a>'
 				: null;
 ?>
 	<section id="twenty-em-neon" class="jumbo-content">
-		<div class="wrapper container text-center">
-			<h3><?php echo do_shortcode( $t_em['neon_ad_headline'] ) ?></h3>
-			<?php echo t_em_wrap_paragraph( $t_em['neon_ad_content'] ) ?>
-			<div class="actions">
-			<?php echo $btn_one . ' ' . $btn_two ?>
+		<div class="jumbo-content-inner">
+			<div class="wrapper container text-center">
+				<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['neon_headline'] ) ?></h3>
+				<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['neon_content'] ) ) ?>
+				<footer class="actions">
+					<?php echo $btn_one . ' ' . $btn_two ?>
+				</footer>
 			</div>
 		</div>
 	</section>
@@ -163,22 +167,24 @@ function t_em_all_github_ad(){
 	endif;
 ?>
 	<section id="twenty-em-github" class="jumbo-content">
-		<div class="wrapper container text-center">
-			<div class="row">
-			<h3><?php echo $t_em['github_commits_headline'] ?></h3>
+		<div class="jumbo-content-inner">
+			<div class="wrapper container text-center">
+				<div class="row">
+				<h3 class="jumbo-header"><?php echo $t_em['github_commits_headline'] ?></h3>
 <?php if ( $max_items == 0 ) : ?>
-			<p class="lead"><?php _e( 'No updates so far...', 't_em_all' ) ?></p>
+				<p class="lead"><?php _e( 'No updates so far...', 't_em_all' ) ?></p>
 <?php else : ?>
-			<div class="col-sm-8 col-sm-offset-2">
-				<dl class="dl-horizontal text-left lead">
+				<div class="col-sm-8 col-sm-offset-2">
+					<dl class="dl-horizontal text-left lead">
 <?php 	foreach ( $rss_items as $item ) : ?>
-					<dt class="text-muted small"><?php echo $item->get_date( 'j F Y' ) ?></dt>
-					<dd><a href="<?php echo esc_url( $item->get_permalink() ); ?>">
-						<?php echo esc_html( $item->get_title() ); ?></a></dd>
+						<dt class="text-muted small"><?php echo $item->get_date( 'j F Y' ) ?></dt>
+						<dd><a href="<?php echo esc_url( $item->get_permalink() ); ?>">
+							<?php echo esc_html( $item->get_title() ); ?></a></dd>
 <?php 	endforeach; ?>
-				</dl>
-			</div>
+					</dl>
+				</div>
 <?php endif; ?>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -200,7 +206,8 @@ function t_em_all_fun_ad(){
 	$coffee = t_em_all_coffee();
 ?>
 	<section id="twenty-em-fun" class="jumbo-content">
-		<div class="text-center">
+		<div class="jumbo-content-inner">
+			<div class="text-center">
 <?php foreach ( $funs as $fun ) :
 		$coding = $t_em['hours_of_coding'];
 		$start_date = new DateTime( $coding );
@@ -208,19 +215,20 @@ function t_em_all_fun_ad(){
 		$interval = $start_date->diff( $end_date );
 		$value = ( $fun['value'] == 'hours_of_coding' ) ? $interval->days : $t_em[$fun['value']];
 ?>
-			<div class="fun-fact">
-				<div class="fun-fact-inner">
-					<i class="<?php echo $t_em[$fun['icon']] ?> h1"></i>
-					<p class="h1"><?php echo $value ?></p>
-					<p class="lead"><?php echo $fun['label'] ?></p>
-				</div>
+				<div class="fun-fact">
+					<div class="fun-fact-inner">
+						<i class="<?php echo $t_em[$fun['icon']] ?> h1"></i>
+						<p class="h1"><?php echo $value ?></p>
+						<p class="lead"><?php echo $fun['label'] ?></p>
+					</div>
 				</div>
 <?php endforeach; ?>
-			<div class="fun-fact">
-				<div class="fun-fact-inner">
-					<i class="icofont icofont-coffee-mug h1"></i>
-					<p class="h1"><?php echo $coffee['cups'] ?></p>
-					<p class="lead"><?php echo $coffee['label'] ?></p>
+				<div class="fun-fact">
+					<div class="fun-fact-inner">
+						<i class="icofont icofont-coffee-mug h1"></i>
+						<p class="h1"><?php echo $coffee['cups'] ?></p>
+						<p class="lead"><?php echo $coffee['label'] ?></p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -245,22 +253,24 @@ function t_em_all_latests_news_ad(){
 	$news = get_posts( $args );
 ?>
 	<section id="twenty-em-posts" class="jumbo-content">
-		<div class="wrapper container">
-			<div class="row">
-			<h3 class="text-center"><?php _e( 'News', 't_em_all' ) ?></h3>
+		<div class="jumbo-content-inner">
+			<div class="wrapper container">
+				<div class="row">
+				<h3 class="jumbo-header text-center"><?php _e( 'Blog Posts', 't_em_all' ) ?></h3>
 <?php if ( $news ) : ?>
-			<div class="col-sm-8 col-sm-offset-2">
+				<div class="col-sm-8 col-sm-offset-2">
 <?php 	foreach ( $news as $new ) : ?>
-			<div class="media">
-				<div class="media-left"><?php t_em_featured_post_thumbnail( 100, 100, true, 'media-object', $new->ID ) ?></div>
-				<div class="media-body">
-					<h4 class="media-heading"><a href="<?php echo get_permalink( $new->ID ) ?>"><?php echo $new->post_title ?></a></h4>
-					<?php echo t_em_wrap_paragraph( $new->post_excerpt ) ?>
+				<div class="media">
+					<div class="media-left"><?php echo get_the_date( '', $new->ID ) ?></div>
+					<div class="media-body">
+						<h4 class="media-heading"><a href="<?php echo get_permalink( $new->ID ) ?>"><?php echo $new->post_title ?></a></h4>
+						<?php echo t_em_wrap_paragraph( do_shortcode( $new->post_excerpt ) ) ?>
+					</div>
 				</div>
-			</div>
 <?php 	endforeach; ?>
-			</div>
+				</div>
 <?php endif; ?>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -274,18 +284,53 @@ add_action( 't_em_action_main_after', 't_em_all_latests_news_ad' );
  * @since Twenty'em All 1.0
  */
 function t_em_all_donate_ad(){
-	global $t_em;
+	global $t_em, $template;
+	if ( ! is_front_page() || basename( $template ) != 'custom-front-page.php' )
+		return;
 ?>
 	<section id="twenty-em-donate" class="jumbo-content">
-		<div class="wrapper container text-center">
-			<h3><?php echo $t_em['donate_ad_headline'] ?></h3>
-			<?php echo t_em_wrap_paragraph( $t_em['donate_ad_content'] ) ?>
-			<div class="actions">
-				<a href="<?php echo $t_em['donate_ad_button_link'] ?>" class="btn btn-default"><?php echo $t_em['donate_ad_button_label'] ?></a>
+		<div class="jumbo-content-inner">
+			<div class="wrapper container text-center">
+				<h3 class="jumbo-header"><?php echo $t_em['donate_headline'] ?></h3>
+				<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['donate_content'] ) ) ?>
+				<footer class="actions">
+					<a href="<?php echo $t_em['donate_button_link'] ?>" class="btn btn-default"><?php echo $t_em['donate_button_label'] ?></a>
+				</footer>
 			</div>
 		</div>
 	</section>
 <?php
 }
 add_action( 't_em_action_main_after', 't_em_all_donate_ad' );
+
+/**
+ * Subscribe
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_subscribe_ad(){
+	global $t_em, $template;
+	if ( ! is_front_page() || basename( $template ) != 'custom-front-page.php' )
+		return;
+
+?>
+	<section id="twenty-em-subscribe" class="jumbo-content">
+		<div class="jumbo-content-inner">
+			<div class="wrapper container text-center">
+				<h3 class="jumbo-header"><?php echo $t_em['feedburner_headline'] ?></h3>
+				<?php echo t_em_wrap_paragraph( $t_em['feedburner_content'] ) ?>
+				<form class="form-inline" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $t_em['feedburner_id'] ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+					<div class="form-group">
+						<input type="email" class="form-control subscribe-input" placeholder="<?php echo $t_em['feedburner_button_placeholder'] ?>" required>
+						<input type="hidden" value="<?php echo $t_em['feedburner_id']; ?>" name="uri"/>
+						<input type="hidden" name="loc" value="en_US"/>
+					</div>
+					<button class="btn" type="submit"><?php echo $t_em['feedburner_button_label'] ?></button>
+				</form>
+			</div>
+		</div>
+	</section>
+<?php
+}
+add_action( 't_em_action_main_after', 't_em_all_subscribe_ad' );
 ?>
