@@ -323,6 +323,7 @@ function t_em_all_subscribe_ad(){
 					<div class="form-group">
 						<input type="email" class="form-control subscribe-input" placeholder="<?php echo $t_em['feedburner_button_placeholder'] ?>" required>
 						<input type="hidden" value="<?php echo $t_em['feedburner_id']; ?>" name="uri"/>
+						<input type="hidden" value="fulano@detal.com" name="email"/>
 						<input type="hidden" name="loc" value="en_US"/>
 					</div>
 					<button class="btn" type="submit"><?php echo $t_em['feedburner_button_label'] ?></button>
