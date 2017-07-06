@@ -6,7 +6,7 @@
  * @subpackage		Twenty'em All: Templates
  * @author			RogerTM
  * @license			license.txt
- * @link			https://twenty-em.themingisprose.com
+ * @link			https://themingisprose.com/twenty-em
  * @since 			Twenty'em All 1.0
  */
 
@@ -165,26 +165,44 @@ function t_em_all_github_ad(){
 	else :
 		$max_items = null;
 	endif;
+	$items = ( $max_items > 0 ) ? $max_items : null;
+
+
+	$btn_one = ( $t_em['github_button_one_label'] && $t_em['github_button_one_link'] )
+				? '<a href="'. $t_em['neon_button_one_link'] .'" class="btn btn-primary">'. $t_em['github_button_one_label'] .'</a>'
+				: null;
+
+	$btn_two = ( $t_em['github_button_two_label'] && $t_em['github_button_two_link'] )
+				? '<a href="'. $t_em['neon_button_two_link'] .'" class="btn btn-primary">'. $t_em['github_button_two_label'] .'</a>'
+				: null;
+
+	$cols = ( $items ) ? '6' : '12';
 ?>
 	<section id="twenty-em-github" class="jumbo-content">
 		<div class="jumbo-content-inner">
-			<div class="wrapper container text-center">
-				<div class="row">
-				<h3 class="jumbo-header"><?php echo $t_em['github_commits_headline'] ?></h3>
-<?php if ( $max_items == 0 ) : ?>
-				<p class="lead"><?php _e( 'No updates so far...', 't_em_all' ) ?></p>
-<?php else : ?>
-				<div class="col-sm-8 col-sm-offset-2">
-					<dl class="dl-horizontal text-left lead">
+			<div class="text-center">
+				<div id="github-left" class="col-md-<?php echo $cols ?>">
+					<div>
+						<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['github_content_headline'] ) ?></h3>
+						<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['github_content'] ) ) ?>
+						<footer class="actions">
+							<?php echo $btn_one . ' ' . $btn_two ?>
+						</footer>
+					</div>
+				</div> <!-- #github-left -->
+<?php if ( $items ) : ?>
+				<div id="github-right" class="col-md-6">
+						<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['github_commits_headline'] ) ?></h3>
+						<dl class="dl-horizontal text-left">
 <?php 	foreach ( $rss_items as $item ) : ?>
-						<dt class="text-muted small"><?php echo $item->get_date( 'j F Y' ) ?></dt>
-						<dd><a href="<?php echo esc_url( $item->get_permalink() ); ?>">
-							<?php echo esc_html( $item->get_title() ); ?></a></dd>
+							<dt class="text-muted small"><?php echo $item->get_date( 'j F, Y' ) ?></dt>
+							<dd class="h4"><a href="<?php echo esc_url( $item->get_permalink() ); ?>">
+								<?php echo esc_html( $item->get_title() ); ?></a></dd>
 <?php 	endforeach; ?>
-					</dl>
-				</div>
+						</dl>
+					</div>
 <?php endif; ?>
-				</div>
+				</div> <!-- #github-right -->
 			</div>
 		</div>
 	</section>
@@ -259,9 +277,17 @@ function t_em_all_latests_news_ad(){
 				<h3 class="jumbo-header text-center"><?php _e( 'Blog Posts', 't_em_all' ) ?></h3>
 <?php if ( $news ) : ?>
 				<div class="col-sm-8 col-sm-offset-2">
-<?php 	foreach ( $news as $new ) : ?>
+<?php 	foreach ( $news as $new ) :
+			$date = explode( ' ', get_the_date( 'd M Y', $new->ID ) );
+?>
 				<div class="media">
-					<div class="media-left"><?php echo get_the_date( '', $new->ID ) ?></div>
+					<div class="media-left">
+						<time>
+							<span class="day"><?php echo $date[0] ?></span>
+							<span class="month"><?php echo $date[1] ?></span>
+							<span class="year"><?php echo $date[2] ?></span>
+						</time>
+					</div>
 					<div class="media-body">
 						<h4 class="media-heading"><a href="<?php echo get_permalink( $new->ID ) ?>"><?php echo $new->post_title ?></a></h4>
 						<?php echo t_em_wrap_paragraph( do_shortcode( $new->post_excerpt ) ) ?>

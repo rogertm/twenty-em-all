@@ -6,7 +6,7 @@
  * @subpackage		Twenty'em All: Functions
  * @author			RogerTM
  * @license			license.txt
- * @link			https://twenty-em.themingisprose.com
+ * @link			https://themingisprose.com/twenty-em
  * @since 			Twenty'em All 1.0
  */
 

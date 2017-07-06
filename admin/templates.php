@@ -6,7 +6,7 @@
  * @subpackage		Twenty'em All: Admin
  * @author			RogerTM
  * @license			license.txt
- * @link			https://twenty-em.themingisprose.com
+ * @link			https://themingisprose.com/twenty-em
  * @since 			Twenty'em All 1.0
  */
 
@@ -170,7 +170,7 @@ function t_em_all_render_front_page_github_commints(){
 		<h3><?php _e( 'GitHub commit\'s RSS', 't_em_all' ) ?></h3>
 		<p>
 			<label>
-				<span><?php _e( 'Headline', 't_em_all' ) ?></span>
+				<span><?php _e( 'Headline Commits', 't_em_all' ) ?></span>
 				<input class="regular-text headline" type="text" name="t_em_theme_options[github_commits_headline]" value="<?php echo $t_em['github_commits_headline'] ?>">
 			</label>
 		</p>
@@ -178,6 +178,42 @@ function t_em_all_render_front_page_github_commints(){
 			<label>
 				<span><?php _e( 'RSS', 't_em_all' ) ?></span>
 				<input class="regular-text" type="url" name="t_em_theme_options[github_commits_rss]" value="<?php echo $t_em['github_commits_rss'] ?>">
+			</label>
+		</p>
+		<p>
+			<label>
+				<span><?php _e( 'Headline Content', 't_em_all' ) ?></span>
+				<input class="regular-text headline" type="text" name="t_em_theme_options[github_content_headline]" value="<?php echo $t_em['github_content_headline'] ?>">
+			</label>
+		</p>
+		<p>
+			<label>
+				<span><?php _e( 'Content', 't_em_all' ) ?></span>
+				<textarea class="large-text" name="t_em_theme_options[github_content]" rows="7"><?php echo $t_em['github_content'] ?></textarea>
+			</label>
+		</p>
+		<p>
+			<label>
+				<span><?php _e( 'First Button Label', 't_em_all' ) ?></span>
+				<input class="regular-text" type="text" name="t_em_theme_options[github_button_one_label]" value="<?php echo $t_em['github_button_one_label'] ?>">
+			</label>
+		</p>
+		<p>
+			<label>
+				<span><?php _e( 'First Button Link', 't_em_all' ) ?></span>
+				<input class="regular-text" type="url" name="t_em_theme_options[github_button_one_link]" value="<?php echo $t_em['github_button_one_link'] ?>">
+			</label>
+		</p>
+		<p>
+			<label>
+				<span><?php _e( 'Second Button Label', 't_em_all' ) ?></span>
+				<input class="regular-text" type="text" name="t_em_theme_options[github_button_two_label]" value="<?php echo $t_em['github_button_two_label'] ?>">
+			</label>
+		</p>
+		<p>
+			<label>
+				<span><?php _e( 'Second Button Link', 't_em_all' ) ?></span>
+				<input class="regular-text" type="url" name="t_em_theme_options[github_button_two_link]" value="<?php echo $t_em['github_button_two_link'] ?>">
 			</label>
 		</p>
 	</div>

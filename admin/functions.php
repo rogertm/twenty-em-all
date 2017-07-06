@@ -6,7 +6,7 @@
  * @subpackage		Twenty'em All: Admin
  * @author			RogerTM
  * @license			license.txt
- * @link			https://twenty-em.themingisprose.com
+ * @link			https://themingisprose.com/twenty-em
  * @since 			Twenty'em All 1.0
  */
 
@@ -50,16 +50,25 @@ function t_em_all_default_theme_options( $default_theme_options ){
 		'neon_button_two_link'				=> '',
 		'github_commits_headline'			=> '',
 		'github_commits_rss'				=> '',
+		'github_content_headline'			=> '',
+		'github_content'					=> '',
+		'github_button_one_label'			=> '',
+		'github_button_one_link'			=> '',
+		'github_button_two_label'			=> '',
+		'github_button_two_link'			=> '',
 		'donate_headline'					=> '',
 		'donate_content'					=> '',
 		'donate_button_label'				=> '',
 		'donate_button_link'				=> '',
 		'lines_of_code'						=> '',
+		'kilobytes'							=> '',
+		'files'								=> '',
+		'hours_of_coding'					=> '2012-09-10', // First Commit Date
 		'feedburner_headline'				=> '',
 		'feedburner_content'				=> '',
 		'feedburner_button_label'			=> '',
-		'feedburner_button_placeholder'	=> '',
-		'feedburner_id'					=> '',
+		'feedburner_button_placeholder'		=> '',
+		'feedburner_id'						=> '',
 	);
 	$ads = t_em_all_front_page_ads_features_options();
 	foreach ( $ads as $ad => $value ) :
@@ -100,10 +109,17 @@ function t_em_all_theme_options_validate( $input ){
 		'neon_button_one_label',
 		'neon_button_two_label',
 		'github_commits_headline',
+		'github_content_headline',
+		'github_content',
+		'github_button_one_label',
+		'github_button_two_label',
 		'donate_headline',
 		'donate_content',
 		'donate_button_label',
 		'lines_of_code',
+		'kilobytes',
+		'files',
+		'hours_of_coding',
 		'feedburner_headline',
 		'feedburner_content',
 		'feedburner_button_label',
@@ -151,6 +167,8 @@ function t_em_all_theme_options_validate( $input ){
 		'neon_button_one_link',
 		'neon_button_two_link',
 		'github_commits_rss',
+		'github_button_one_link',
+		'github_button_two_link',
 		'donate_button_link',
 	) as $url_field ) :
 		$input[$url_field] = ( isset( $input[$url_field] ) ) ? esc_url_raw( $input[$url_field] ) : '';

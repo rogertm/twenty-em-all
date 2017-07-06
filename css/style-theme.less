@@ -5,7 +5,7 @@
  * @subpackage		Twenty'em All: LESS
  * @author			RogerTM
  * @license			license.txt
- * @link			https://twenty-em.themingisprose.com
+ * @link			https://themingisprose.com/twenty-em
  * @since 			Twenty'em All 1.0
  */
 
@@ -118,43 +118,6 @@ body.admin-bar{
 
 /* =Front Page
 ------------------------------------------------------------------------------------------------- */
-.jumbo-content{
-	.jumbo-content-inner{
-		padding: @jumbo-padding 0;
-		overflow: hidden;
-		position: relative;
-		.jumbo-header{
-			.h1;
-		}
-		.actions{
-			margin: 50px 0 25px;
-			.btn{
-				.btn-hero;
-				@media (min-width: @screen-md-min){
-					margin: 0 15px;
-				}
-			}
-		}
-	}
-}
-#twenty-em-neon,
-#twenty-em-donate{
-	background-image: url("../images/jumbo-content-bg.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-attachment: fixed;
-	.jumbo-content-inner{
-		// #gradient > .directional(rgba(red(@purple), green(@purple), blue(@purple), .8); rgba(red(@deep-purple), green(@deep-purple), blue(@deep-purple), .8); 45deg);
-		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .8);
-	}
-	color: #fff;
-	p{
-		.lead;
-	}
-	.btn{
-		.btn-transparent;
-	}
-}
 #featured-widget-area{
 	.front-page-widget{
 		display: table;
@@ -200,8 +163,62 @@ body.admin-bar{
 		}
 	}
 }
+.jumbo-content{
+	.jumbo-content-inner{
+		padding: @jumbo-padding 0;
+		overflow: hidden;
+		position: relative;
+		.jumbo-header{
+			.h1;
+		}
+		.actions{
+			margin: 50px 0 25px;
+			.btn{
+				.btn-hero;
+				@media (min-width: @screen-md-min){
+					margin: 0 15px;
+				}
+			}
+		}
+	}
+}
 #twenty-em-features{
 	background-color: @gray-lighter;
+}
+#twenty-em-neon,
+#twenty-em-donate{
+	background-image: url("../images/jumbo-content-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	.jumbo-content-inner{
+		// #gradient > .directional(rgba(red(@purple), green(@purple), blue(@purple), .8); rgba(red(@deep-purple), green(@deep-purple), blue(@deep-purple), .8); 45deg);
+		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .8);
+	}
+	color: #fff;
+	p{
+		.lead;
+	}
+	.btn{
+		.btn-transparent;
+	}
+}
+#twenty-em-github{
+	background-color: @gray-lighter;
+	.jumbo-content-inner{
+		padding: 0;
+		#github-left,
+		#github-right{
+			padding-top: @jumbo-padding * 2;
+			padding-bottom: @jumbo-padding * 3;
+		}
+		#github-right{
+			background-color: #fff;
+		}
+		p{
+			.lead;
+		}
+	}
 }
 #twenty-em-fun{
 	.jumbo-content-inner{
@@ -226,14 +243,39 @@ body.admin-bar{
 			background-color: @indigo;
 		}
 		&:nth-of-type(4){
-			background-color: @teal;
+			// background-color: @teal;
+			background-color: @blue;
 		}
 		&:nth-of-type(5){
-			background-color: @green;
+			// background-color: @green;
+			background-color: @light-blue;
 		}
 		.fun-fact-inner{
 			display: table-cell;
 			vertical-align: middle;
+		}
+	}
+}
+#twenty-em-posts{
+	.media{
+		.media-left{
+			time{
+				background-color: @gray-lighter;
+				font-weight: 700;
+				color: @gray-light;
+				display: block;
+				.text-center;
+				span{
+					padding: 0 10px;
+					display: block;
+					&.year{
+						background-color: @gray-light;
+						color: #fff;
+						padding: 3px 10px;
+						margin-top: 5px;
+					}
+				}
+			}
 		}
 	}
 }
