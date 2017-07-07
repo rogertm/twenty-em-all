@@ -169,11 +169,11 @@ function t_em_all_github_ad(){
 
 
 	$btn_one = ( $t_em['github_button_one_label'] && $t_em['github_button_one_link'] )
-				? '<a href="'. $t_em['neon_button_one_link'] .'" class="btn btn-primary">'. $t_em['github_button_one_label'] .'</a>'
+				? '<a href="'. $t_em['github_button_one_link'] .'" class="btn btn-primary">'. $t_em['github_button_one_label'] .'</a>'
 				: null;
 
 	$btn_two = ( $t_em['github_button_two_label'] && $t_em['github_button_two_link'] )
-				? '<a href="'. $t_em['neon_button_two_link'] .'" class="btn btn-primary">'. $t_em['github_button_two_label'] .'</a>'
+				? '<a href="'. $t_em['github_button_two_link'] .'" class="btn btn-primary">'. $t_em['github_button_two_label'] .'</a>'
 				: null;
 
 	$cols = ( $items ) ? '6' : '12';
