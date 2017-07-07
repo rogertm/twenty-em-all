@@ -193,10 +193,10 @@ function t_em_all_github_ad(){
 <?php if ( $items ) : ?>
 				<div id="github-right" class="col-md-6">
 						<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['github_commits_headline'] ) ?></h3>
-						<dl class="dl-horizontal text-left">
+						<dl id="commit-items">
 <?php 	foreach ( $rss_items as $item ) : ?>
-							<dt class="text-muted small"><?php echo $item->get_date( 'j F, Y' ) ?></dt>
-							<dd class="h4"><a href="<?php echo esc_url( $item->get_permalink() ); ?>">
+							<dt class="commit-date"><?php echo $item->get_date( 'j F, Y' ) ?></dt>
+							<dd class="commit-title"><a href="<?php echo esc_url( $item->get_permalink() ); ?>">
 								<?php echo esc_html( $item->get_title() ); ?></a></dd>
 <?php 	endforeach; ?>
 						</dl>
@@ -235,17 +235,17 @@ function t_em_all_fun_ad(){
 ?>
 				<div class="fun-fact">
 					<div class="fun-fact-inner">
-						<i class="<?php echo $t_em[$fun['icon']] ?> h1"></i>
-						<p class="h1"><?php echo $value ?></p>
-						<p class="lead"><?php echo $fun['label'] ?></p>
+						<i class="fun-icon <?php echo $t_em[$fun['icon']] ?>"></i>
+						<p class="fun-value"><?php echo $value ?></p>
+						<p class="fun-label"><?php echo $fun['label'] ?></p>
 					</div>
 				</div>
 <?php endforeach; ?>
 				<div class="fun-fact">
 					<div class="fun-fact-inner">
-						<i class="icofont icofont-coffee-mug h1"></i>
-						<p class="h1"><?php echo $coffee['cups'] ?></p>
-						<p class="lead"><?php echo $coffee['label'] ?></p>
+						<i class="fun-icon icofont icofont-coffee-mug"></i>
+						<p class="fun-value"><?php echo $coffee['cups'] ?></p>
+						<p class="fun-label"><?php echo $coffee['label'] ?></p>
 					</div>
 				</div>
 			</div>
@@ -270,12 +270,12 @@ function t_em_all_latests_news_ad(){
 	);
 	$news = get_posts( $args );
 ?>
+<?php if ( $news ) : ?>
 	<section id="twenty-em-posts" class="jumbo-content">
 		<div class="jumbo-content-inner">
 			<div class="wrapper container">
 				<div class="row">
 				<h3 class="jumbo-header text-center"><?php _e( 'Blog Posts', 't_em_all' ) ?></h3>
-<?php if ( $news ) : ?>
 				<div class="col-sm-8 col-sm-offset-2">
 <?php 	foreach ( $news as $new ) :
 			$date = explode( ' ', get_the_date( 'd M Y', $new->ID ) );
@@ -295,11 +295,11 @@ function t_em_all_latests_news_ad(){
 				</div>
 <?php 	endforeach; ?>
 				</div>
-<?php endif; ?>
 				</div>
 			</div>
 		</div>
 	</section>
+<?php endif; ?>
 <?php
 }
 add_action( 't_em_action_main_after', 't_em_all_latests_news_ad' );
@@ -359,4 +359,19 @@ function t_em_all_subscribe_ad(){
 <?php
 }
 add_action( 't_em_action_main_after', 't_em_all_subscribe_ad' );
+
+/** Single ****************************************************************************************/
+/**
+ * Add the custom excerpt in single posts
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_single_custom_excerpt(){
+	global $post;
+	if ( is_singular( 'post' ) && $post->post_excerpt ) : ?>
+	<div class="single-excerpt"><?php echo t_em_wrap_paragraph( $post->post_excerpt ) ?></div>
+<?php
+	endif;
+}
+add_action( 't_em_action_post_content_before', 't_em_all_single_custom_excerpt', 15 );
 ?>

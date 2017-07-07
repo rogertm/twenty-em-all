@@ -39,6 +39,9 @@ function t_em_all_enqueue(){
 	wp_register_style( 'icofont', t_em_all_get_css('icofont'), array(), $t_em_theme_data['Version'], $media = 'all' );
 	wp_enqueue_style( 'icofont' );
 
+	wp_register_script( 'jquery.scrollto', t_em_all_get_js( 'jquery.scrollto' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
+	wp_enqueue_script( 'jquery.scrollto' );
+
 	wp_register_script( 'app-utils', t_em_all_get_js( 'app.utils' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
 	wp_enqueue_script( 'app-utils' );
 
@@ -78,4 +81,19 @@ function t_em_all_coffee(){
 	return $coffee;
 }
 add_action( 't_em_action_custom_front_page_before', 't_em_all_coffee' );
+
+/**
+ * Formating Twenty’em and Twenty&#8217;em into Twenty\'em
+ * Clone of capital_P_dangit() WordPress function
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_twenty_em_formating( $twenty_em ) {
+	return str_replace( array( 'Twenty’em', 'Twenty&#8217;em', 'Twenty&#039;em' ), 'Twenty\'em', $twenty_em );
+}
+add_filter( 'the_content', 't_em_all_twenty_em_formating' );
+add_filter( 'the_title', 't_em_all_twenty_em_formating' );
+add_filter( 'wp_title', 't_em_all_twenty_em_formating' );
+add_filter( 'the_excerpt', 't_em_all_twenty_em_formating' );
+add_filter( 'comment_text', 't_em_all_twenty_em_formating' );
 ?>

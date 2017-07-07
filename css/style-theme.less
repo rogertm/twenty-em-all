@@ -25,6 +25,7 @@ body{
 			margin-top: 100px;
 		}
 	}
+	cursor: default;
 }
 figure{
 	figcaption{
@@ -51,7 +52,10 @@ figure{
 		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .8);
 	}
 	#static-header{
-		padding: 150px 50px 100px;
+		padding: 50px 50px 100px;
+		@media (min-width: @screen-sm-min){
+			padding: 150px 50px 100px;
+		}
 		#static-header-inner{
 			background-color: transparent;
 			color: #fff;
@@ -93,25 +97,46 @@ body.admin-bar{
 	right: 0;
 	z-index: @zindex-navbar;
 	background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .9);
-	// background-color: rgba(255, 255, 255, .8);
 	color: #fff;
-	// color: @brand-primary;
-	padding: 15px 0;
+	@media (min-width: @screen-sm-min){
+		padding: 15px 0;
+	}
 	.navbar{
 		border-width: 0;
 		background-color: transparent;
 		a{
 			color: #fff !important;
-			// color: @brand-primary !important;
+		}
+		.current-menu-item,
+		.current-menu-item > a{
+			background-color: transparent;
+		}
+		.navbar-toggle{
+			border-color: transparent;
+			&:hover,
+			&:active,
+			&:focus{
+				background-color: transparent;
+			}
+		}
+		.navbar-collapse{
+			border-color: transparent;
 		}
 	}
 	.navbar-brand{
-		// font-size: @font-size-h3;
 	}
 	.custom-logo-link.navbar-brand{
-		padding: 5px 0;
+		padding: 15px 0;
 		img{
-			.size( auto; 40px );
+			.size( auto; 20px );
+		}
+	}
+	@media (min-width: @screen-sm-min){
+		.custom-logo-link.navbar-brand{
+			padding: 5px 0;
+			img{
+				.size( auto; 40px );
+			}
 		}
 	}
 }
@@ -170,6 +195,7 @@ body.admin-bar{
 		position: relative;
 		.jumbo-header{
 			.h1;
+			margin-bottom: @line-height-computed;
 		}
 		.actions{
 			margin: 50px 0 25px;
@@ -177,6 +203,13 @@ body.admin-bar{
 				.btn-hero;
 				@media (min-width: @screen-md-min){
 					margin: 0 15px;
+				}
+			}
+			@media (max-width: @screen-sm-max){
+				padding: 0 50px;
+				.btn{
+					.btn-block;
+					margin-top: (@line-height-computed / 2);
 				}
 			}
 		}
@@ -192,7 +225,6 @@ body.admin-bar{
 	background-size: cover;
 	background-attachment: fixed;
 	.jumbo-content-inner{
-		// #gradient > .directional(rgba(red(@purple), green(@purple), blue(@purple), .8); rgba(red(@deep-purple), green(@deep-purple), blue(@deep-purple), .8); 45deg);
 		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .8);
 	}
 	color: #fff;
@@ -214,6 +246,21 @@ body.admin-bar{
 		}
 		#github-right{
 			background-color: #fff;
+			.commit-date{
+				.text-muted;
+				.small;
+			}
+			.commit-title{
+				.h4;
+				margin-top: 5px;
+				margin-bottom: 25px;
+			}
+			#commit-items{
+				@media (min-width: @screen-md-min){
+					.dl-horizontal;
+					.text-left;
+				}
+			}
 		}
 		p{
 			.lead;
@@ -230,6 +277,14 @@ body.admin-bar{
 		.pull-left;
 		width: 100%;
 		display: table;
+		.fun-icon,
+		.fun-value{
+			.h1;
+		}
+		.fun-label{
+			text-transform: uppercase;
+			.small;
+		}
 		@media (min-width: @screen-md-min){
 			width: 20%;
 		}
@@ -243,11 +298,9 @@ body.admin-bar{
 			background-color: @indigo;
 		}
 		&:nth-of-type(4){
-			// background-color: @teal;
 			background-color: @blue;
 		}
 		&:nth-of-type(5){
-			// background-color: @green;
 			background-color: @light-blue;
 		}
 		.fun-fact-inner{
@@ -304,6 +357,27 @@ body.admin-bar{
 			.btn-warning;
 			.btn-lg;
 		}
+	}
+}
+
+/* =Content
+------------------------------------------------------------------------------------------------- */
+article{
+	&:not(.full-post){ /* .full-post class is provided by the parent theme */
+		margin-bottom: 100px !important;
+	}
+	.featured-post-thumbnail{
+		margin-bottom: 25px;
+	}
+	.more-link{
+		.btn;
+		.btn-primary;
+		display: table;
+		margin: 15px 0;
+	}
+	.single-excerpt{
+		.lead;
+		margin-top: 35px;
 	}
 }
 

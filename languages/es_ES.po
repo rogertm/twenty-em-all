@@ -1,0 +1,181 @@
+# Copyright (C) 2017 RogerTM
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Twenty'em All 1.0\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/support/theme/twenty-em-all\n"
+"POT-Creation-Date: 2017-07-07 00:26-0400\n"
+"PO-Revision-Date: 2017-07-07 00:27-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_CU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin/templates.php:23
+msgid "Ad One"
+msgstr "Anuncio Uno"
+
+#: admin/templates.php:32
+msgid "Ad Two"
+msgstr "Anuncio Dos"
+
+#: admin/templates.php:41
+msgid "Ad Three"
+msgstr "Anuncio Tres"
+
+#: admin/templates.php:50
+msgid "Ad Four"
+msgstr "Anuncio Cuatro"
+
+#: admin/templates.php:77 admin/templates.php:276
+msgid "Features ads"
+msgstr "Características"
+
+#: admin/templates.php:86
+msgid "Heading"
+msgstr "Encabezado"
+
+#: admin/templates.php:92 admin/templates.php:291
+msgid "IcoFont"
+msgstr "IcoFont"
+
+#: admin/templates.php:98 admin/templates.php:128 admin/templates.php:191
+#: admin/templates.php:323 admin/templates.php:362
+msgid "Content"
+msgstr "Contenido"
+
+#: admin/templates.php:119
+msgid "Neon ad"
+msgstr "Anuncio Neon"
+
+#: admin/templates.php:122 admin/templates.php:317 admin/templates.php:356
+msgid "Headline"
+msgstr "Encabezado"
+
+#: admin/templates.php:134 admin/templates.php:197
+msgid "First Button Label"
+msgstr "Texto Primer Botón"
+
+#: admin/templates.php:140 admin/templates.php:203
+msgid "First Button Link"
+msgstr "Enlace Primer Botón"
+
+#: admin/templates.php:146 admin/templates.php:209
+msgid "Second Button Label"
+msgstr "Texto Segundo Botón"
+
+#: admin/templates.php:152 admin/templates.php:215
+msgid "Second Button Link"
+msgstr "Enlace Segurno Botón"
+
+#: admin/templates.php:170
+msgid "GitHub commit's RSS"
+msgstr "RSS de Commits"
+
+#: admin/templates.php:173
+msgid "Headline Commits"
+msgstr "Encabezado de Commits"
+
+#: admin/templates.php:179
+msgid "RSS"
+msgstr "RSS"
+
+#: admin/templates.php:185
+msgid "Headline Content"
+msgstr "Encabezado Contenido"
+
+#: admin/templates.php:234
+msgid "Lines of Code"
+msgstr "Líneas de Código"
+
+#: admin/templates.php:235
+msgid "<code>$ find . -name \"*.php\" | xargs wc -l</code>"
+msgstr "<code>$ find . -name \"*.php\" | xargs wc -l</code>"
+
+#: admin/templates.php:240
+msgid "Kilobytes"
+msgstr "Kilobytes"
+
+#: admin/templates.php:241
+msgid "Kilobytes of this project"
+msgstr "Kilobytes de este royecto"
+
+#: admin/templates.php:246
+msgid "Files"
+msgstr "Archivos"
+
+#: admin/templates.php:247
+msgid "Amount of files of this project"
+msgstr "Cantidad de archivos de este proyecto"
+
+#: admin/templates.php:252
+msgid "Hours of Coding"
+msgstr "Horas Programando"
+
+#: admin/templates.php:253
+msgid "First commit date, in format <code>YYYY-MM-DD</code>"
+msgstr "Fecha del commit inicial, en formato <code>YYYY-MM-DD</code>"
+
+#: admin/templates.php:314
+msgid "Donate ad"
+msgstr "Anuncio Donar"
+
+#: admin/templates.php:329 admin/templates.php:368
+msgid "Button Label"
+msgstr "Texto del Botón"
+
+#: admin/templates.php:335
+msgid "Button Link"
+msgstr "Enlace del Botón"
+
+#: admin/templates.php:353
+msgid "FeedBurner ad"
+msgstr "Anuncio FeedBurner"
+
+#: admin/templates.php:374
+msgid "Button Placeholder"
+msgstr "Placeholder del Botón"
+
+#: admin/templates.php:380
+msgid "FeedBurner ID"
+msgstr "ID de FeedBurner"
+
+#: content.php:23
+msgid "Permalink to %s"
+msgstr "Enlace a %s"
+
+#: inc/functions.php:79
+msgid "Cups of Coffee"
+msgstr "Tazas de Café"
+
+#: inc/shortcodes.php:29
+msgid "Theming is Prose"
+msgstr "Theming is Prose"
+
+#: inc/templates.php:278
+msgid "Blog Posts"
+msgstr "Entradas del Blog"
+
+#. Theme Name of the plugin/theme
+msgid "Twenty'em All"
+msgstr "Twenty'em All"
+
+#. Theme URI of the plugin/theme
+msgid "https://themingisprose.com/twenty-em"
+msgstr "https://themingisprose.com/twenty-em"
+
+#. Description of the plugin/theme
+msgid "Twenty'em Site Theme"
+msgstr "Twenty'em Site Theme"
+
+#. Author of the plugin/theme
+msgid "RogerTM"
+msgstr "RogerTM"
+
+#. Author URI of the plugin/theme
+msgid "https://themingisprose.com"
+msgstr "https://themingisprose.com"
