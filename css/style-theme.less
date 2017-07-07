@@ -386,9 +386,6 @@ article{
 #footer{
 	background-color: @gray-dark;
 	color: @gray-lighter;
-	a{
-		color: @gray-lighter;
-	}
 	.wrapper.container{
 		border-top: 0;
 	}
@@ -397,12 +394,21 @@ article{
 		.widget-title{
 			border: 0;
 		}
+		a{
+			color: @gray-lighter;
+			&:hover{
+				color: @gray-light;
+			}
+		}
 	}
 	#site-info{
-		background-color: @gray-lighter;
-		color: @gray-dark;
+		background-color: @gray-darker;
+		color: @gray-lighter;
 		a{
-			color: @gray-dark;
+			color: @gray-lighter;
+			&:hover{
+				color: @gray-light;
+			}
 		}
 		#twenty-em-credit{
 			@media (min-width: @screen-md-min){
