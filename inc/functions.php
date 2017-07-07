@@ -96,4 +96,14 @@ add_filter( 'the_title', 't_em_all_twenty_em_formating' );
 add_filter( 'wp_title', 't_em_all_twenty_em_formating' );
 add_filter( 'the_excerpt', 't_em_all_twenty_em_formating' );
 add_filter( 'comment_text', 't_em_all_twenty_em_formating' );
+
+/**
+ * Keep an eye on revisions 8)
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_revisions_number( $num, $post ){
+	return 1;
+}
+add_filter( 'wp_revisions_to_keep', 't_em_all_revisions_number', 10, 2 );
 ?>

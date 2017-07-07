@@ -25,7 +25,7 @@ global $t_em;
 					<?php t_em_posted_on(); ?>
 				</span><!-- .entry-meta -->
 			</header>
-			<?php the_excerpt(); ?>
+			<?php echo do_shortcode( get_the_excerpt() ) ; ?>
 			<footer class="entry-utility">
 				<?php t_em_posted_in(); ?>
 				<?php t_em_comments_link(); ?>

@@ -344,7 +344,7 @@ function t_em_all_subscribe_ad(){
 		<div class="jumbo-content-inner">
 			<div class="wrapper container text-center">
 				<h3 class="jumbo-header"><?php echo $t_em['feedburner_headline'] ?></h3>
-				<?php echo t_em_wrap_paragraph( $t_em['feedburner_content'] ) ?>
+				<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['feedburner_content'] ) ) ?>
 				<form class="form-inline" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $t_em['feedburner_id'] ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
 					<div class="form-group">
 						<input type="email" name="email" class="form-control subscribe-input" placeholder="<?php echo $t_em['feedburner_button_placeholder'] ?>" required>
@@ -369,7 +369,7 @@ add_action( 't_em_action_main_after', 't_em_all_subscribe_ad' );
 function t_em_all_single_custom_excerpt(){
 	global $post;
 	if ( is_singular( 'post' ) && $post->post_excerpt ) : ?>
-	<div class="single-excerpt"><?php echo t_em_wrap_paragraph( $post->post_excerpt ) ?></div>
+	<div class="single-excerpt"><?php echo t_em_wrap_paragraph( do_shortcode( $post->post_excerpt ) ) ?></div>
 <?php
 	endif;
 }
