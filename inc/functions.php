@@ -124,9 +124,9 @@ function t_em_all_get_post_resume( $post_id, $trim = 55, $echo = true ){
 	$resume = ( ! empty( $excerpt ) ) ? $excerpt : wp_trim_words( $content, $trim );
 
 	if ( $echo ) :
-		echo $resume;
+		echo do_shortcode ( $resume );
 	else :
-		return $resume;
+		return do_shortcode ( $resume );
 	endif;
 }
 ?>
