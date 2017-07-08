@@ -106,4 +106,27 @@ function t_em_all_revisions_number( $num, $post ){
 	return 1;
 }
 add_filter( 'wp_revisions_to_keep', 't_em_all_revisions_number', 10, 2 );
+
+/**
+ * Get the resume of every post
+ * @param int $post_id 	Post ID
+ * @param int $trim 	Amount of words to show. Default 55.
+ * @param bool $echo 	Return the value or print it on screen. Default to 'true'
+ * @return string 		The 'post_excerpt' field or the first $trim words of the 'post_content' fields
+ * 						if 'post_excerpt' is empty
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_get_post_resume( $post_id, $trim = 55, $echo = true ){
+	$excerpt = get_post_field( 'post_excerpt', $post_id );
+	$content = get_post_field( 'post_content', $post_id );
+
+	$resume = ( ! empty( $excerpt ) ) ? $excerpt : wp_trim_words( $content, $trim );
+
+	if ( $echo ) :
+		echo $resume;
+	else :
+		return $resume;
+	endif;
+}
 ?>

@@ -290,7 +290,7 @@ function t_em_all_latests_news_ad(){
 					</div>
 					<div class="media-body">
 						<h4 class="media-heading"><a href="<?php echo get_permalink( $new->ID ) ?>"><?php echo $new->post_title ?></a></h4>
-						<?php echo t_em_wrap_paragraph( do_shortcode( $new->post_excerpt ) ) ?>
+						<?php echo t_em_wrap_paragraph( do_shortcode( t_em_all_get_post_resume( $new->ID ) ) ) ?>
 					</div>
 				</div>
 <?php 	endforeach; ?>
