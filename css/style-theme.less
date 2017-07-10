@@ -49,7 +49,7 @@ figure{
 		bottom: 0;
 		right: 0;
 		content: "";
-		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .8);
+		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .1);
 	}
 	#static-header{
 		padding: 50px 50px 100px;
@@ -225,7 +225,7 @@ body.admin-bar{
 	background-size: cover;
 	background-attachment: fixed;
 	.jumbo-content-inner{
-		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .8);
+		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .1);
 	}
 	color: #fff;
 	p{
@@ -298,10 +298,10 @@ body.admin-bar{
 			background-color: @indigo;
 		}
 		&:nth-of-type(4){
-			background-color: @blue;
+			background-color: darken(@blue, 15%);
 		}
 		&:nth-of-type(5){
-			background-color: @light-blue;
+			background-color: darken(@light-blue, 10%);
 		}
 		.fun-fact-inner{
 			display: table-cell;

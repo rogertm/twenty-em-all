@@ -15,6 +15,7 @@
 @purple:					#9C27B0;
 @deep-purple:				#673AB7;
 @indigo:					#3F51B5;
+@indigo-dark:				#000d57;
 @blue:						#2196F3;
 @light-blue:				#03A9F4;
 @blue-gray:					#607D8B;
@@ -27,7 +28,7 @@
 @brown:						#795548;
 @pink:						#E91E63;
 
-@brand-primary:				@indigo;
+@brand-primary:				darken(@blue, 15%);
 @brand-success:				@teal;
 @brand-info:				@deep-purple;
 @brand-warning:				@deep-orange;
@@ -87,7 +88,7 @@ h1, h2, h3, h4, h5, h6,
 	&:focus,
 	&:hover,
 	&:active{
-		background-color: @gray-lighter;
+		background-color: rgba(255,255,255,.9);
 		color: @brand-primary;
 	}
 }
