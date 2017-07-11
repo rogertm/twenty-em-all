@@ -39,6 +39,9 @@ function t_em_all_enqueue(){
 	wp_register_style( 'icofont', t_em_all_get_css('icofont'), array(), $t_em_theme_data['Version'], $media = 'all' );
 	wp_enqueue_style( 'icofont' );
 
+	wp_register_script( 'prettify', t_em_all_get_js( 'prettify' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
+	wp_enqueue_script( 'prettify' );
+
 	wp_register_script( 'app-utils', t_em_all_get_js( 'app.utils' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
 	wp_enqueue_script( 'app-utils' );
 

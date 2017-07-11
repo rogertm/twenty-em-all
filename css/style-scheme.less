@@ -12,21 +12,24 @@
 /* =Variables
 ------------------------------------------------------------------------------------------------- */
 // Colors
+@red:						#F44336;
+@pink:						#E91E63;
 @purple:					#9C27B0;
 @deep-purple:				#673AB7;
 @indigo:					#3F51B5;
-@indigo-dark:				#000d57;
 @blue:						#2196F3;
 @light-blue:				#03A9F4;
-@blue-gray:					#607D8B;
-@g-gray:					#9E9E9E;
+@cyan:						#00BCD4;
 @teal:						#009688;
 @green:						#4CAF50;
+@light-green:				#8BC34A;
 @lime:						#CDDC39;
+@yellow:					#FFEB3B;
+@amber:						#FF9800;
 @deep-orange:				#FF5722;
-@red:						#F44336;
 @brown:						#795548;
-@pink:						#E91E63;
+@g-gray:					#9E9E9E;
+@blue-gray:					#607D8B;
 
 @brand-primary:				darken(@blue, 15%);
 @brand-success:				@teal;
@@ -41,7 +44,7 @@
 @font-size-base:			16px;
 @font-family-sans-serif:	"Lato", Helvetica, Arial, sans-serif;
 @heading-font-family:		"Roboto Condensed", Helvetica, Arial, sans-serif;
-@code-color:				@pink;
+@code-color:				darken(@red, 15%);
 @code-bg:					@gray-lighter;
 
 // Buttons
@@ -94,4 +97,22 @@ h1, h2, h3, h4, h5, h6,
 }
 .btn{
 	font-family: @heading-font-family;
+}
+
+/* =Alerts
+------------------------------------------------------------------------------------------------- */
+.alert-variant(@background; @border; @text-color) {
+	background-color: lighten( @background, 5% );
+	border-color: darken(@border, 15%);
+	color: @text-color;
+	border-width: 0 0 0 7px;
+	border-style: solid;
+
+	hr {
+		border-top-color: darken(@border, 5%);
+	}
+		.alert-link, a {
+		color: darken(@text-color, 10%);
+		border-bottom: dotted 1px;
+	}
 }
