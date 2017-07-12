@@ -125,11 +125,11 @@ function t_em_all_neon_ad(){
 		return;
 
 	$btn_one = ( $t_em['neon_button_one_label'] && $t_em['neon_button_one_link'] )
-				? '<a href="'. $t_em['neon_button_one_link'] .'" class="btn btn-default">'. $t_em['neon_button_one_label'] .'</a>'
+				? '<a href="'. $t_em['neon_button_one_link'] .'" class="btn">'. $t_em['neon_button_one_label'] .'</a>'
 				: null;
 
 	$btn_two = ( $t_em['neon_button_two_label'] && $t_em['neon_button_two_link'] )
-				? '<a href="'. $t_em['neon_button_two_link'] .'" class="btn btn-default">'. $t_em['neon_button_two_label'] .'</a>'
+				? '<a href="'. $t_em['neon_button_two_link'] .'" class="btn">'. $t_em['neon_button_two_label'] .'</a>'
 				: null;
 ?>
 	<section id="twenty-em-neon" class="jumbo-content">
@@ -169,11 +169,11 @@ function t_em_all_github_ad(){
 
 
 	$btn_one = ( $t_em['github_button_one_label'] && $t_em['github_button_one_link'] )
-				? '<a href="'. $t_em['github_button_one_link'] .'" class="btn btn-primary">'. $t_em['github_button_one_label'] .'</a>'
+				? '<a href="'. $t_em['github_button_one_link'] .'" class="btn">'. $t_em['github_button_one_label'] .'</a>'
 				: null;
 
 	$btn_two = ( $t_em['github_button_two_label'] && $t_em['github_button_two_link'] )
-				? '<a href="'. $t_em['github_button_two_link'] .'" class="btn btn-primary">'. $t_em['github_button_two_label'] .'</a>'
+				? '<a href="'. $t_em['github_button_two_link'] .'" class="btn">'. $t_em['github_button_two_label'] .'</a>'
 				: null;
 
 	$cols = ( $items ) ? '6' : '12';
@@ -275,26 +275,26 @@ function t_em_all_latests_news_ad(){
 		<div class="jumbo-content-inner">
 			<div class="wrapper container">
 				<div class="row">
-				<h3 class="jumbo-header text-center"><?php _e( 'Blog Posts', 't_em_all' ) ?></h3>
-				<div class="col-sm-8 col-sm-offset-2">
+					<h3 class="jumbo-header text-center"><?php _e( 'Blog Posts', 't_em_all' ) ?></h3>
+					<div class="col-sm-8 col-sm-offset-2">
 <?php 	foreach ( $news as $new ) :
 			$date = explode( ' ', get_the_date( 'd M Y', $new->ID ) );
 ?>
-				<div class="media">
-					<div class="media-left">
-						<time>
-							<span class="day"><?php echo $date[0] ?></span>
-							<span class="month"><?php echo $date[1] ?></span>
-							<span class="year"><?php echo $date[2] ?></span>
-						</time>
+					<div class="media">
+						<div class="media-left">
+							<time>
+								<span class="day"><?php echo $date[0] ?></span>
+								<span class="month"><?php echo $date[1] ?></span>
+								<span class="year"><?php echo $date[2] ?></span>
+							</time>
+						</div>
+						<div class="media-body">
+							<h4 class="media-heading"><a href="<?php echo get_permalink( $new->ID ) ?>"><?php echo $new->post_title ?></a></h4>
+							<?php t_em_wrap_paragraph( t_em_all_get_post_resume( $new->ID ) ) ?>
+						</div>
 					</div>
-					<div class="media-body">
-						<h4 class="media-heading"><a href="<?php echo get_permalink( $new->ID ) ?>"><?php echo $new->post_title ?></a></h4>
-						<?php t_em_wrap_paragraph( t_em_all_get_post_resume( $new->ID ) ) ?>
-					</div>
-				</div>
 <?php 	endforeach; ?>
-				</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -320,7 +320,7 @@ function t_em_all_donate_ad(){
 				<h3 class="jumbo-header"><?php echo $t_em['donate_headline'] ?></h3>
 				<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['donate_content'] ) ) ?>
 				<footer class="actions">
-					<a href="<?php echo $t_em['donate_button_link'] ?>" class="btn btn-default"><?php echo $t_em['donate_button_label'] ?></a>
+					<a href="<?php echo $t_em['donate_button_link'] ?>" class="btn"><?php echo $t_em['donate_button_label'] ?></a>
 				</footer>
 			</div>
 		</div>
@@ -374,4 +374,13 @@ function t_em_all_single_custom_excerpt(){
 	endif;
 }
 add_action( 't_em_action_post_content_before', 't_em_all_single_custom_excerpt', 15 );
+
+/** Content ***************************************************************************************/
+/**
+ * Go to top
+ */
+function t_em_all_go_top(){
+	echo '<div id="gototop" class="btn scroll-to" data-target="body"><i class="icofont icofont-simple-up"></i><span class="text-hide">'. __( 'Go to top', 't_em_all' ) .'</span></div>';
+}
+add_action( 'wp_footer', 't_em_all_go_top' );
 ?>

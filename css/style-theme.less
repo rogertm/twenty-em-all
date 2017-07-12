@@ -140,6 +140,20 @@ body.admin-bar{
 		}
 	}
 }
+#gototop{
+	display: none;
+	position: fixed;
+	top: auto;
+	left: auto;
+	right: 30px;
+	bottom: 30px;
+	background-color: rgba(0,0,0,.3);
+	color: #fff;
+	&:hover,
+	&:focus{
+		background-color: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), .7);
+	}
+}
 
 /* =Front Page
 ------------------------------------------------------------------------------------------------- */
@@ -239,6 +253,11 @@ body.admin-bar{
 	background-color: @gray-lighter;
 	.jumbo-content-inner{
 		padding: 0;
+		.actions{
+			.btn{
+				.btn-primary;
+			}
+		}
 		#github-left,
 		#github-right{
 			padding-top: @jumbo-padding * 2;
@@ -364,7 +383,7 @@ body.admin-bar{
 ------------------------------------------------------------------------------------------------- */
 article{
 	&:not(.full-post){ /* .full-post class is provided by the parent theme */
-		margin-bottom: 100px !important;
+		margin-bottom: 75px;
 	}
 	.featured-post-thumbnail{
 		margin-bottom: 25px;
@@ -381,6 +400,20 @@ article{
 	}
 	.entry-content{
 		margin-bottom: @line-height-computed * 1.5;
+		.h-anchor{
+			.anchor{
+				font-size: 20px;
+				vertical-align: middle;
+				margin-left: -1em;
+				display: none;
+				color: lighten(@gray-light, 15%);
+			}
+			&:hover{
+				.anchor{
+					display: inline;
+				}
+			}
+		}
 	}
 	pre{
 		padding-top: (@line-height-computed - 1);
