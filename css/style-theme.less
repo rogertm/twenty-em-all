@@ -477,6 +477,48 @@ article{
 			}
 		}
 	}
+	&#post-0{
+		&.error404{
+			.text-center;
+			> .entry-content p{
+				.h4;
+			}
+			> header{
+				cursor: none;
+				&:before{
+					.transition(500ms);
+					font-weight: bold;
+					line-height: 0.8;
+					overflow: hidden;
+					color: @link-color;
+					font-size: ceil((@font-size-base * 10)); // ~160px
+					@media (min-width: @screen-md-min){
+						font-size: ceil((@font-size-base * 25)); // ~440px
+					}
+				}
+				&:hover{
+					&:before{
+						color: @link-hover-color;
+					}
+				}
+			}
+			#searchform{
+				.center-block;
+			}
+		}
+		&.error404{
+			> header{
+				&:before{
+					content: "404";
+				}
+			}
+		}
+		#searchform{
+			@media (min-width: @screen-md-min){
+				width: 58.3333%;
+			}
+		}
+	}
 }
 pre{
 	-moz-tab-size: 2;

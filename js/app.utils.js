@@ -78,6 +78,9 @@ jQuery(document).ready(function($) {
 		});
 	});
 
+	// 404 || 403
+	$('#post-0.error404 #searchform .input-group').addClass('input-group-lg');
+
 	$(window).resize(function(){
 		t_em_all_github_panel();
 	});

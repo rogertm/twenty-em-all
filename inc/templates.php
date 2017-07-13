@@ -280,7 +280,7 @@ function t_em_all_latests_news_ad(){
 <?php 	foreach ( $news as $new ) :
 			$date = explode( ' ', get_the_date( 'd M Y', $new->ID ) );
 ?>
-					<div class="media">
+					<div <?php post_class( 'media', $new->ID ) ?>">
 						<div class="media-left">
 							<time>
 								<span class="day"><?php echo $date[0] ?></span>
