@@ -408,7 +408,8 @@ article{
 				display: none;
 				color: lighten(@gray-light, 15%);
 			}
-			&:hover{
+			&:hover,
+			&:focus{
 				.anchor{
 					display: inline;
 				}
@@ -425,8 +426,8 @@ article{
 			font-weight: bold;
 			content: attr(rel);
 			display: block;
-			margin: -(@line-height-computed - 1) -((@line-height-computed - 1) / 2) ((@line-height-computed - 1) / 2); // ~ -27px -13.5px 13.5px
-			padding: @padding-base-vertical @padding-base-horizontal; // ~6px ~12px
+			margin: -(@line-height-computed - 1) -((@line-height-computed - 1) / 2) ((@line-height-computed - 1) / 2);
+			padding: @padding-base-vertical @padding-base-horizontal;
 			text-transform: uppercase;
 			position: absolute;
 			left: 2px;
@@ -496,7 +497,8 @@ article{
 						font-size: ceil((@font-size-base * 25)); // ~440px
 					}
 				}
-				&:hover{
+				&:hover,
+				&:focus{
 					&:before{
 						color: @link-hover-color;
 					}
@@ -590,7 +592,8 @@ h1, h2, h3, h4, h5, h6{
 		color: @gray-lighter;
 		a{
 			color: @gray-lighter;
-			&:hover{
+			&:hover,
+			&:focus{
 				color: @gray-light;
 			}
 		}
