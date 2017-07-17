@@ -532,6 +532,33 @@ h1, h2, h3, h4, h5, h6{
 	}
 }
 
+/* =Sidebar
+------------------------------------------------------------------------------------------------- */
+.widget-container{
+	ul{
+		&:not(.media-list){
+			li{
+				a{
+					display: block;
+				}
+			}
+		}
+	}
+}
+#sidebar{
+	ul{
+		&:not(.media-list){
+			li{
+				a{
+					font-size: @font-size-large;
+					border-bottom: solid 1px @gray-lighter;
+					padding: 5px 0 2px;
+				}
+			}
+		}
+	}
+}
+
 /* =Footer
 ------------------------------------------------------------------------------------------------- */
 #footer{
@@ -547,8 +574,14 @@ h1, h2, h3, h4, h5, h6{
 		}
 		a{
 			color: @gray-lighter;
-			&:hover{
+			&:hover,
+			&:focus{
 				color: @gray-light;
+			}
+		}
+		p{
+			a{
+				border-bottom: dotted 1px;
 			}
 		}
 	}
