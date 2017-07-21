@@ -94,7 +94,7 @@ function t_em_all_features_ad(){
 ?>
 	<section id="twenty-em-features" class="jumbo-content">
 		<div class="jumbo-content-inner">
-			<div class="wrapper container text-center">
+			<div class="wrapper container ">
 				<div class="row">
 <?php foreach ( $ads as $ad => $value ) :
 		$data = $value['data'];
@@ -134,7 +134,7 @@ function t_em_all_neon_ad(){
 ?>
 	<section id="twenty-em-neon" class="jumbo-content">
 		<div class="jumbo-content-inner">
-			<div class="wrapper container text-center">
+			<div class="wrapper container ">
 				<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['neon_headline'] ) ?></h3>
 				<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['neon_content'] ) ) ?>
 				<footer class="actions">
@@ -180,7 +180,7 @@ function t_em_all_github_ad(){
 ?>
 	<section id="twenty-em-github" class="jumbo-content">
 		<div class="jumbo-content-inner">
-			<div class="text-center">
+			<div class="">
 				<div id="github-left" class="col-md-<?php echo $cols ?>">
 					<div>
 						<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['github_content_headline'] ) ?></h3>
@@ -225,7 +225,7 @@ function t_em_all_fun_ad(){
 ?>
 	<section id="twenty-em-fun" class="jumbo-content">
 		<div class="jumbo-content-inner">
-			<div class="text-center">
+			<div class="">
 <?php foreach ( $funs as $fun ) :
 		$coding = $t_em['hours_of_coding'];
 		$start_date = new DateTime( $coding );
@@ -269,14 +269,17 @@ function t_em_all_latests_news_ad(){
 		'posts_per_page'	=> 4,
 	);
 	$news = get_posts( $args );
+	$page_blog = ( $t_em['page_blog'] )
+					? '<a href="'. get_permalink( $t_em['page_blog'] ) .'" class="btn">'. __( 'View more', 't_em_all' ) .'</a>'
+					: null;
 ?>
 <?php if ( $news ) : ?>
 	<section id="twenty-em-posts" class="jumbo-content">
 		<div class="jumbo-content-inner">
 			<div class="wrapper container">
 				<div class="row">
-					<h3 class="jumbo-header text-center"><?php _e( 'Blog Posts', 't_em_all' ) ?></h3>
-					<div class="col-sm-8 col-sm-offset-2">
+					<h3 class="jumbo-header "><?php _e( 'Blog Posts', 't_em_all' ) ?></h3>
+					<div class="col-sm-8 col-sm-offset-2 text-left">
 <?php 	foreach ( $news as $new ) :
 			$date = explode( ' ', get_the_date( 'd M Y', $new->ID ) );
 ?>
@@ -296,6 +299,9 @@ function t_em_all_latests_news_ad(){
 <?php 	endforeach; ?>
 					</div>
 				</div>
+				<footer class="actions">
+					<?php echo $page_blog ?>
+				</footer>
 			</div>
 		</div>
 	</section>
@@ -316,7 +322,7 @@ function t_em_all_donate_ad(){
 ?>
 	<section id="twenty-em-donate" class="jumbo-content">
 		<div class="jumbo-content-inner">
-			<div class="wrapper container text-center">
+			<div class="wrapper container ">
 				<h3 class="jumbo-header"><?php echo $t_em['donate_headline'] ?></h3>
 				<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['donate_content'] ) ) ?>
 				<footer class="actions">
@@ -342,7 +348,7 @@ function t_em_all_subscribe_ad(){
 ?>
 	<section id="twenty-em-subscribe" class="jumbo-content">
 		<div class="jumbo-content-inner">
-			<div class="wrapper container text-center">
+			<div class="wrapper container">
 				<h3 class="jumbo-header"><?php echo $t_em['feedburner_headline'] ?></h3>
 				<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['feedburner_content'] ) ) ?>
 				<form class="form-inline" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo $t_em['feedburner_id'] ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">

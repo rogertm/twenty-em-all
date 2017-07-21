@@ -11,6 +11,17 @@
  */
 
 /**
+ * Register Setting
+ * @link http://codex.wordpress.org/Settings_API
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_register_setting_init(){
+	add_settings_field( 't_em_all_custom_pages', __( 'Custom Pages', 't_em_all' ), 't_em_all_setting_fields_custom_pages', 'twenty-em-options', 'twenty-em-section' );
+}
+add_action( 't_em_admin_action_add_settings_field', 't_em_all_register_setting_init' );
+
+/**
  * Remove unnecessary options
  */
 add_filter( 't_em_admin_filter_header_options_no_header_image', '__return_false' );
@@ -78,6 +89,12 @@ function t_em_all_default_theme_options( $default_theme_options ){
 
 	$funs = t_em_all_fun_facts_options();
 	foreach ( $funs as $fun => $value ) :
+		$key = array( $value['value'] => '' );
+		$t_em_all_default_options = array_merge( $t_em_all_default_options, array_slice( $key, -1 ) );
+	endforeach;
+
+	// Get custom pages from the original function
+	foreach ( t_em_all_custom_pages() as $pages => $value ) :
 		$key = array( $value['value'] => '' );
 		$t_em_all_default_options = array_merge( $t_em_all_default_options, array_slice( $key, -1 ) );
 	endforeach;
@@ -172,6 +189,19 @@ function t_em_all_theme_options_validate( $input ){
 		'donate_button_link',
 	) as $url_field ) :
 		$input[$url_field] = ( isset( $input[$url_field] ) ) ? esc_url_raw( $input[$url_field] ) : '';
+	endforeach;
+
+	// Let's go for pages
+	$select_pages = array();
+	// Create the array on the fly
+	foreach ( t_em_all_custom_pages() as $pages => $value ) :
+		$key = array(
+			$value['value'] => array(
+				'set'		=> $value['value'],
+				'callback'	=> t_em_all_custom_pages(),
+			),
+		);
+	$select_pages = array_merge( $select_pages, array_slice( $key, -1 ) );
 	endforeach;
 
 	return $input;
