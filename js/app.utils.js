@@ -10,6 +10,15 @@
  */
 
 jQuery(document).ready(function($) {
+	// Add version to every download button
+	$('body.home .actions .btn, body.home .actions .btn span').each(function(){
+		var button 	= $(this),
+			str 	= $(button).text();
+		if ( str == 'Descargar' ){
+			$(button).html( str + ' v' + t_em_all_l10n_app_utils.app_version );
+		}
+	});
+
 	// Make GitHub panels same hight
 	function t_em_all_github_panel(){
 		var l_h = $('#github-left').css('height')

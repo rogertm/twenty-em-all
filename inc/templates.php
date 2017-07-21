@@ -180,30 +180,25 @@ function t_em_all_github_ad(){
 ?>
 	<section id="twenty-em-github" class="jumbo-content">
 		<div class="jumbo-content-inner">
-			<div class="">
-				<div id="github-left" class="col-md-<?php echo $cols ?>">
-					<div>
-						<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['github_content_headline'] ) ?></h3>
-						<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['github_content'] ) ) ?>
-						<footer class="actions">
-							<?php echo $btn_one . ' ' . $btn_two ?>
-						</footer>
-					</div>
-				</div> <!-- #github-left -->
+			<div id="github-left" class="col-md-<?php echo $cols ?>">
+					<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['github_content_headline'] ) ?></h3>
+					<?php echo t_em_wrap_paragraph( do_shortcode( $t_em['github_content'] ) ) ?>
+					<footer class="actions">
+						<?php echo $btn_one . ' ' . $btn_two ?>
+					</footer>
+			</div> <!-- #github-left -->
 <?php if ( $items ) : ?>
-				<div id="github-right" class="col-md-6">
-						<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['github_commits_headline'] ) ?></h3>
-						<dl id="commit-items">
+			<div id="github-right" class="col-md-6">
+				<h3 class="jumbo-header"><?php echo do_shortcode( $t_em['github_commits_headline'] ) ?></h3>
+				<dl id="commit-items">
 <?php 	foreach ( $rss_items as $item ) : ?>
-							<dt class="commit-date"><?php echo $item->get_date( 'j F, Y' ) ?></dt>
-							<dd class="commit-title"><a href="<?php echo esc_url( $item->get_permalink() ); ?>">
-								<?php echo esc_html( $item->get_title() ); ?></a></dd>
+				<dt class="commit-date"><?php echo $item->get_date( 'j F, Y' ) ?></dt>
+				<dd class="commit-title"><a href="<?php echo esc_url( $item->get_permalink() ); ?>">
+					<?php echo esc_html( $item->get_title() ); ?></a></dd>
 <?php 	endforeach; ?>
-						</dl>
-					</div>
+				</dl>
+			</div><!-- #github-right -->
 <?php endif; ?>
-				</div> <!-- #github-right -->
-			</div>
 		</div>
 	</section>
 <?php
@@ -283,7 +278,7 @@ function t_em_all_latests_news_ad(){
 <?php 	foreach ( $news as $new ) :
 			$date = explode( ' ', get_the_date( 'd M Y', $new->ID ) );
 ?>
-					<div <?php post_class( 'media', $new->ID ) ?>">
+					<div <?php post_class( 'media', $new->ID ) ?>>
 						<div class="media-left">
 							<time>
 								<span class="day"><?php echo $date[0] ?></span>
