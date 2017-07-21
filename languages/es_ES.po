@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Twenty'em All 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/twenty-em-all\n"
-"POT-Creation-Date: 2017-07-07 00:26-0400\n"
-"PO-Revision-Date: 2017-07-07 00:27-0400\n"
+"POT-Creation-Date: 2017-07-21 00:01-0400\n"
+"PO-Revision-Date: 2017-07-21 00:03-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_CU\n"
@@ -14,6 +14,46 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: admin/custom-pages-options.php:40
+msgid "Page Blog"
+msgstr "Página del Blog"
+
+#: admin/custom-pages-options.php:41
+msgid "Blog"
+msgstr "Blog"
+
+#: admin/custom-pages-options.php:47
+msgid "Page IcoMoon Demo"
+msgstr "Página demo IcoMoon"
+
+#: admin/custom-pages-options.php:48
+msgid "IcoMoon Demo"
+msgstr "Demo IcoMoon"
+
+#: admin/custom-pages-options.php:54
+msgid "Page License"
+msgstr "Página de Licencia"
+
+#: admin/custom-pages-options.php:55
+msgid "License"
+msgstr "Licencia"
+
+#: admin/custom-pages-options.php:77
+msgid "&mdash; Select &mdash;"
+msgstr "&mdash; Seleccionar &mdash;"
+
+#: admin/custom-pages-options.php:87
+msgid "Edit"
+msgstr "Editar"
+
+#: admin/custom-pages-options.php:88
+msgid "View"
+msgstr "Ver"
+
+#: admin/functions.php:20
+msgid "Custom Pages"
+msgstr "Páginas Personalizadas"
 
 #: admin/templates.php:23
 msgid "Ad One"
@@ -148,17 +188,25 @@ msgstr "ID de FeedBurner"
 msgid "Permalink to %s"
 msgstr "Enlace a %s"
 
-#: inc/functions.php:79
+#: inc/functions.php:87
 msgid "Cups of Coffee"
 msgstr "Tazas de Café"
 
-#: inc/shortcodes.php:29
+#: inc/shortcodes.php:48
 msgid "Theming is Prose"
 msgstr "Theming is Prose"
 
-#: inc/templates.php:278
+#: inc/templates.php:268
+msgid "View more"
+msgstr "Ver más"
+
+#: inc/templates.php:276
 msgid "Blog Posts"
 msgstr "Entradas del Blog"
+
+#: inc/templates.php:384
+msgid "Go to top"
+msgstr "Subir"
 
 #. Theme Name of the plugin/theme
 msgid "Twenty'em All"
