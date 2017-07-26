@@ -137,4 +137,16 @@ function t_em_all_get_post_resume( $post_id, $trim = 55, $echo = true ){
 		return do_shortcode ( $resume );
 	endif;
 }
+
+/**
+ * Add default avatar
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_default_avatar( $avatar_defaults ){
+	$avatar = T_EM_CHILD_THEME_DIR_URL . '/images/twenty-em-avatar.png';
+	$avatar_defaults[$avatar] = sprintf( __( '%s Avatar', 't_em_all' ), T_EM_FRAMEWORK_NAME );
+	return $avatar_defaults;
+}
+add_filter( 'avatar_defaults', 't_em_all_default_avatar' );
 ?>
