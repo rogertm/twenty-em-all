@@ -28,6 +28,7 @@ add_filter( 't_em_admin_filter_header_options_no_header_image', '__return_false'
 add_filter( 't_em_admin_filter_header_options_header_image', '__return_false' );
 add_filter( 't_em_admin_filter_header_options_slider', '__return_false' );
 add_filter( 't_em_admin_filter_front_page_options_wp_front_page', '__return_false' );
+add_filter( 't_em_admin_filter_archive_options_the_content', '__return_false' );
 
 
 /**

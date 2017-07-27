@@ -149,4 +149,59 @@ function t_em_all_default_avatar( $avatar_defaults ){
 	return $avatar_defaults;
 }
 add_filter( 'avatar_defaults', 't_em_all_default_avatar' );
+
+/**
+ * Make some redirects
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_redirect(){
+	global $post;
+	if ( is_attachment() ) :
+		$attachment_id = $post->ID;
+		$parent_id = get_post_field( 'post_parent', $attachment_id );
+		$go = ( $parent_id == 0 ) ? home_url() : get_permalink( $parent_id );
+		$redirect = wp_safe_redirect( $go );
+	endif;
+}
+add_action( 'template_redirect', 't_em_all_redirect' );
+
+
+/**
+ * Remove Jetpack Share buttons from default location
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_remove_jp_sharing(){
+	remove_filter( 'the_content', 'sharing_display', 19 );
+	remove_filter( 'the_excerpt', 'sharing_display', 19 );
+	if ( class_exists( 'Jetpack_likes' ) ) :
+		remove_filter( 'the_content', array( Jetpack_likes::init(), 'post_likes' ), 30, 1 );
+	endif;
+}
+add_action( 'loop_start', 't_em_all_remove_jp_sharing' );
+
+/**
+ * New location for Jetpack Share buttons
+ *
+ * @since Twenty'em ALl 1.0
+ */
+function t_em_all_jp_sharing(){
+	global $post;
+	$sharing = get_option( 'sharing-options' );
+	$post_type = get_post_type( $post->ID );
+	if ( ! in_array( $post_type, $sharing['global']['show'] ) )
+		return;
+
+	$text = sprintf( __( '<h4>Share: <small>%s</small></h4>', 't_em_all' ), $post->post_title );
+	if ( function_exists( 'sharing_display' ) ) :
+		sharing_display( $text, true );
+	endif;
+
+	if ( class_exists( 'Jetpack_Likes' ) ) :
+		$custom_likes = new Jetpack_Likes;
+		echo $custom_likes->post_likes( '' );
+	endif;
+}
+add_action( 't_em_action_post_content_after', 't_em_all_jp_sharing' );
 ?>
