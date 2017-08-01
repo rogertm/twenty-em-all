@@ -184,9 +184,11 @@ add_action( 'loop_start', 't_em_all_remove_jp_sharing' );
 /**
  * New location for Jetpack Share buttons
  *
- * @since Twenty'em ALl 1.0
+ * @since Twenty'em All 1.0
  */
 function t_em_all_jp_sharing(){
+	if ( ! is_singular() )
+		return;
 	global $post;
 	$sharing = get_option( 'sharing-options' );
 	$post_type = get_post_type( $post->ID );
