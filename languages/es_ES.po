@@ -4,9 +4,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Twenty'em All 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/twenty-em-all\n"
-"POT-Creation-Date: 2017-07-21 00:01-0400\n"
-"PO-Revision-Date: 2017-07-21 00:03-0400\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2017-08-01 09:51-0400\n"
+"PO-Revision-Date: 2017-08-01 09:52-0400\n"
+"Last-Translator: RogerTM <hi@themingisprose.com>\n"
 "Language-Team: \n"
 "Language: es_CU\n"
 "MIME-Version: 1.0\n"
@@ -191,6 +191,14 @@ msgstr "Enlace a %s"
 #: inc/functions.php:87
 msgid "Cups of Coffee"
 msgstr "Tazas de Café"
+
+#: inc/functions.php:148
+msgid "%s Avatar"
+msgstr "Avatar %s"
+
+#: inc/functions.php:198
+msgid "<h4>Share: <small>%s</small></h4>"
+msgstr "<h4>Compartir: <small>%s</small></h4>"
 
 #: inc/shortcodes.php:48
 msgid "Theming is Prose"
