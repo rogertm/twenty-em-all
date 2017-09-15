@@ -23,6 +23,7 @@ function t_em_all_quicktags_buttons(){
 		QTags.addButton( 'sc_t_em_all_pre', 'pre', '<pre class="prettyprint linenums" title="code">', '</pre>', '', '', 105 );
 		QTags.addButton( 'sc_t_em_all_t_em', 't_em', '[t_em]', '', '', '', 106 );
 		QTags.addButton( 'sc_t_em_all_tip', 'tip', '[tip]', '', '', '', 107 );
+		QTags.addButton( 'sc_t_em_all_remove_shortcode', 'remove_shortcode', '[remove_shortcode]', '[/remove_shortcode]', '', '', 108 );
 	</script>
 <?php
 	endif;
@@ -48,4 +49,14 @@ function t_em_all_shortcode_tip( $atts, $content = null ){
 	return '<span class="branding">'. __( 'Theming is Prose', 't_em_all' ) .'</span>';
 }
 add_shortcode( 'tip', 't_em_all_shortcode_tip' );
+
+/**
+ * Remove Shortcode
+ *
+ * @since Twenty'em All 1.0
+ */
+function t_em_all_shortcode_removed( $atts, $content = null ){
+	return '<span class="removed-shortcode">'. $content .'</span>';
+}
+add_shortcode( 'remove_shortcode', 't_em_all_shortcode_removed' );
 ?>
