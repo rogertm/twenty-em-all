@@ -1,0 +1,77 @@
+// Twenty'em All Variables
+
+//
+// Colors
+//
+$child-red:						#F44336 !default;
+$child-pink:					#E91E63 !default;
+$child-purple:					#9C27B0 !default;
+$child-deep-purple:				#673AB7 !default;
+$child-indigo:					#3F51B5 !default;
+$child-blue:					#2196F3 !default;
+$child-light-blue:				#03A9F4 !default;
+$child-cyan:					#00BCD4 !default;
+$child-teal:					#009688 !default;
+$child-green:					#4CAF50 !default;
+$child-light-green:				#8BC34A !default;
+$child-lime:					#CDDC39 !default;
+$child-yellow:					#FFEB3B !default;
+$child-amber:					#FF9800 !default;
+$child-orange:					#FF9800 !default;
+$child-deep-orange:				#FF5722 !default;
+$child-brown:					#795548 !default;
+$child-blue-gray:				#607D8B !default;
+$child-gray:					#9E9E9E !default;
+$child-primary: 				$child-indigo !default;
+$child-secondary: 				$gray-600 !default;
+$child-success: 				$child-lime !default;
+$child-info: 					$child-blue !default;
+$child-warning: 				$child-orange !default;
+$child-danger: 					$child-red !default;
+
+$child-colors:(
+	child-red: $child-red,
+	child-pink: $child-pink,
+	child-purple: $child-purple,
+	child-deep-purple: $child-deep-purple,
+	child-indigo: $child-indigo,
+	child-blue: $child-blue,
+	child-light-blue: $child-light-blue,
+	child-cyan: $child-cyan,
+	child-teal: $child-teal,
+	child-green: $child-green,
+	child-light-green: $child-light-green,
+	child-lime: $child-lime,
+	child-yellow: $child-yellow,
+	child-amber: $child-amber,
+	child-orange: $child-orange,
+	child-deep-orange: $child-deep-orange,
+	child-brown: $child-brown,
+	child-blue-gray: $child-blue-gray,
+	child-primary: $child-primary,
+	child-secondary: $child-secondary,
+	child-success: $child-success,
+	child-info: $child-info,
+	child-warning: $child-warning,
+	child-danger: $child-danger
+) !default;
+
+$child-theme-colors: (
+	child-primary: $child-primary,
+	child-secondary: $child-secondary,
+	child-success: $child-success,
+	child-info: $child-info,
+	child-warning: $child-warning,
+	child-danger: $child-danger
+) !default;
+
+//
+// Spacers
+//
+$child-spacers: (
+	6: ($spacer * 6),
+	7: ($spacer * 7),
+	8: ($spacer * 8),
+	9: ($spacer * 9),
+	10: ($spacer * 10),
+) !default;

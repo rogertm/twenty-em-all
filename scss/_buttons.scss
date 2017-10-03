@@ -1,0 +1,23 @@
+// Twenty'em All buttons
+
+//
+// Button Hero variant
+//
+.btn-hero {
+	@include button-size($input-btn-padding-y-lg * 1.2, $input-btn-padding-x-lg * 3, $font-size-lg * 1.2, $line-height-lg, $btn-border-radius-lg);
+}
+
+//
+// Alternate buttons
+//
+@each $color, $value in $child-colors {
+  .btn-#{$color} {
+    @include button-variant($value, $value);
+  }
+}
+
+@each $color, $value in $child-colors {
+  .btn-outline-#{$color} {
+    @include button-outline-variant($value, #fff);
+  }
+}

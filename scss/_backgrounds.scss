@@ -1,0 +1,4 @@
+// Twenty'em All Backgrounds variant
+@each $color, $value in $child-colors {
+  @include bg-variant('.bg-#{$color}', $value);
+}

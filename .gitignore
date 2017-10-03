@@ -1,4 +1,6 @@
 #Ignore files
+.sass-cache
+.sass-cache/*.*
 cache
 cache/*.*
 twenty-em-all.sublime-project

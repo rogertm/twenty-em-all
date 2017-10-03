@@ -1,0 +1,597 @@
+// Twenty'em All scss source file
+
+//
+// Imports
+//
+@import "init";
+@import "../../twenty-em/css/theme";
+// Child Theme components
+@import "variables";
+@import "callouts";
+@import "backgrounds";
+@import "spacing";
+@import "buttons";
+@import "text";
+
+//
+// Scaffolding
+//
+*{
+	transition: $thumbnail-transition;
+}
+body{
+	&:not(.home){
+		#main{
+			@extend .mt-7;
+		}
+	}
+	&.admin-bar{
+		#top-menu{
+			top: 30px;
+		}
+	}
+	cursor: default;
+}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+#site-title,
+.branding,
+.btn{
+	font-family: $heading-font-family;
+}
+pre{
+	-moz-tab-size: 2;
+	  -o-tab-size: 2;
+	     tab-size: 2;
+	@extend .bg-light;
+}
+h1, h2, h3, h4, h5, h6{
+	code{
+		background-color: transparent;
+		color: $body-color;
+	}
+}
+
+//
+// Navigation
+//
+#top-menu{
+	@extend .fixed-top;
+	.navbar{
+		background-color: rgba( $child-indigo, .9) !important;
+		.navbar-toggler{
+			border-color: transparent;
+		}
+		&-brand{
+			.custom-logo{
+				width: auto;
+				height: 30px;
+			}
+		}
+		&-nav{
+			@extend .ml-auto;
+			.nav-link{
+				color: rgba(255, 255, 255, 0.8);
+				&:hover,
+				&:focus{
+					color: #fff !important;
+				}
+				@include media-breakpoint-down(lg){
+					text-align: center;
+				}
+			}
+			.active > .nav-link{
+				color: #fff !important;
+			}
+		}
+	}
+}
+#gototop{
+	display: none;
+	position: fixed;
+	top: auto;
+	left: auto;
+	right: 30px;
+	bottom: 30px;
+	background-color: rgba(0,0,0,.3);
+	color: #fff;
+	cursor: pointer;
+	&:hover,
+	&:focus{
+		background-color: rgba( $child-primary, .7);
+	}
+}
+
+//
+// Header
+//
+#static-header{
+	@extend .text-center;
+	@extend .pt-10;
+	@extend .pb-7;
+	background-color: transparent;
+	background-image: url("../images/jumbo-content-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	@include media-breakpoint-down(md){
+		padding-top: 5rem !important;
+	}
+	&-text{
+		@extend .text-white;
+		h2{
+			@extend .display-4;
+			@include media-breakpoint-down(md){
+				font-size: 2.5rem;
+			}
+		}
+	}
+	.static-header-content{
+		@extend .lead;
+		@extend .mt-4;
+	}
+	.actions{
+		@extend .mt-5;
+		@extend .mb-4;
+		.btn{
+			@extend .btn-hero;
+			@extend .btn-outline-light;
+			@extend .mx-3;
+			@extend .mb-3;
+			min-width: 25%;
+			&:hover,
+			&:focus{
+				@extend .text-child-primary;
+				background-color: rgba( 255, 255, 255, .8 );
+			}
+			@include media-breakpoint-down(lg){
+				display: inline-block;
+				min-width: 50%;
+			}
+			@include media-breakpoint-down(xs){
+				min-width: 75%;
+			}
+		}
+	}
+}
+
+//
+// Front Page Features
+//
+.jumbo{
+	&-content{
+		@extend .text-center;
+		.jumbo-header{
+			@extend .h1;
+		}
+		p{
+			@extend .lead;
+		}
+		.actions{
+			@extend .mt-5;
+			.btn{
+				min-width: 25%;
+				@extend .mb-3;
+				@include media-breakpoint-down(lg){
+					display: inline-block;
+					min-width: 50%;
+				}
+				@include media-breakpoint-down(xs){
+					min-width: 75%;
+					width: auto;
+				}
+			}
+		}
+	}
+}
+#twenty-em{
+	&-features{
+		background-color: $gray-200;
+		@extend .text-center;
+		@extend .py-5;
+		margin-top: -$spacer * 3;
+		p{
+			font-size: $font-size-base;
+		}
+	}
+	&-neon{
+		background-image: url("../images/jumbo-content-bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		position: relative;
+		@extend .text-white;
+		@extend .py-6;
+		.btn{
+			@extend .btn-hero;
+			@extend .btn-outline-light;
+			@extend .mx-3;
+			&:hover,
+			&:focus{
+				@extend .text-child-primary;
+				background-color: rgba( 255, 255, 255, .8 );
+			}
+		}
+	}
+	&-github{
+		.jumbo-header{
+			@extend .mt-3;
+		}
+		#github{
+			&-left{
+				@extend .pt-6;
+				@extend .pb-8;
+				background-color: $gray-200;
+				.btn{
+					@extend .btn-child-indigo;
+					@extend .btn-hero;
+					@extend .mx-3;
+				}
+			}
+			&-right{
+				@extend .pt-6;
+				@extend .pb-8;
+				#commit-items{
+					@extend .text-left;
+					@include media-breakpoint-down(md){
+						text-align: center !important;
+					}
+					.commit-date{
+						@extend .text-right;
+						@extend .text-secondary;
+						@include media-breakpoint-down(md){
+							text-align: center !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	&-fun{
+		overflow: hidden;
+		.fun{
+			&-fact{
+				@extend .text-white;
+				@extend .float-left;
+				@extend .w-100;
+				@extend .d-table;
+				@extend .py-5;
+				@include media-breakpoint-up(lg){
+					width: 20% !important;
+				}
+				&:nth-of-type(1){
+					background-color: $child-purple;
+				}
+				&:nth-of-type(2){
+					background-color: $child-deep-purple;
+				}
+				&:nth-of-type(3){
+					background-color: $child-indigo;
+				}
+				&:nth-of-type(4){
+					background-color: darken($child-blue, 15%);
+				}
+				&:nth-of-type(5){
+					background-color: darken($child-light-blue, 10%);
+				}
+				&:nth-of-type(6){
+					background-color: darken($child-light-blue, 10%);
+				}
+			}
+			&-icon,
+			&-value{
+				@extend .h1;
+				@extend .mt-3;
+			}
+			&-label{
+				text-transform: uppercase;
+				@extend .small;
+			}
+		}
+	}
+	&-posts{
+		@extend .py-6;
+		time{
+			background-color: $gray-200;
+			@extend .text-child-secondary;
+			font-weight: 700;
+			display: block;
+			@extend .text-center;
+			span{
+				@extend .py-0;
+				@extend .px-2;
+				display: block;
+				&.year{
+					@extend .bg-child-secondary;
+					color: #fff;
+					@extend .py-1;
+					@extend .px-2;
+					margin-top: 5px;
+				}
+			}
+		}
+		.btn{
+			@extend .btn-child-primary;
+			@extend .btn-hero;
+		}
+	}
+	&-donate{
+		@extend .py-6;
+		@extend .text-white;
+		background-image: url("../images/jumbo-content-bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		.btn{
+			@extend .btn-hero;
+			@extend .btn-outline-light;
+			&:hover,
+			&:focus{
+				@extend .text-child-primary;
+				background-color: rgba( 255, 255, 255, .8 );
+			}
+		}
+	}
+	&-subscribe{
+		@extend .text-light;
+		background-image: url("../images/world-map-bg.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		.jumbo-content-inner{
+			@extend .pt-8;
+			@extend .pb-10;
+			background-color: rgba(0,0,0,.7);
+			.input{
+				&-email{
+					@extend .ml-auto;
+					@extend .mx-1;
+					@include media-breakpoint-down(xs){
+						margin: 0 auto $spacer !important;
+						width: 100%;
+					}
+				}
+				&-send{
+					@extend .mr-auto;
+					@extend .mx-1;
+					@include media-breakpoint-down(xs){
+						margin: 0 auto $spacer !important;
+						width: 100%;
+					}
+				}
+			}
+			.subscribe-input{
+				border: 0;
+				border-bottom: solid 2px #fff;
+				border-radius: 0;
+				box-shadow: unset;
+				background-color: transparent;
+				@extend .text-light;
+				@include media-breakpoint-down(xs){
+					text-align: center;
+				}
+			}
+			.btn{
+				@extend .btn-child-deep-orange;
+				@extend .btn-lg;
+			}
+		}
+	}
+}
+#featured-widget-area{
+	@extend .py-5;
+	.front-page-widget-caption{
+		@include media-breakpoint-down(lg){
+			text-align: center;
+		}
+		h2{
+			@extend .h1;
+			@extend .mt-5;
+			@extend .mb-3;
+		}
+		p{
+			@extend .lead;
+		}
+	}
+	.widget-thumbnail{
+		@include media-breakpoint-down(lg){
+			text-align: center;
+			img{
+				max-width: 80%;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+//
+// Sidebar
+//
+.widget-container{
+	ul{
+		&:not(.media){
+			li{
+				a{
+					@extend .d-block;
+				}
+			}
+		}
+	}
+}
+#sidebar{
+	.widget-title{
+		border-bottom: solid 1px $gray-200;
+		@extend .pb-2;
+		@extend .mb-3;
+	}
+}
+#colophon{
+	.widget-title{
+		@extend .mb-4;
+	}
+}
+
+//
+// Post
+//
+article{
+	.more-link{
+		@extend .btn;
+		@extend .btn-child-primary;
+	}
+	.entry-content{
+		@extend .mb-5;
+		h1, h2, h3,
+		.h1, .h2, .h3{
+			@extend .mt-3;
+			@extend .mb-2;
+		}
+		.h-anchor{
+			.anchor{
+				font-size: 20px;
+				vertical-align: middle;
+				margin-left: -1em;
+				display: none;
+				@extend .text-muted;
+			}
+			&:hover,
+			&:focus{
+				.anchor{
+					display: inline;
+				}
+			}
+			&:before{
+				content: "";
+				display: block;
+				margin-top: -4rem;
+				height: 4rem;
+				visibility: hidden;
+			}
+		}
+	}
+	pre{
+		@extend .pt-3;
+		@extend .mt-3;
+		&:before{
+			background: $green;
+			@extend .text-light;
+			font-weight: bold;
+			content: attr(rel);
+			display: block;
+			margin: -$spacer 0;
+			padding: 10px 10px;
+			text-transform: uppercase;
+			position: absolute;
+			left: $spacer;
+			right: $spacer;
+			width: auto;
+		}
+		&.prettyprint{
+			.com { color: #93a1a1; }
+			.lit { color: #195f91; }
+			.opn, .clo { color: #93a1a1; }
+			.pun { color: #3a4a64; }
+			.fun { color: #dc322f; }
+			.str, .atv { color: #c03030; }
+			.kwd { color: #1e347b; }
+			.tag { color: #3b5bb5; }
+			.typ, .atn, .dec, .var { color: teal; }
+			.pln { color: #48484c; }
+			&.linenums{
+				ol.linenums {
+					box-shadow: 40px 0px 0px #fbfbfb inset, 41px 0px 0px #ececf0 inset;
+					@extend .py-4;
+					@extend .mt-4;
+					@extend .mb-0;
+					li{
+						@extend .px-3;
+						color: #bebec5;
+						&:hover,
+						&:active
+						&:focus{
+							color: $body-color;
+							background-color: #fbfbfb;
+						}
+					}
+				}
+			}
+		}
+	}
+	&#post-0{
+		&.error404{
+			@extend .text-center;
+			> .entry-content p{
+				@extend .h4;
+			}
+			> header{
+				cursor: none;
+				.entry-title{
+					@extend .my-5;
+				}
+				&:before{
+					transition: 500ms;
+					font-weight: bold;
+					line-height: 0.8;
+					overflow: hidden;
+					color: $link-color;
+					font-size: ceil($font-size-lg * 20);
+					@include media-breakpoint-down(md){
+						font-size: ceil($font-size-lg * 15);
+					}
+					@include media-breakpoint-down(sm){
+						font-size: ceil($font-size-lg * 10);
+					}
+				}
+				&:hover,
+				&:focus{
+					&:before{
+						color: $link-hover-color;
+					}
+				}
+			}
+			#searchform{
+				@extend .my-5;
+			}
+		}
+		&.error404{
+			> header{
+				&:before{
+					content: "404";
+				}
+			}
+		}
+	}
+}
+
+//
+// Footer
+//
+#footer{
+	.home &{
+		margin-top: -$spacer * 3;
+	}
+	background-color: $gray-800;
+	* {
+		@extend .text-light;
+	}
+	a{
+		&:hover,
+		&:focus{
+			color: $gray-600 !important;
+		}
+	}
+	#colophon{
+		@extend .pt-7;
+		@extend .pt-6;
+	}
+	#site-info{
+		background-color: $gray-900;
+		#twenty-em-credit{
+			@extend .small;
+			@include media-breakpoint-up(lg){
+				text-align: left !important;
+			}
+		}
+	}
+}

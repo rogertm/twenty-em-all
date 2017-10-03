@@ -32,12 +32,8 @@ function t_em_all_enqueue(){
 	wp_register_style( 'google-fonts', t_em_all_embed_google_fonts(), array(), $t_em_theme_data['Version'], 'all' );
 	wp_enqueue_style( 'google-fonts' );
 
-	$less_files = array( T_EM_CHILD_THEME_DIR_PATH . '/css/style-theme.less' => T_EM_CHILD_THEME_DIR_URL . '/css' );
-	$options = array( 'compress' => true );
-	wp_enqueue_style( 'child-style-less', t_em_lessphp_compiler( $less_files, $options ), '', $t_em_theme_data['Version'], 'all' );
-
-	wp_register_style( 'icofont', t_em_all_get_css('icofont'), array(), $t_em_theme_data['Version'], $media = 'all' );
-	wp_enqueue_style( 'icofont' );
+	wp_register_style( 'child-style', t_em_get_css( 'theme', T_EM_CHILD_THEME_DIR_PATH .'/css', T_EM_CHILD_THEME_DIR_URL .'/css' ), '', $t_em_theme_data['Version'], 'all' );
+	wp_enqueue_style( 'child-style' );
 
 	wp_register_script( 'jquery.scrollto', t_em_all_get_js( 'jquery.scrollto' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
 	wp_enqueue_script( 'jquery.scrollto' );
@@ -55,6 +51,17 @@ function t_em_all_enqueue(){
 
 }
 add_action( 'wp_enqueue_scripts', 't_em_all_enqueue' );
+
+/**
+ * Dequeue styles form parent theme
+ *
+ * @since Twenty'em All 1.1
+ */
+function t_em_all_dequeue(){
+	wp_dequeue_style( 'twenty-em-style' );
+	wp_deregister_style( 'twenty-em-style' );
+}
+add_action( 'wp_enqueue_scripts', 't_em_all_dequeue', 999 );
 
 /**
  * Google Fonts

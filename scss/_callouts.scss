@@ -1,0 +1,43 @@
+// Twenty'em All Callouts variant
+
+//
+// Base style
+//
+.child-callout{
+	@extend .alert;
+}
+.child-callout-heading{
+	@extend .alert-heading;
+}
+.child-callout-dismissible{
+	@extend .alert-dismissible;
+}
+.child-callout-link{
+	@extend .alert-link;
+}
+
+//
+// Mixin
+//
+@mixin child-callout-variant($background, $border, $color) {
+	color: darken( $color, 15% );
+	background-color: lighten( $background, 45% );
+	border-color: darken( $border, 15% );
+	border-width: 0 0 0 7px;
+	border-style: solid;
+
+	hr {
+		border-top-color: darken($border, 5%);
+	}
+
+	.child-callout-link, a {
+		color: darken($color, 10%);
+	}
+}
+
+.child-callout-primary { @include child-callout-variant( lighten( $child-primary, 3% ), $child-primary, $child-primary ); }
+.child-callout-secondary { @include child-callout-variant( darken( $child-secondary, 5% ), $child-secondary, $child-secondary ); }
+.child-callout-success { @include child-callout-variant( darken( $child-success, 7% ), $child-success, $child-success ); }
+.child-callout-info { @include child-callout-variant( darken( $child-info, 2% ), $child-info, $child-info ); }
+.child-callout-warning { @include child-callout-variant( $child-warning, $child-warning, $child-warning ); }
+.child-callout-danger { @include child-callout-variant( darken( $child-danger, 7% ), $child-danger, $child-danger ); }
