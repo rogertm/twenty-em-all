@@ -49,6 +49,13 @@ function t_em_all_custom_pages( $custom_pages = '' ){
 			'user_menu'		=> '',
 			'type'			=> 'page',
 		),
+		'page_docs'	=> array(
+			'value'			=> 'page_docs',
+			'label'			=> __( 'Page Docs', 't_em_all' ),
+			'public_label'	=> __( 'Documentation', 't_em_all' ),
+			'user_menu'		=> '',
+			'type'			=> 'page',
+		),
 		'page_license'	=> array(
 			'value'			=> 'page_license',
 			'label'			=> __( 'Page License', 't_em_all' ),

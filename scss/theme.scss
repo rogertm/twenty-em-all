@@ -382,13 +382,18 @@ h1, h2, h3, h4, h5, h6{
 #featured-widget-area{
 	@extend .py-5;
 	.front-page-widget-caption{
-		@include media-breakpoint-down(lg){
+		@include media-breakpoint-down(md){
 			text-align: center;
 		}
 		h2{
 			@extend .h1;
 			@extend .mt-5;
 			@extend .mb-3;
+		}
+		.btn{
+			&-primary{
+				@extend .btn-child-primary;
+			}
 		}
 		p{
 			@extend .lead;
@@ -419,7 +424,8 @@ h1, h2, h3, h4, h5, h6{
 		}
 	}
 }
-#sidebar{
+#sidebar,
+#sidebar-docs{
 	.widget-title{
 		border-bottom: solid 1px $gray-200;
 		@extend .pb-2;
@@ -559,6 +565,26 @@ article{
 				&:before{
 					content: "404";
 				}
+			}
+		}
+	}
+}
+
+//
+// Cards
+//
+.card{
+	&-doc,
+	&-tour{
+		@extend .border-light;
+		.card{
+			&-header{
+				@extend .h4;
+				@extend .bg-transparent;
+				@extend .px-0;
+			}
+			&-body{
+				@extend .px-0;
 			}
 		}
 	}

@@ -18,4 +18,5 @@ require( get_stylesheet_directory() . '/inc/functions.php' );
 require( get_stylesheet_directory() . '/inc/templates.php' );
 require( get_stylesheet_directory() . '/inc/helpers.php' );
 require( get_stylesheet_directory() . '/inc/shortcodes.php' );
+require( get_stylesheet_directory() . '/inc/post-types.php' );
 ?>

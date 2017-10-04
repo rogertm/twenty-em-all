@@ -17,4 +17,5 @@
  */
 require( get_stylesheet_directory() . '/admin/index.php' );
 require( get_stylesheet_directory() . '/inc/index.php' );
+require( get_stylesheet_directory() . '/docs/index.php' );
 ?>
