@@ -84,6 +84,24 @@ function t_em_all_embed_google_fonts(){
 }
 
 /**
+ * Register Sidebars
+ *
+ * @since Twenty'em All 1.1
+ */
+function t_em_all_widgets_init(){
+	register_sidebar( array(
+		'name' => __( 'Documentation Sidebar', 't_em_all' ),
+		'id' => 'sidebar-documentation',
+		'description' => __( 'Documentation Section sidebar widget area', 't_em_all' ),
+		'before_widget' => '<aside id="%1$s" class="widget-container %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 't_em_all_widgets_init' );
+
+/**
  * Get cups of coffee consumed as a fun facts :P
  * This function does not make any important stuff, just output some funny facts depending on the
  * amount of lines of codes, kilobytes and files in Twnety'em
