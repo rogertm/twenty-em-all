@@ -32,6 +32,11 @@
 
 	.child-callout-link, a {
 		color: darken($color, 10%);
+		border-bottom: dotted 1px;
+	}
+
+	code{
+		color: darken( $color, 15% );
 	}
 }
 

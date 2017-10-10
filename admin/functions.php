@@ -193,16 +193,11 @@ function t_em_all_theme_options_validate( $input ){
 	endforeach;
 
 	// Let's go for pages
-	$select_pages = array();
-	// Create the array on the fly
-	foreach ( t_em_all_custom_pages() as $pages => $value ) :
-		$key = array(
-			$value['value'] => array(
-				'set'		=> $value['value'],
-				'callback'	=> t_em_all_custom_pages(),
-			),
-		);
-	$select_pages = array_merge( $select_pages, array_slice( $key, -1 ) );
+	$pages = t_em_all_custom_pages();
+	foreach ( $pages as $key => $value ) :
+		if ( array_key_exists( $input[$key['value']], $pages ) ) :
+			$input[$key] = $input[$key['value']];
+		endif;
 	endforeach;
 
 	return $input;

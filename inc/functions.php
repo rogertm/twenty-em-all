@@ -21,6 +21,17 @@ function t_em_all_setup(){
 }
 add_action( 'after_setup_theme', 't_em_all_setup' );
 
+function t_em_all_remove_setup(){
+	if ( is_singular( 'doc' ) || ( is_search() && isset( $_GET['pt'] ) && $_GET['pt'] == 'doc' ) ) :
+		remove_action( 't_em_action_post_after', 't_em_single_navigation', 5 );
+		remove_action( 't_em_action_post_after', 't_em_single_related_posts' );
+		remove_action( 't_em_action_post_inside_after', 't_em_single_author_meta' );
+		remove_action( 't_em_action_entry_meta_header', 't_em_post_date' );
+		remove_action( 't_em_action_entry_meta_header', 't_em_post_author' );
+	endif;
+}
+add_action( 'wp', 't_em_all_remove_setup' );
+
 /**
  * Enqueue and register all css and js
  *

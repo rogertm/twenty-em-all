@@ -62,6 +62,9 @@ function t_em_all_the_doc(){
 					'orderby'			=> 'menu_order',
 					'order'				=> 'ASC',
 					'posts_per_page'	=> -1,
+					'meta_key'			=> 'function_api_deprecated',
+					'meta_value_num'	=> '1',
+					'meta_compare'		=> 'NOT EXISTS',
 				);
 				$docs_inner_pages = get_posts( $args );
 				foreach ( $docs_inner_pages as $doc ) : ?>
@@ -92,7 +95,7 @@ function t_em_all_search_docs_form(){
 	if ( is_page( $t_em['page_docs'] ) ) :
 ?>
 <section id="search-in-docs" class="row">
-	<div class="col-lg-10 mx-auto">
+	<div class="col-lg-10 mx-auto mb-5">
 		<?php get_template_part( 'searchform', 'docs' ); ?>
 	</div>
 </section>
@@ -100,4 +103,33 @@ function t_em_all_search_docs_form(){
 	endif;
 }
 add_action( 't_em_action_post_content_after', 't_em_all_search_docs_form' );
+
+/**
+ * Check if the current doc topic is a deprecated element. If it's, intersect its content
+ *
+ * @since Twenty'em All 1.1
+ */
+function t_em_all_doc_deprecated_content( $content ){
+	// if ( ! is_singular( 'doc' ) )
+	// 	return;
+
+	global $post;
+	$api_deprecated = ( get_post_meta( $post->ID, 'function_api_deprecated', true ) ) ? get_post_meta( $post->ID, 'function_api_deprecated', true ) : null;
+	if ( $api_deprecated ) :
+		$api_deprecated_since 	= get_post_meta( $post->ID, 'function_api_deprecated_since', true );
+		$api_use_instead 		= get_post_meta( $post->ID, 'function_api_use_instead', true );
+		$deprecated_since 		= ( $api_deprecated_since ) ? sprintf( __( ' since version <strong>%s</strong>', 't_em_all' ), $api_deprecated_since ) : null;
+		$use_instead 			= ( $api_use_instead ) ? sprintf( __( 'You may use <code>%s</code> instead.', 't_em_all' ), '<a href="'. get_permalink( $api_use_instead ) .'">'. get_the_title( $api_use_instead ) .'</a>' ) : null;
+
+		$clean_title = get_the_title( $post->ID );
+		$content = '<div class="child-callout child-callout-danger">';
+		$content .= 		'<h4 class="child-callout-heading">'. __( 'Deprecated Element', 't_em_all' ) .'</h4>';
+		$content .= 	'<p class="mb-1">'. sprintf( __( '<code>%s</code> is marked as deprecated%s. That means it has been replaced by a new function or is no longer supported, and may be removed from future versions. %s', 't_em_all' ), $clean_title, $deprecated_since, $use_instead ) .'</p>';
+		$content .= '</div">';
+	else :
+		$content = $content;
+	endif;
+	return $content;
+}
+add_filter( 'the_content', 't_em_all_doc_deprecated_content' );
 ?>

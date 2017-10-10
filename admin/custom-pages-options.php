@@ -16,13 +16,34 @@
  * @since Twenty'em All 1.0
  */
 function t_em_all_list_pages( $type ){
-	$args = array(
+	$page_args = array(
 		'post_type'			=> $type,
 		'posts_per_page'	=> -1,
 		'orderby'			=> 'title',
 		'post_status'		=> array( 'publish', 'private' ),
 		'order'				=> 'ASC',
 	);
+
+	$doc_args = array(
+		'post_type'			=> 'doc',
+		'posts_per_page'	=> -1,
+		'orderby'			=> 'menu_order',
+		'post_status'		=> array( 'publish', 'private' ),
+		'order'				=> 'ASC',
+		'meta_query'		=> array(
+				array(
+					'key'	=> 't_em_all_doc_top_page',
+					'value'	=> '1'
+				),
+			),
+	);
+
+	if ( $type == 'page' ) :
+		$args = $page_args;
+	elseif ( $type == 'doc' ) :
+		$args = $doc_args;
+	endif;
+
 	$sort = get_posts( $args );
 	sort( $sort );
 	return apply_filters( 't_em_all_admin_filter_list_pages', get_posts( $args ) );
@@ -62,6 +83,11 @@ function t_em_all_custom_pages( $custom_pages = '' ){
 			'public_label'	=> __( 'License', 't_em_all' ),
 			'user_menu'		=> '',
 			'type'			=> 'page',
+		),
+		'page_api'	=> array(
+			'value'		=> 'page_api',
+			'label'		=> __( 'Developers API Page', 't_em_all' ),
+			'type'		=> 'doc'
 		),
 	);
 	return apply_filters( 't_em_all_admin_filter_custom_pages', $custom_pages );

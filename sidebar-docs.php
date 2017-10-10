@@ -32,6 +32,9 @@ global $t_em;
 					'orderby'			=> 'menu_order',
 					'order'				=> 'ASC',
 					'posts_per_page'	=> -1,
+					'meta_key'			=> 'function_api_deprecated',
+					'meta_value_num'	=> '1',
+					'meta_compare'		=> 'NOT EXISTS',
 				);
 				$doc_topics = get_posts( $args );
 				if ( count( $doc_topics ) > 0 ) :
@@ -42,9 +45,8 @@ global $t_em;
 					<li class="doc-topic-<?php echo $post->ID ?> <?php echo ( $post->ID == get_the_ID() ) ? 'current-topic' : null; ?>"><a href="<?php echo get_permalink( $post->ID ) ?>"><?php echo get_the_title( $post->ID ); ?></a></li>
 			<?php 	foreach ( $doc_topics as $topic ) :
 						$active = ( $topic->ID == get_the_ID() ) ? 'current-topic' : null;
-						$deprecated = ( get_post_meta( $topic->ID, 'function_api_deprecated', true ) ) ? 'topic-deprecated' : null;
 			?>
-						<li class="doc-topic-<?php echo $topic->ID ?> <?php echo $active ?> <?php echo $deprecated ?>"><a href="<?php echo get_permalink( $topic->ID ) ?>"><?php echo get_the_title( $topic->ID ); ?></a></li>
+						<li class="doc-topic-<?php echo $topic->ID ?> <?php echo $active ?>"><a href="<?php echo get_permalink( $topic->ID ) ?>"><?php echo get_the_title( $topic->ID ); ?></a></li>
 			<?php 	endforeach; ?>
 				</ul>
 			</aside>
@@ -58,6 +60,9 @@ global $t_em;
 						'orderby'			=> 'menu_order',
 						'order'				=> 'ASC',
 						'posts_per_page'	=> -1,
+						'meta_key'			=> 'function_api_deprecated',
+						'meta_value_num'	=> '1',
+						'meta_compare'		=> 'NOT EXISTS',
 					);
 					$doc_topics = get_posts( $args );
 					if ( count( $doc_topics ) > 0 ) :

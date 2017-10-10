@@ -51,6 +51,9 @@ get_header(); ?>
 						'orderby'			=> 'menu_order',
 						'order'				=> 'ASC',
 						'posts_per_page'	=> -1,
+						'meta_key'			=> 'function_api_deprecated',
+						'meta_value_num'	=> '1',
+						'meta_compare'		=> 'NOT EXISTS',
 					);
 					$doc_topics = get_posts( $args );
 			?>

@@ -20,6 +20,7 @@ get_header(); ?>
 				$args = array(
 					'post_type'			=> 'doc',
 					's'					=> get_query_var( 's' ),
+					'posts_per_page'	=> ( ( get_option( 'posts_per_page' ) * 2 ) > 10 ) ? get_option( 'posts_per_page' ) * 2 : 10,
 					'paged'				=> get_query_var( 'paged' ),
 					'meta_query'		=> array(
 						array(

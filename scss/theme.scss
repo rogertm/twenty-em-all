@@ -36,6 +36,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 #site-title,
 .branding,
+.lead,
 .btn{
 	font-family: $heading-font-family;
 }
@@ -99,6 +100,19 @@ h1, h2, h3, h4, h5, h6{
 	&:hover,
 	&:focus{
 		background-color: rgba( $child-primary, .7);
+	}
+}
+#site-pagination{
+	&.pagination{
+		ul{
+			li{
+				.page-numbers{
+					&.current{
+						@extend .bg-child-primary;
+					}
+				}
+			}
+		}
 	}
 }
 

@@ -8341,7 +8341,10 @@ article.sticky {
   .child-callout-primary hr {
     border-top-color: #3849a2; }
   .child-callout-primary .child-callout-link, .child-callout-primary a {
-    color: #32408f; }
+    color: #32408f;
+    border-bottom: dotted 1px; }
+  .child-callout-primary code {
+    color: #2b387c; }
 
 .child-callout-secondary {
   color: #60686f;
@@ -8352,7 +8355,10 @@ article.sticky {
   .child-callout-secondary hr {
     border-top-color: #78818a; }
   .child-callout-secondary .child-callout-link, .child-callout-secondary a {
-    color: #6c757d; }
+    color: #6c757d;
+    border-bottom: dotted 1px; }
+  .child-callout-secondary code {
+    color: #60686f; }
 
 .child-callout-success {
   color: #9daa1e;
@@ -8363,7 +8369,10 @@ article.sticky {
   .child-callout-success hr {
     border-top-color: #c6d626; }
   .child-callout-success .child-callout-link, .child-callout-success a {
-    color: #b2c022; }
+    color: #b2c022;
+    border-bottom: dotted 1px; }
+  .child-callout-success code {
+    color: #9daa1e; }
 
 .child-callout-info {
   color: #0a6ebd;
@@ -8374,7 +8383,10 @@ article.sticky {
   .child-callout-info hr {
     border-top-color: #0d8aee; }
   .child-callout-info .child-callout-link, .child-callout-info a {
-    color: #0c7cd5; }
+    color: #0c7cd5;
+    border-bottom: dotted 1px; }
+  .child-callout-info code {
+    color: #0a6ebd; }
 
 .child-callout-warning {
   color: #b36a00;
@@ -8385,7 +8397,10 @@ article.sticky {
   .child-callout-warning hr {
     border-top-color: #e68900; }
   .child-callout-warning .child-callout-link, .child-callout-warning a {
-    color: #cc7a00; }
+    color: #cc7a00;
+    border-bottom: dotted 1px; }
+  .child-callout-warning code {
+    color: #b36a00; }
 
 .child-callout-danger {
   color: #d2190b;
@@ -8396,7 +8411,10 @@ article.sticky {
   .child-callout-danger hr {
     border-top-color: #f32c1e; }
   .child-callout-danger .child-callout-link, .child-callout-danger a {
-    color: #ea1c0d; }
+    color: #ea1c0d;
+    border-bottom: dotted 1px; }
+  .child-callout-danger code {
+    color: #d2190b; }
 
 .bg-child-red {
   background-color: #F44336 !important; }
@@ -8506,10 +8524,10 @@ a.bg-child-brown:focus, a.bg-child-brown:hover {
 a.bg-child-blue-gray:focus, a.bg-child-blue-gray:hover {
   background-color: #4b626d !important; }
 
-.bg-child-primary {
+.bg-child-primary, #site-pagination.pagination ul li .page-numbers.current {
   background-color: #3F51B5 !important; }
 
-a.bg-child-primary:focus, a.bg-child-primary:hover {
+a.bg-child-primary:focus, #site-pagination.pagination ul li a.page-numbers.current:focus, a.bg-child-primary:hover, #site-pagination.pagination ul li a.page-numbers.current:hover {
   background-color: #32408f !important; }
 
 .bg-child-secondary, #twenty-em-posts time span.year {
@@ -10953,6 +10971,12 @@ h1, h2, h3, h4, h5, h6,
 #featured-widget-area .front-page-widget-caption h2, .h2, .h3, .h4, article#post-0.error404 > .entry-content p, .card-doc .card-header, .card-tour .card-header, .h5, .h6,
 #site-title,
 .branding,
+.lead,
+article .entry-excerpt,
+.featured-header-template .entry-content,
+#static-header .static-header-content,
+.jumbo-content p,
+#featured-widget-area .front-page-widget-caption p,
 .btn,
 #commentform .submit,
 #comments .comment-reply-link,
