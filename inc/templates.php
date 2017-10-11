@@ -138,6 +138,16 @@ function t_em_all_github_ad(){
 add_action( 't_em_action_main_after', 't_em_all_github_ad' );
 
 /**
+ * Lifetime of the feed cache
+ *
+ * @since Twenty'em All 1.1
+ */
+function t_em_all_feed_lifetime(){
+	return 3600;
+}
+add_filter( 'wp_feed_cache_transient_lifetime', 't_em_all_feed_lifetime' );
+
+/**
  * Fun facts ad
  *
  * @since Twenty'em All 1.0

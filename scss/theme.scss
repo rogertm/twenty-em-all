@@ -586,6 +586,15 @@ article{
 }
 
 //
+// Forms
+//
+#commentform{
+	#submit{
+		@extend .btn-child-primary;
+	}
+}
+
+//
 // Cards
 //
 .card{
