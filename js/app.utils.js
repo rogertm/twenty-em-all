@@ -83,12 +83,26 @@ jQuery(document).ready(function($) {
 				'id':$id,
 				'class':'h-anchor'
 			});
-			$(this).prepend('<a href="#'+$id+'" class="anchor scroll-to" data-target="#'+$id+'"><i class="icomoon-link"></i></a>');
+			$(this).prepend('<a href="#'+$id+'" class="anchor scroll-to" data-target="#'+$id+'" data-anchorjs-icon="#"></a>').wrapInner('<div></div>');
 		});
 	});
 
 	// 404 || 403
 	$('#post-0.error404 #searchform .input-group').addClass('input-group-lg');
+
+	// Icon Filter
+	var $rows = jQuery('.icon-list .icon-wrapper');
+	jQuery('#icon-filter').keyup(function() {
+
+	    var val = jQuery.trim(jQuery(this).val()).replace(/ +/g, ' ').toLowerCase();
+
+	    $rows.show().filter(function() {
+	        var text = jQuery(this).attr('data-icon').replace(/\s+/g, ' ').toLowerCase();
+	        return !~text.indexOf(val);
+	    }).hide();
+	});
+
+	$('input#icon-filter').focus();
 
 	$(window).resize(function(){
 		t_em_all_github_panel();

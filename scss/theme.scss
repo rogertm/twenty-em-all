@@ -465,21 +465,26 @@ article{
 		@extend .mb-5;
 		h1, h2, h3,
 		.h1, .h2, .h3{
-			@extend .mt-3;
+			@extend .mt-4;
 			@extend .mb-2;
 		}
 		.h-anchor{
-			.anchor{
-				font-size: 20px;
-				vertical-align: middle;
-				margin-left: -1em;
-				display: none;
-				@extend .text-muted;
-			}
-			&:hover,
-			&:focus{
+			div{
 				.anchor{
-					display: inline;
+					margin-left: -1.5rem;
+					margin-right: .75rem;
+					@extend .text-muted;
+					opacity: 0;
+					font-size: $font-size-lg;
+					&:before{
+						content: attr(data-anchorjs-icon);
+					}
+				}
+				&:hover,
+				&:focus{
+					.anchor{
+						opacity: 1;
+					}
 				}
 			}
 			&:before{
@@ -580,6 +585,54 @@ article{
 				&:before{
 					content: "404";
 				}
+			}
+		}
+	}
+}
+
+//
+// IcoMoon Demo
+//
+#icon-pack{
+	.icon-filter{
+		@extend .text-center;
+		@extend .mx-auto;
+		@extend .mb-5;
+	}
+	.icon-list{
+		.icon{
+			&-wrapper{
+				@extend .float-left;
+				width: 16.66%;
+				display: block;
+				@include media-breakpoint-down(md){
+					width: 25%;
+				}
+				@include media-breakpoint-down(sm){
+					width: 33.33%;
+				}
+				&:hover,
+				&:focus{
+					.icon{
+						@extend .bg-child-primary;
+						@extend .text-white;
+					}
+				}
+			}
+			&-brand{
+				@extend .h1;
+				@extend .mb-3;
+			}
+			@extend .text-center;
+			@extend .bg-light;
+			@extend .m-1;
+			@extend .p-3;
+			label{
+				@extend .mb-0;
+			}
+			input{
+				padding: .12rem .25rem;
+				@extend .text-center;
 			}
 		}
 	}

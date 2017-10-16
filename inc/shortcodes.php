@@ -82,7 +82,7 @@ add_shortcode( 'callout', 't_em_shortcode_callout' );
  * @since Twenty'em All 1.0
  */
 function t_em_all_shortcode_removed( $atts, $content = null ){
-	return '<span class="removed-shortcode">'. $content .'</span>';
+	return '<code class="removed-shortcode">'. $content .'</code>';
 }
 add_shortcode( 'remove_shortcode', 't_em_all_shortcode_removed' );
 ?>

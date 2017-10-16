@@ -332,14 +332,15 @@ h1, h2, h3, h4, h5, h6,
 .jumbo-content .jumbo-header,
 #twenty-em-fun .fun-icon,
 #twenty-em-fun .fun-value,
-#featured-widget-area .front-page-widget-caption h2, .h2, .h3, .h4, article#post-0.error404 > .entry-content p, .card-doc .card-header, .card-tour .card-header, .h5, .h6 {
+#featured-widget-area .front-page-widget-caption h2,
+#icon-pack .icon-list .icon-brand, .h2, .h3, .h4, article#post-0.error404 > .entry-content p, .card-doc .card-header, .card-tour .card-header, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
 
-h1, .h1, .jumbo-content .jumbo-header, #twenty-em-fun .fun-icon, #twenty-em-fun .fun-value, #featured-widget-area .front-page-widget-caption h2 {
+h1, .h1, .jumbo-content .jumbo-header, #twenty-em-fun .fun-icon, #twenty-em-fun .fun-value, #featured-widget-area .front-page-widget-caption h2, #icon-pack .icon-list .icon-brand {
   font-size: 2.5rem; }
 
 h2, .h2 {
@@ -4272,10 +4273,10 @@ a.bg-warning:focus, a.bg-warning:hover {
 a.bg-danger:focus, a.bg-danger:hover {
   background-color: #bd2130 !important; }
 
-.bg-light, pre {
+.bg-light, pre, #icon-pack .icon-list .icon {
   background-color: #f8f9fa !important; }
 
-a.bg-light:focus, a.bg-light:hover {
+a.bg-light:focus, #icon-pack .icon-list a.icon:focus, a.bg-light:hover, #icon-pack .icon-list a.icon:hover {
   background-color: #dae0e5 !important; }
 
 .bg-dark {
@@ -4976,7 +4977,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 
   .align-self-xl-stretch {
     align-self: stretch !important; } }
-.float-left, .alignleft, #twenty-em-fun .fun-fact {
+.float-left, .alignleft, #twenty-em-fun .fun-fact, #icon-pack .icon-list .icon-wrapper {
   float: left !important; }
 
 .float-right, .alignright {
@@ -5105,7 +5106,7 @@ a.bg-dark:focus, a.bg-dark:hover {
 .mr-0 {
   margin-right: 0 !important; }
 
-.mb-0, article pre.prettyprint.linenums ol.linenums {
+.mb-0, article pre.prettyprint.linenums ol.linenums, #icon-pack .icon-list .icon label {
   margin-bottom: 0 !important; }
 
 .ml-0 {
@@ -5119,7 +5120,7 @@ a.bg-dark:focus, a.bg-dark:hover {
   margin-top: 0 !important;
   margin-bottom: 0 !important; }
 
-.m-1 {
+.m-1, #icon-pack .icon-list .icon {
   margin: 0.25rem !important; }
 
 .mt-1 {
@@ -5160,7 +5161,9 @@ article .entry-content #twenty-em-fun .fun-icon,
 article .entry-content #twenty-em-fun .fun-value,
 #twenty-em-fun article .entry-content .fun-value,
 article .entry-content #featured-widget-area .front-page-widget-caption h2,
-#featured-widget-area .front-page-widget-caption article .entry-content h2, article .entry-content .h2, article .entry-content .h3 {
+#featured-widget-area .front-page-widget-caption article .entry-content h2,
+article .entry-content #icon-pack .icon-list .icon-brand,
+#icon-pack .icon-list article .entry-content .icon-brand, article .entry-content .h2, article .entry-content .h3 {
   margin-bottom: 0.5rem !important; }
 
 .ml-2 {
@@ -5177,12 +5180,7 @@ article .entry-content #featured-widget-area .front-page-widget-caption h2,
 .m-3 {
   margin: 1rem !important; }
 
-.mt-3, article, #twenty-em-github .jumbo-header, #twenty-em-fun .fun-icon, #twenty-em-fun .fun-value, article .entry-content h1, article .entry-content h2, article .entry-content h3,
-article .entry-content .h1,
-article .entry-content .jumbo-content .jumbo-header,
-.jumbo-content article .entry-content .jumbo-header,
-article .entry-content #featured-widget-area .front-page-widget-caption h2,
-#featured-widget-area .front-page-widget-caption article .entry-content h2, article .entry-content .h2, article .entry-content .h3, article pre {
+.mt-3, article, #twenty-em-github .jumbo-header, #twenty-em-fun .fun-icon, #twenty-em-fun .fun-value, article pre {
   margin-top: 1rem !important; }
 
 .mr-3, figure.alignleft, #top-menu .custom-logo-link #site-title {
@@ -5193,7 +5191,7 @@ article .entry-content #featured-widget-area .front-page-widget-caption h2,
 #comments #static-header .actions #cancel-comment-reply-link, #static-header .actions article .more-link, article #static-header .actions .more-link, .jumbo-content .actions .btn, .jumbo-content .actions #commentform .submit, #commentform .jumbo-content .actions .submit, .jumbo-content .actions #comments .comment-reply-link, #comments .jumbo-content .actions .comment-reply-link,
 .jumbo-content .actions #comments #cancel-comment-reply-link,
 #comments .jumbo-content .actions #cancel-comment-reply-link, .jumbo-content .actions article .more-link, article .jumbo-content .actions .more-link, #featured-widget-area .front-page-widget-caption h2, #sidebar .widget-title,
-#sidebar-docs .widget-title {
+#sidebar-docs .widget-title, #icon-pack .icon-list .icon-brand {
   margin-bottom: 1rem !important; }
 
 .ml-3, figure.alignright {
@@ -5221,7 +5219,18 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
 .m-4 {
   margin: 1.5rem !important; }
 
-.mt-4, #static-header .static-header-content, article pre.prettyprint.linenums ol.linenums {
+.mt-4, #static-header .static-header-content, article .entry-content h1, article .entry-content h2, article .entry-content h3,
+article .entry-content .h1,
+article .entry-content .jumbo-content .jumbo-header,
+.jumbo-content article .entry-content .jumbo-header,
+article .entry-content #twenty-em-fun .fun-icon,
+#twenty-em-fun article .entry-content .fun-icon,
+article .entry-content #twenty-em-fun .fun-value,
+#twenty-em-fun article .entry-content .fun-value,
+article .entry-content #featured-widget-area .front-page-widget-caption h2,
+#featured-widget-area .front-page-widget-caption article .entry-content h2,
+article .entry-content #icon-pack .icon-list .icon-brand,
+#icon-pack .icon-list article .entry-content .icon-brand, article .entry-content .h2, article .entry-content .h3, article pre.prettyprint.linenums ol.linenums {
   margin-top: 1.5rem !important; }
 
 .mr-4 {
@@ -5250,7 +5259,7 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
 .mr-5 {
   margin-right: 3rem !important; }
 
-.mb-5, #featured-widget-area.template-jumbotron #front-page-widget-one, #featured-widget-area.template-jumbotron #front-page-widget-one .widget-thumbnail, article, .author-info, .widget-container, article .entry-content {
+.mb-5, #featured-widget-area.template-jumbotron #front-page-widget-one, #featured-widget-area.template-jumbotron #front-page-widget-one .widget-thumbnail, article, .author-info, .widget-container, article .entry-content, #icon-pack .icon-filter {
   margin-bottom: 3rem !important; }
 
 .ml-5 {
@@ -5334,7 +5343,7 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
   padding-top: 0.5rem !important;
   padding-bottom: 0.5rem !important; }
 
-.p-3, .author-info {
+.p-3, .author-info, #icon-pack .icon-list .icon {
   padding: 1rem !important; }
 
 .pt-3, article pre {
@@ -5422,7 +5431,7 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
 #comments-navigation.nav .comments-next, #top-menu .navbar-nav, #twenty-em-subscribe .jumbo-content-inner .input-email {
   margin-left: auto !important; }
 
-.mx-auto, .aligncenter {
+.mx-auto, .aligncenter, #icon-pack .icon-filter {
   margin-right: auto !important;
   margin-left: auto !important; }
 
@@ -6644,7 +6653,7 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
   text-align: right !important; }
 
 .text-center, #site-pagination.prev-next a, #posts-navigation.nav a,
-#comments-navigation.nav a, #site-info, #static-header, .jumbo-content, #twenty-em-features, #twenty-em-posts time, article#post-0.error404 {
+#comments-navigation.nav a, #site-info, #static-header, .jumbo-content, #twenty-em-features, #twenty-em-posts time, article#post-0.error404, #icon-pack .icon-filter, #icon-pack .icon-list .icon, #icon-pack .icon-list .icon input {
   text-align: center !important; }
 
 @media (min-width: 576px) {
@@ -6701,7 +6710,7 @@ article .card-img-overlay #comments #cancel-comment-reply-link,
 .font-italic {
   font-style: italic; }
 
-.text-white, #static-header-text, #twenty-em-neon, #twenty-em-fun .fun-fact, #twenty-em-donate {
+.text-white, #static-header-text, #twenty-em-neon, #twenty-em-fun .fun-fact, #twenty-em-donate, #icon-pack .icon-list .icon-wrapper:hover .icon, #icon-pack .icon-list .icon-wrapper:focus .icon {
   color: #fff !important; }
 
 .text-primary {
@@ -6752,7 +6761,7 @@ a.text-light:focus, a#twenty-em-subscribe:focus, #twenty-em-subscribe .jumbo-con
 a.text-dark:focus, a.text-dark:hover {
   color: #1d2124 !important; }
 
-.text-muted, article .entry-content .h-anchor .anchor {
+.text-muted, article .entry-content .h-anchor div .anchor {
   color: #868e96 !important; }
 
 .text-hide {
@@ -8524,10 +8533,10 @@ a.bg-child-brown:focus, a.bg-child-brown:hover {
 a.bg-child-blue-gray:focus, a.bg-child-blue-gray:hover {
   background-color: #4b626d !important; }
 
-.bg-child-primary, #site-pagination.pagination ul li .page-numbers.current {
+.bg-child-primary, #site-pagination.pagination ul li .page-numbers.current, #icon-pack .icon-list .icon-wrapper:hover .icon, #icon-pack .icon-list .icon-wrapper:focus .icon {
   background-color: #3F51B5 !important; }
 
-a.bg-child-primary:focus, #site-pagination.pagination ul li a.page-numbers.current:focus, a.bg-child-primary:hover, #site-pagination.pagination ul li a.page-numbers.current:hover {
+a.bg-child-primary:focus, #site-pagination.pagination ul li a.page-numbers.current:focus, #icon-pack .icon-list .icon-wrapper:hover a.icon:focus, #icon-pack .icon-list .icon-wrapper:focus a.icon:focus, a.bg-child-primary:hover, #site-pagination.pagination ul li a.page-numbers.current:hover, #icon-pack .icon-list .icon-wrapper:hover a.icon:hover, #icon-pack .icon-list .icon-wrapper:focus a.icon:hover {
   background-color: #32408f !important; }
 
 .bg-child-secondary, #twenty-em-posts time span.year {
@@ -8809,7 +8818,7 @@ a.bg-child-danger:focus, a.bg-child-danger:hover {
 #comments-navigation.nav .comments-next, #top-menu .navbar-nav, #twenty-em-subscribe .jumbo-content-inner .input-email {
   margin-left: auto !important; }
 
-.mx-auto, .aligncenter {
+.mx-auto, .aligncenter, #icon-pack .icon-filter {
   margin-right: auto !important;
   margin-left: auto !important; }
 
@@ -10968,7 +10977,8 @@ h1, h2, h3, h4, h5, h6,
 .jumbo-content .jumbo-header,
 #twenty-em-fun .fun-icon,
 #twenty-em-fun .fun-value,
-#featured-widget-area .front-page-widget-caption h2, .h2, .h3, .h4, article#post-0.error404 > .entry-content p, .card-doc .card-header, .card-tour .card-header, .h5, .h6,
+#featured-widget-area .front-page-widget-caption h2,
+#icon-pack .icon-list .icon-brand, .h2, .h3, .h4, article#post-0.error404 > .entry-content p, .card-doc .card-header, .card-tour .card-header, .h5, .h6,
 #site-title,
 .branding,
 .lead,
@@ -11188,13 +11198,15 @@ h1 code, h2 code, h3 code, h4 code, h5 code, h6 code {
 #sidebar-docs .widget-title {
   border-bottom: solid 1px #e9ecef; }
 
-article .entry-content .h-anchor .anchor {
-  font-size: 20px;
-  vertical-align: middle;
-  margin-left: -1em;
-  display: none; }
-article .entry-content .h-anchor:hover .anchor, article .entry-content .h-anchor:focus .anchor {
-  display: inline; }
+article .entry-content .h-anchor div .anchor {
+  margin-left: -1.5rem;
+  margin-right: .75rem;
+  opacity: 0;
+  font-size: 1.25rem; }
+  article .entry-content .h-anchor div .anchor:before {
+    content: attr(data-anchorjs-icon); }
+article .entry-content .h-anchor div:hover .anchor, article .entry-content .h-anchor div:focus .anchor {
+  opacity: 1; }
 article .entry-content .h-anchor:before {
   content: "";
   display: block;
@@ -11260,6 +11272,18 @@ article#post-0.error404 > header {
     color: #2b387c; }
 article#post-0.error404 > header:before {
   content: "404"; }
+
+#icon-pack .icon-list .icon-wrapper {
+  width: 16.66%;
+  display: block; }
+  @media (max-width: 991px) {
+    #icon-pack .icon-list .icon-wrapper {
+      width: 25%; } }
+  @media (max-width: 767px) {
+    #icon-pack .icon-list .icon-wrapper {
+      width: 33.33%; } }
+#icon-pack .icon-list .icon input {
+  padding: .12rem .25rem; }
 
 #footer {
   background-color: #343a40; }
