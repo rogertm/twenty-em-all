@@ -23,7 +23,7 @@ function t_em_all_register_post_types(){
 						  'singular-item' => _x( 'Topic', 'singular document item', 't_em_all' ),
 						  'plural-items' => _x( 'Topics', 'plural document item', 't_em_all' ),
 						  'hierarchical' => true,
-						  'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'trackbacks', 'page-attributes', 'revisions' ),
+						  'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'trackbacks', 'page-attributes', 'revisions', 'shortlinks' ),
 					),
 	);
 
