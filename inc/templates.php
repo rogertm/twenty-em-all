@@ -811,8 +811,9 @@ function t_em_all_icomoon_demo(){
 		<div class="icon-list">
 <?php
 	foreach ( $icomoon as $key => $value ) :
+		$icon = str_replace( 'icomoon-', '', $key );
 ?>
-			<div class="icon-wrapper" data-icon="<?php echo $key ?>">
+			<div class="icon-wrapper" data-icon="<?php echo $icon ?>">
 				<div class="icon">
 					<p class="icon-brand"><span class="<?php echo $key ?>"></span></p>
 					<label for="icon-key-<?php echo $key ?>"><?php _e( 'Class:', 't_em_all' ) ?></label>
