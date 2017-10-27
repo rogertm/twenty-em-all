@@ -110,9 +110,6 @@ add_action( 't_em_action_post_content_after', 't_em_all_search_docs_form' );
  * @since Twenty'em All 1.1
  */
 function t_em_all_doc_deprecated_content( $content ){
-	// if ( ! is_singular( 'doc' ) )
-	// 	return;
-
 	global $post;
 	$api_deprecated = ( get_post_meta( $post->ID, 'function_api_deprecated', true ) ) ? get_post_meta( $post->ID, 'function_api_deprecated', true ) : null;
 	if ( $api_deprecated ) :

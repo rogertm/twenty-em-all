@@ -49,10 +49,10 @@ function t_em_all_doc_editor_content( $content ){
 	if ( $screen->id == 'doc' ) :
 		if ( get_post_type( $post->ID ) == 'doc' && empty( get_post_field( 'post_content', $post->ID ) ) ) :
 			$content = __( '<h2>Description</h2>', 't_em_all' );
-			$content .= __( '<h2>Parameters</h2>', 't_em_all' );
 			$content .= __( '<h2>Usage</h2>', 't_em_all' );
-			$content .= __( '<h2>Examples</h2>', 't_em_all' );
+			$content .= __( '<h2>Parameters</h2>', 't_em_all' );
 			$content .= __( '<h2>Returned Values</h2>', 't_em_all' );
+			$content .= __( '<h2>Examples</h2>', 't_em_all' );
 			$content .= __( '<h2>Notes</h2>', 't_em_all' );
 			$content .= __( '<h2>Resources</h2>', 't_em_all' );
 		else :
