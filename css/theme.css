@@ -5375,7 +5375,7 @@ article .entry-content #icon-pack .icon-list .icon-brand,
 .pr-4 {
   padding-right: 1.5rem !important; }
 
-.pb-4 {
+.pb-4, #icon-pack .icon-list .icon {
   padding-bottom: 1.5rem !important; }
 
 .pl-4 {
@@ -6779,7 +6779,7 @@ a.text-dark:focus, a.text-dark:hover {
 
 @font-face {
   font-family: 'icomoon';
-  src: url("../../twenty-em/fonts/icomoon.ttf?t80h1m") format("truetype"), url("../../twenty-em/fonts/icomoon.woff?t80h1m") format("woff"), url("../../twenty-em/fonts/icomoon.svg?t80h1m#icomoon") format("svg");
+  src: url("../../twenty-em/fonts/icomoon.ttf?r8tdks") format("truetype"), url("../../twenty-em/fonts/icomoon.woff?r8tdks") format("woff"), url("../../twenty-em/fonts/icomoon.svg?r8tdks#icomoon") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icomoon-"], [class*=" icomoon-"] {
@@ -6794,6 +6794,12 @@ a.text-dark:focus, a.text-dark:hover {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icomoon-cloud-upload:before {
+  content: ""; }
+
+.icomoon-cloud-download:before {
+  content: ""; }
 
 .icomoon-500px:before {
   content: ""; }
@@ -8105,9 +8111,6 @@ a.text-dark:focus, a.text-dark:hover {
 
 .icomoon-upload:before {
   content: ""; }
-
-.icomoon-upload-to-cloud:before {
-  content: ""; }
 
 .icomoon-user:before {
   content: ""; }
