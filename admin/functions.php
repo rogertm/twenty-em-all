@@ -54,12 +54,14 @@ add_action( 'admin_enqueue_scripts', 't_em_all_admin_enqueue' );
  */
 function t_em_all_default_theme_options( $default_theme_options ){
 	$t_em_all_default_options = array(
+		// Neon call to action
 		'neon_headline'						=> '',
 		'neon_content'						=> '',
 		'neon_button_one_label'				=> '',
 		'neon_button_one_link'				=> '',
 		'neon_button_two_label'				=> '',
 		'neon_button_two_link'				=> '',
+		// GitHub Stuff
 		'github_commits_headline'			=> '',
 		'github_commits_rss'				=> '',
 		'github_content_headline'			=> '',
@@ -68,19 +70,24 @@ function t_em_all_default_theme_options( $default_theme_options ){
 		'github_button_one_link'			=> '',
 		'github_button_two_label'			=> '',
 		'github_button_two_link'			=> '',
+		// Donate Stuff
 		'donate_headline'					=> '',
 		'donate_content'					=> '',
 		'donate_button_label'				=> '',
 		'donate_button_link'				=> '',
+		// Funny Stuff
 		'lines_of_code'						=> '',
 		'kilobytes'							=> '',
 		'files'								=> '',
 		'hours_of_coding'					=> '2012-09-10', // First Commit Date
+		// FeedBurner Stuff
 		'feedburner_headline'				=> '',
 		'feedburner_content'				=> '',
 		'feedburner_button_label'			=> '',
 		'feedburner_button_placeholder'		=> '',
 		'feedburner_id'						=> '',
+		// Icon Pack Stuff
+		'icon_pack_json'					=> '',
 	);
 	$ads = t_em_all_front_page_ads_features_options();
 	foreach ( $ads as $ad => $value ) :
@@ -188,6 +195,7 @@ function t_em_all_theme_options_validate( $input ){
 		'github_button_one_link',
 		'github_button_two_link',
 		'donate_button_link',
+		'icon_pack_json',
 	) as $url_field ) :
 		$input[$url_field] = ( isset( $input[$url_field] ) ) ? esc_url_raw( $input[$url_field] ) : '';
 	endforeach;

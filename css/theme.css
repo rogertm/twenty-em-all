@@ -5375,7 +5375,7 @@ article .entry-content #icon-pack .icon-list .icon-brand,
 .pr-4 {
   padding-right: 1.5rem !important; }
 
-.pb-4 {
+.pb-4, #icon-pack .icon-list .icon {
   padding-bottom: 1.5rem !important; }
 
 .pl-4 {
