@@ -14,7 +14,7 @@ get_header(); ?>
 
 		<section id="main-content" <?php t_em_breakpoint( 'main-content' ); ?>>
 			<section id="content" role="main" <?php t_em_breakpoint( 'content' ); ?>>
-				<?php t_em_action_content_before(); ?>
+				<?php do_action( 't_em_action_content_before' ); ?>
 				<?php
 				// We exclude deprecated functions from search...
 				$args = array(
@@ -33,7 +33,7 @@ get_header(); ?>
 				$wp_query = new WP_Query( $args );
 				?>
 				<?php t_em_loop(); ?>
-				<?php t_em_action_content_after(); ?>
+				<?php do_action( 't_em_action_content_after' ); ?>
 			</section><!-- #content -->
 			<?php get_sidebar( 'docs' ); ?>
 			<?php get_sidebar( 'alt' ); ?>

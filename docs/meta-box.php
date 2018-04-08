@@ -70,12 +70,11 @@ add_action( 'save_post', 't_em_all_save_doc_top_page' );
  * @since Twenty'em All 1.1
  */
 function t_em_all_api_change_log_callback( $post ){
-	global $t_em;
 	wp_nonce_field( 'doc_api_data_attr', 'doc_api_data_field' );
 
 	$api_args = array(
 		'post_type'			=> 'doc',
-		'child_of'			=> $t_em['page_api'],
+		'child_of'			=> t_em( 'page_api' ),
 		'parent'			=> -1,
 		'post_status'		=> array( 'publish' ),
 		'sort_column'		=> 'menu_order',
@@ -110,8 +109,8 @@ function t_em_all_api_change_log_callback( $post ){
 			if ( ! get_post_meta( $function->ID, 'function_api_deprecated', true ) ) :
 				$selected = selected( $use_instead, $function->ID, false );
 				$function_ancestor = get_post_ancestors( $function->ID );
-				$function_label = ( $function_ancestor[0] == $t_em['page_api'] ) ? sprintf( '&mdash;&mdash; %s &mdash;&mdash;', get_the_title( $function->ID ) ) : get_the_title( $function->ID );
-				$option_tag = ( $function_ancestor[0] == $t_em['page_api'] ) ? 'optgroup' : 'option';
+				$function_label = ( $function_ancestor[0] == t_em( 'page_api' ) ) ? sprintf( '&mdash;&mdash; %s &mdash;&mdash;', get_the_title( $function->ID ) ) : get_the_title( $function->ID );
+				$option_tag = ( $function_ancestor[0] == t_em( 'page_api' ) ) ? 'optgroup' : 'option';
 ?>
 			<<?php echo $option_tag ?> label="<?php echo $function_label ?>" value="<?php echo $function->ID ?>" <?php echo $selected; ?>><?php echo $function_label ?></<?php echo $option_tag ?>>
 <?php

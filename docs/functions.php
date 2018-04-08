@@ -29,9 +29,8 @@ add_filter( 'search_template', 't_em_all_load_search_docs_template' );
  * @since Twenty'em All 1.1
  */
 function t_em_all_doc_redirect(){
-	global $t_em;
 	if ( is_post_type_archive( 'doc' ) ) :
-		$location = get_permalink( $t_em['page_docs'] );
+		$location = get_permalink( t_em( 'page_docs' ) );
 		wp_safe_redirect( $location );
 		exit();
 	endif;

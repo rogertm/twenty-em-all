@@ -16,8 +16,7 @@
  * @since Twenty'em All 1.0
  */
 function t_em_all_quicktags_buttons(){
-	global $t_em;
-	if ( wp_script_is( 'quicktags' ) && $t_em['shortcode_buttoms'] ) :
+	if ( wp_script_is( 'quicktags' ) && t_em( 'shortcode_buttoms' ) ) :
 ?>
 	<script type="text/javascript">
 		QTags.addButton( 'sc_t_em_all_pre', 'pre', '<pre class="prettyprint linenums" title="code">', '</pre>', '', '', 105 );

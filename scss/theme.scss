@@ -17,7 +17,7 @@
 // Scaffolding
 //
 *{
-	transition: $thumbnail-transition;
+	transition: 250ms;
 }
 body{
 	&:not(.home){

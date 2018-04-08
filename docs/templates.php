@@ -17,8 +17,7 @@
  * @since Twenty'em All 1.1
  */
 function t_em_all_the_doc(){
-	global $t_em;
-	if ( is_page( $t_em['page_docs'] ) ) :
+	if ( is_page( t_em( 'page_docs' ) ) ) :
 ?>
 	<div id="docs-main-page">
 	<?php
@@ -91,8 +90,7 @@ add_action( 't_em_action_post_inside_after', 't_em_all_the_doc' );
  * @since Twenty'em All 1.1
  */
 function t_em_all_search_docs_form(){
-	global $t_em;
-	if ( is_page( $t_em['page_docs'] ) ) :
+	if ( is_page( t_em( 'page_docs' ) ) ) :
 ?>
 <section id="search-in-docs" class="row">
 	<div class="col-lg-10 mx-auto mb-5">

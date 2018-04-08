@@ -70,7 +70,6 @@ function t_em_all_front_page_ads_features_options(){
  * @since Twenty'em All 1.0
  */
 function t_em_all_render_front_page_features_ads(){
-	global $t_em;
 	$ads = t_em_all_front_page_ads_features_options();
 ?>
 	<div id="t-em-all-features-ads">
@@ -84,19 +83,19 @@ function t_em_all_render_front_page_features_ads(){
 				<p>
 					<label>
 						<span><?php _e( 'Heading', 't_em_all' ) ?></span>
-						<input type="text" class="regular-text headline" name="t_em_theme_options[<?php echo $data[0] ?>]" value="<?php echo $t_em[$data[0]] ?>">
+						<input type="text" class="regular-text headline" name="t_em_theme_options[<?php echo $data[0] ?>]" value="<?php echo t_em( $data[0] ) ?>">
 					</label>
 				</p>
 				<p>
 					<label>
 						<span><?php _e( 'IcoFont', 't_em_all' ) ?></span>
-						<input type="text" class="regular-text" name="t_em_theme_options[<?php echo $data[1] ?>]" value="<?php echo $t_em[$data[1]] ?>">
+						<input type="text" class="regular-text" name="t_em_theme_options[<?php echo $data[1] ?>]" value="<?php echo t_em( $data[1] ) ?>">
 					</label>
 				</p>
 				<p>
 					<label>
 						<span><?php _e( 'Content', 't_em_all' ) ?></span>
-						<textarea class="regular-text" name="t_em_theme_options[<?php echo $data[2] ?>]" rows="7"><?php echo $t_em[$data[2]] ?></textarea>
+						<textarea class="regular-text" name="t_em_theme_options[<?php echo $data[2] ?>]" rows="7"><?php echo t_em( $data[2] ) ?></textarea>
 					</label>
 				</p>
 			</div>
@@ -113,44 +112,43 @@ add_action( 't_em_admin_action_from_page_option_widgets-front-page_before', 't_e
  * @since Twenty'em All 1.0
  */
 function t_em_all_render_front_page_neon_ad(){
-	global $t_em;
 ?>
 	<div id="neon-setting" class="sub-extend option-group text-option">
 		<h3><?php _e( 'Neon ad', 't_em_all' ) ?></h3>
 		<p>
 			<label>
 				<span><?php _e( 'Headline', 't_em_all' ) ?></span>
-				<input class="regular-text headline" type="text" name="t_em_theme_options[neon_headline]" value="<?php echo $t_em['neon_headline'] ?>">
+				<input class="regular-text headline" type="text" name="t_em_theme_options[neon_headline]" value="<?php echo t_em( 'neon_headline' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Content', 't_em_all' ) ?></span>
-				<textarea class="large-text" name="t_em_theme_options[neon_content]" rows="7"><?php echo $t_em['neon_content'] ?></textarea>
+				<textarea class="large-text" name="t_em_theme_options[neon_content]" rows="7"><?php echo t_em( 'neon_content' ) ?></textarea>
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'First Button Label', 't_em_all' ) ?></span>
-				<input class="regular-text" type="text" name="t_em_theme_options[neon_button_one_label]" value="<?php echo $t_em['neon_button_one_label'] ?>">
+				<input class="regular-text" type="text" name="t_em_theme_options[neon_button_one_label]" value="<?php echo t_em( 'neon_button_one_label' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'First Button Link', 't_em_all' ) ?></span>
-				<input class="regular-text" type="url" name="t_em_theme_options[neon_button_one_link]" value="<?php echo $t_em['neon_button_one_link'] ?>">
+				<input class="regular-text" type="url" name="t_em_theme_options[neon_button_one_link]" value="<?php echo t_em( 'neon_button_one_link' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Second Button Label', 't_em_all' ) ?></span>
-				<input class="regular-text" type="text" name="t_em_theme_options[neon_button_two_label]" value="<?php echo $t_em['neon_button_two_label'] ?>">
+				<input class="regular-text" type="text" name="t_em_theme_options[neon_button_two_label]" value="<?php echo t_em( 'neon_button_two_label' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Second Button Link', 't_em_all' ) ?></span>
-				<input class="regular-text" type="url" name="t_em_theme_options[neon_button_two_link]" value="<?php echo $t_em['neon_button_two_link'] ?>">
+				<input class="regular-text" type="url" name="t_em_theme_options[neon_button_two_link]" value="<?php echo t_em( 'neon_button_two_link' ) ?>">
 			</label>
 		</p>
 	</div>
@@ -164,56 +162,55 @@ add_action( 't_em_admin_action_from_page_option_widgets-front-page_after', 't_em
  * @since Twenty'em All 1.0
  */
 function t_em_all_render_front_page_github_commints(){
-	global $t_em;
 ?>
 	<div id="github-setting" class="sub-extend option-group text-option">
 		<h3><?php _e( 'GitHub commit\'s RSS', 't_em_all' ) ?></h3>
 		<p>
 			<label>
 				<span><?php _e( 'Headline Commits', 't_em_all' ) ?></span>
-				<input class="regular-text headline" type="text" name="t_em_theme_options[github_commits_headline]" value="<?php echo $t_em['github_commits_headline'] ?>">
+				<input class="regular-text headline" type="text" name="t_em_theme_options[github_commits_headline]" value="<?php echo t_em( 'github_commits_headline' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'RSS', 't_em_all' ) ?></span>
-				<input class="regular-text" type="url" name="t_em_theme_options[github_commits_rss]" value="<?php echo $t_em['github_commits_rss'] ?>">
+				<input class="regular-text" type="url" name="t_em_theme_options[github_commits_rss]" value="<?php echo t_em( 'github_commits_rss' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Headline Content', 't_em_all' ) ?></span>
-				<input class="regular-text headline" type="text" name="t_em_theme_options[github_content_headline]" value="<?php echo $t_em['github_content_headline'] ?>">
+				<input class="regular-text headline" type="text" name="t_em_theme_options[github_content_headline]" value="<?php echo t_em( 'github_content_headline' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Content', 't_em_all' ) ?></span>
-				<textarea class="large-text" name="t_em_theme_options[github_content]" rows="7"><?php echo $t_em['github_content'] ?></textarea>
+				<textarea class="large-text" name="t_em_theme_options[github_content]" rows="7"><?php echo t_em( 'github_content' ) ?></textarea>
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'First Button Label', 't_em_all' ) ?></span>
-				<input class="regular-text" type="text" name="t_em_theme_options[github_button_one_label]" value="<?php echo $t_em['github_button_one_label'] ?>">
+				<input class="regular-text" type="text" name="t_em_theme_options[github_button_one_label]" value="<?php echo t_em( 'github_button_one_label' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'First Button Link', 't_em_all' ) ?></span>
-				<input class="regular-text" type="url" name="t_em_theme_options[github_button_one_link]" value="<?php echo $t_em['github_button_one_link'] ?>">
+				<input class="regular-text" type="url" name="t_em_theme_options[github_button_one_link]" value="<?php echo t_em( 'github_button_one_link' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Second Button Label', 't_em_all' ) ?></span>
-				<input class="regular-text" type="text" name="t_em_theme_options[github_button_two_label]" value="<?php echo $t_em['github_button_two_label'] ?>">
+				<input class="regular-text" type="text" name="t_em_theme_options[github_button_two_label]" value="<?php echo t_em( 'github_button_two_label' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Second Button Link', 't_em_all' ) ?></span>
-				<input class="regular-text" type="url" name="t_em_theme_options[github_button_two_link]" value="<?php echo $t_em['github_button_two_link'] ?>">
+				<input class="regular-text" type="url" name="t_em_theme_options[github_button_two_link]" value="<?php echo t_em( 'github_button_two_link' ) ?>">
 			</label>
 		</p>
 	</div>
@@ -269,7 +266,6 @@ function t_em_all_fun_facts_options(){
  * @since Twenty'em All 1.0
  */
 function t_em_all_general_options_fun_facts(){
-	global $t_em;
 	$funs = t_em_all_fun_facts_options();
 ?>
 	<div id="t-em-all-funs-ads">
@@ -283,13 +279,13 @@ function t_em_all_general_options_fun_facts(){
 			<p>
 			<label class="description single-option">
 				<p class="description"><?php echo $fun['description']; ?></p>
-				<input type="text" class="regular-text" name="t_em_theme_options[<?php echo $fun['value'] ?>]" value="<?php echo $t_em[$fun['value']] ?>">
+				<input type="text" class="regular-text" name="t_em_theme_options[<?php echo $fun['value'] ?>]" value="<?php echo t_em( $fun['value'] ) ?>">
 			</label>
 			</p>
 			<p>
 			<label class="description single-option">
 				<p><?php _e( 'IcoFont', 't_em_all' ) ?></p>
-				<input type="text" class="regular-text" name="t_em_theme_options[<?php echo $fun['icon'] ?>]" value="<?php echo $t_em[$fun['icon']] ?>">
+				<input type="text" class="regular-text" name="t_em_theme_options[<?php echo $fun['icon'] ?>]" value="<?php echo t_em( $fun['icon'] ) ?>">
 			</label>
 			</p>
 		</div>
@@ -308,32 +304,31 @@ add_action( 't_em_admin_action_from_page_option_widgets-front-page_after', 't_em
  * @since Twenty'em All 1.0
  */
 function t_em_all_render_front_page_donate_ad(){
-	global $t_em;
 ?>
 	<div id="donate-setting" class="sub-extend option-group text-option">
 		<h3><?php _e( 'Donate ad', 't_em_all' ) ?></h3>
 		<p>
 			<label>
 				<span><?php _e( 'Headline', 't_em_all' ) ?></span>
-				<input class="regular-text headline" type="text" name="t_em_theme_options[donate_headline]" value="<?php echo $t_em['donate_headline'] ?>">
+				<input class="regular-text headline" type="text" name="t_em_theme_options[donate_headline]" value="<?php echo t_em( 'donate_headline' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Content', 't_em_all' ) ?></span>
-				<textarea class="large-text" name="t_em_theme_options[donate_content]" cols="50" rows="7"><?php echo $t_em['donate_content'] ?></textarea>
+				<textarea class="large-text" name="t_em_theme_options[donate_content]" cols="50" rows="7"><?php echo t_em( 'donate_content' ) ?></textarea>
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Button Label', 't_em_all' ) ?></span>
-				<input class="regular-text" type="text" name="t_em_theme_options[donate_button_label]" value="<?php echo $t_em['donate_button_label'] ?>">
+				<input class="regular-text" type="text" name="t_em_theme_options[donate_button_label]" value="<?php echo t_em( 'donate_button_label' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Button Link', 't_em_all' ) ?></span>
-				<input class="regular-text" type="url" name="t_em_theme_options[donate_button_link]" value="<?php echo $t_em['donate_button_link'] ?>">
+				<input class="regular-text" type="url" name="t_em_theme_options[donate_button_link]" value="<?php echo t_em( 'donate_button_link' ) ?>">
 			</label>
 		</p>
 	</div>
@@ -347,38 +342,37 @@ add_action( 't_em_admin_action_from_page_option_widgets-front-page_after', 't_em
  * @since Twenty'em All 1.0
  */
 function t_em_all_render_front_page_feedburner_ad(){
-	global $t_em;
 ?>
 	<div id="feedburner-setting" class="sub-extend option-group text-option">
 		<h3><?php _e( 'FeedBurner ad', 't_em_all' ) ?></h3>
 		<p>
 			<label>
 				<span><?php _e( 'Headline', 't_em_all' ) ?></span>
-				<input class="regular-text headline" type="text" name="t_em_theme_options[feedburner_headline]" value="<?php echo $t_em['feedburner_headline'] ?>">
+				<input class="regular-text headline" type="text" name="t_em_theme_options[feedburner_headline]" value="<?php echo t_em( 'feedburner_headline' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Content', 't_em_all' ) ?></span>
-				<textarea class="large-text" name="t_em_theme_options[feedburner_content]" cols="50" rows="7"><?php echo $t_em['feedburner_content'] ?></textarea>
+				<textarea class="large-text" name="t_em_theme_options[feedburner_content]" cols="50" rows="7"><?php echo t_em( 'feedburner_content' ) ?></textarea>
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Button Label', 't_em_all' ) ?></span>
-				<input class="regular-text" type="text" name="t_em_theme_options[feedburner_button_label]" value="<?php echo $t_em['feedburner_button_label'] ?>">
+				<input class="regular-text" type="text" name="t_em_theme_options[feedburner_button_label]" value="<?php echo t_em( 'feedburner_button_label' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'Button Placeholder', 't_em_all' ) ?></span>
-				<input class="regular-text" type="text" name="t_em_theme_options[feedburner_button_placeholder]" value="<?php echo $t_em['feedburner_button_placeholder'] ?>">
+				<input class="regular-text" type="text" name="t_em_theme_options[feedburner_button_placeholder]" value="<?php echo t_em( 'feedburner_button_placeholder' ) ?>">
 			</label>
 		</p>
 		<p>
 			<label>
 				<span><?php _e( 'FeedBurner ID', 't_em_all' ) ?></span>
-				<input class="regular-text" type="text" name="t_em_theme_options[feedburner_id]" value="<?php echo $t_em['feedburner_id'] ?>">
+				<input class="regular-text" type="text" name="t_em_theme_options[feedburner_id]" value="<?php echo t_em( 'feedburner_id' ) ?>">
 			</label>
 		</p>
 	</div>

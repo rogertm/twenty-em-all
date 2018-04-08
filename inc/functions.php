@@ -38,21 +38,19 @@ add_action( 'wp', 't_em_all_remove_setup' );
  * @since Twenty'em All 1.0
  */
 function t_em_all_enqueue(){
-	global $t_em_theme_data;
-
-	wp_register_style( 'google-fonts', t_em_all_embed_google_fonts(), array(), $t_em_theme_data['Version'], 'all' );
+	wp_register_style( 'google-fonts', t_em_all_embed_google_fonts(), array(), t_em_theme( 'Version' ), 'all' );
 	wp_enqueue_style( 'google-fonts' );
 
-	wp_register_style( 'child-style', t_em_get_css( 'theme', T_EM_CHILD_THEME_DIR_PATH .'/css', T_EM_CHILD_THEME_DIR_URL .'/css' ), '', $t_em_theme_data['Version'], 'all' );
+	wp_register_style( 'child-style', t_em_get_css( 'theme', T_EM_CHILD_THEME_DIR_PATH .'/css', T_EM_CHILD_THEME_DIR_URL .'/css' ), '', t_em_theme( 'Version' ), 'all' );
 	wp_enqueue_style( 'child-style' );
 
-	wp_register_script( 'jquery.scrollto', t_em_all_get_js( 'jquery.scrollto' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
+	wp_register_script( 'jquery.scrollto', t_em_all_get_js( 'jquery.scrollto' ), array( 'jquery' ), t_em_theme( 'Version' ), true );
 	wp_enqueue_script( 'jquery.scrollto' );
 
-	wp_register_script( 'prettify', t_em_all_get_js( 'prettify' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
+	wp_register_script( 'prettify', t_em_all_get_js( 'prettify' ), array( 'jquery' ), t_em_theme( 'Version' ), true );
 	wp_enqueue_script( 'prettify' );
 
-	wp_register_script( 'child-app-utils', t_em_all_get_js( 'app.utils' ), array( 'jquery' ), $t_em_theme_data['Version'], true );
+	wp_register_script( 'child-app-utils', t_em_all_get_js( 'app.utils' ), array( 'jquery' ), t_em_theme( 'Version' ), true );
 	// l10n for app.utils.js
 	$translation = array(
 		'app_version'	=> T_EM_FRAMEWORK_VERSION,
@@ -109,11 +107,10 @@ add_action( 'widgets_init', 't_em_all_widgets_init' );
  * @since Twenty'em All 1.0
  */
 function t_em_all_coffee(){
-	global $t_em;
-	$lines = $t_em['lines_of_code'];
-	$kilos = $t_em['kilobytes'];
-	$files = $t_em['files'];
-	$coding = $t_em['hours_of_coding'];
+	$lines = t_em( 'lines_of_code' );
+	$kilos = t_em( 'kilobytes' );
+	$files = t_em( 'files' );
+	$coding = t_em( 'hours_of_coding' );
 	$start_date = new DateTime( $coding );
 	$end_date = new DateTime( date( 'Y-m-d' ) );
 	$interval = $start_date->diff( $end_date );

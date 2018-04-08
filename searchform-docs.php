@@ -13,8 +13,8 @@
 /**
  * Template for displaying search forms.
  */
-global $t_em;
-$big_form = ( is_page( $t_em['page_docs'] ) ) ? 'input-group-lg' : null;
+$big_form = ( is_page( t_em( 'page_docs' ) ) ) ? 'input-group-lg' : null;
+$big_btn = ( is_page( t_em( 'page_docs' ) ) ) ? 'btn-lg' : null;
 ?>
 <form id="searchform" action="<?php echo home_url( '/' ); ?>" method="get">
 	<div class="input-group <?php echo $big_form ?>">
@@ -22,7 +22,7 @@ $big_form = ( is_page( $t_em['page_docs'] ) ) ? 'input-group-lg' : null;
 		<input type="text" class="form-control" name="s" id="s" value="<?php the_search_query(); ?>" placeholder="<?php _e( 'Search in Docs', 't_em_all' ) ?>" />
 		<input type="hidden" name="pt" value="doc">
 		<span class="input-group-btn">
-			<button class="btn btn-secondary" type="submit" title="<?php _e( 'Search', 't_em_all' ) ?>">
+			<button class="btn btn-secondary <?php echo $big_btn ?>" type="submit" title="<?php _e( 'Search', 't_em_all' ) ?>">
 				<span class="icomoon-search"></span>
 				<span class="label-btn sr-only"><?php _e( 'Search', 't_em_all' ) ?></span>
 			</button>

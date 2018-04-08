@@ -17,11 +17,9 @@
  * @subpackage Twenty'em All
  * @since Twenty'em All 1.0
  */
-
-global $t_em;
 ?>
 		<section id="sidebar-docs" role="complementary" <?php t_em_breakpoint( 'sidebar' ); ?>>
-			<?php t_em_action_sidebar_before(); ?>
+			<?php do_action( 't_em_action_sidebar_before' ); ?>
 			<div class="widget-container"><?php get_template_part( 'searchform', 'docs' ); ?></div>
 			<?php
 			if ( is_singular( 'doc' ) ) :
@@ -85,7 +83,7 @@ global $t_em;
 			endif;
 			?>
 			<aside id="aside-documentation" class="widget-container">
-				<h3 class="widget-title"><?php echo get_the_title( $t_em['page_docs'] ) ?></h3>
+				<h3 class="widget-title"><?php echo get_the_title( t_em( 'page_docs' ) ) ?></h3>
 				<ul>
 				<?php
 					// Get parents docs pages
@@ -100,7 +98,7 @@ global $t_em;
 					);
 					$docs_parent_pages = get_posts( $args );
 				?>
-					<li><a href="<?php echo get_permalink( $t_em['page_docs'] ) ?>"><?php _e( 'Main Page', 't_em_all' ) ?></a></li>
+					<li><a href="<?php echo get_permalink( t_em( 'page_docs' ) ) ?>"><?php _e( 'Main Page', 't_em_all' ) ?></a></li>
 				<?php foreach ( $docs_parent_pages as $docs ) :
 						$active = ( $docs->ID == get_the_ID() ) ? 'current-topic' : null;
 				?>
@@ -115,5 +113,5 @@ global $t_em;
 				endif;
 			?>
 
-			<?php t_em_action_sidebar_after(); ?>
+			<?php do_action( 't_em_action_sidebar_after' ); ?>
 		</section>

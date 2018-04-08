@@ -99,8 +99,6 @@ function t_em_all_custom_pages( $custom_pages = '' ){
  * @since Twenty'em All 1.0
  */
 function t_em_all_setting_fields_custom_pages(){
-	global $t_em;
-
 	foreach ( t_em_all_custom_pages() as $page ) :
 ?>
 	<div class="text-option custom-pages">
@@ -110,15 +108,15 @@ function t_em_all_setting_fields_custom_pages(){
 				<option value="0"><?php _e( '&mdash; Select &mdash;', 't_em_all' ); ?></option>
 				<?php foreach ( t_em_all_list_pages( $page['type'] ) as $list ) :
 				?>
-					<?php $selected = selected( $t_em[$page['value']], $list->ID, false ); ?>
+					<?php $selected = selected( t_em( $page['value'] ), $list->ID, false ); ?>
 					<option value="<?php echo $list->ID ?>" <?php echo $selected; ?>><?php echo $list->post_title ?></option>
 				<?php endforeach; ?>
 			</select>
 		</label>
-		<?php if ( $t_em[$page['value']] ) : ?>
+		<?php if ( t_em( $page['value'] ) ) : ?>
 			<div class="row-action">
-				<span class="edit"><a href="<?php echo get_edit_post_link( $t_em[$page['value']] ) ?>"><?php _e( 'Edit', 't_em_all' ) ?></a> | </span>
-				<span class="view"><a href="<?php echo get_permalink( $t_em[$page['value']] ) ?>"><?php _e( 'View', 't_em_all' ) ?></a></span>
+				<span class="edit"><a href="<?php echo get_edit_post_link( t_em( $page['value'] ) ) ?>"><?php _e( 'Edit', 't_em_all' ) ?></a> | </span>
+				<span class="view"><a href="<?php echo get_permalink( t_em( $page['value'] ) ) ?>"><?php _e( 'View', 't_em_all' ) ?></a></span>
 			</div>
 		<?php endif; ?>
 	</div>
