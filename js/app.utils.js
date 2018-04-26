@@ -32,6 +32,50 @@ jQuery(document).ready(function($) {
 	}
 	t_em_all_github_panel();
 
+	// Hide header on scroll down, show on scroll up
+	// http://jsfiddle.net/mariusc23/s6mLJ/31/
+	function t_em_all_menu_scroll( target, height ){
+		// Hide Header on on scroll down
+		var didScroll;
+		var lastScrollTop = 0;
+		var delta = 5;
+		var targetHeight = height;
+
+		$(window).scroll(function(event){
+		    didScroll = true;
+		});
+
+		setInterval(function() {
+		    if (didScroll) {
+		        hasScrolled();
+		        didScroll = false;
+		    }
+		}, 250);
+
+		function hasScrolled() {
+		    var st = $(this).scrollTop();
+
+		    // Make sure they scroll more than delta
+		    if(Math.abs(lastScrollTop - st) <= delta)
+		        return;
+
+		    // If they scrolled down and are past the target. Do stuff.
+		    // This is necessary so you never see what is "behind" the target.
+		    if (st > lastScrollTop && st > targetHeight){
+		        // Scroll Down
+		        $(target).fadeOut();
+		    } else {
+		        // Scroll Up
+		        if(st + $(window).height() < $(document).height()) {
+		            $(target).fadeIn();
+		        }
+		    }
+
+		    lastScrollTop = st;
+		}
+	}
+	t_em_all_menu_scroll( $('#top-menu'), $('#header').outerHeight() );
+
 	/** Go to top */
 	var gotoTop = $('#gototop');
 	$(window).scroll(function(){
@@ -106,5 +150,6 @@ jQuery(document).ready(function($) {
 
 	$(window).resize(function(){
 		t_em_all_github_panel();
+		t_em_all_menu_scroll( $('#top-menu'), $('#header').outerHeight() );
 	});
 });
