@@ -38,8 +38,8 @@ add_action( 'wp', 't_em_all_remove_setup' );
  * @since Twenty'em All 1.0
  */
 function t_em_all_enqueue(){
-/*	wp_register_style( 'google-fonts', t_em_all_embed_google_fonts(), array(), t_em_theme( 'Version' ), 'all' );
-	wp_enqueue_style( 'google-fonts' );*/
+	wp_register_style( 'google-fonts', t_em_all_embed_google_fonts(), array(), t_em_theme( 'Version' ), 'all' );
+	wp_enqueue_style( 'google-fonts' );
 
 	wp_register_style( 'child-style', t_em_get_css( 'theme', T_EM_CHILD_THEME_DIR_PATH .'/css', T_EM_CHILD_THEME_DIR_URL .'/css' ), '', t_em_theme( 'Version' ), 'all' );
 	wp_enqueue_style( 'child-style' );
