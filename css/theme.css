@@ -327,7 +327,7 @@ h5, .h5 {
 h6, .h6 {
   font-size: 1rem; }
 
-.lead, article .entry-excerpt, .featured-header-template .entry-content, #static-header .static-header-content, .jumbo-content p, #featured-widget-area .front-page-widget-caption p {
+.lead, article .entry-excerpt, .featured-header-template .entry-content, #maintenance-mode #countdowntimer .timerDisplay, #static-header .static-header-content, .jumbo-content p, #featured-widget-area .front-page-widget-caption p {
   font-size: 1.3rem;
   font-weight: 500; }
 
@@ -359,6 +359,7 @@ hr {
 
 small,
 .small,
+#maintenance-mode #countdowntimer .periodDisplay,
 #twenty-em-fun .fun-label,
 #footer #site-info #twenty-em-credit {
   font-size: 80%;
@@ -4099,13 +4100,13 @@ article .input-group > .input-group-prepend:first-child > .more-link:not(:first-
     text-decoration: none;
     background-color: #1d2124; }
 
-.jumbotron {
+.jumbotron, #maintenance-mode {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
   border-radius: 0.2rem; }
   @media (min-width: 576px) {
-    .jumbotron {
+    .jumbotron, #maintenance-mode {
       padding: 4rem 2rem; } }
 
 .jumbotron-fluid {
@@ -4982,12 +4983,14 @@ button.bg-light:focus,
 #icon-pack .icon-list button.icon:focus {
   background-color: #dae0e5 !important; }
 
-.bg-dark {
+.bg-dark, #maintenance-mode-alert {
   background-color: #343a40 !important; }
 
-a.bg-dark:hover, a.bg-dark:focus,
+a.bg-dark:hover, a#maintenance-mode-alert:hover, a.bg-dark:focus, a#maintenance-mode-alert:focus,
 button.bg-dark:hover,
-button.bg-dark:focus {
+button#maintenance-mode-alert:hover,
+button.bg-dark:focus,
+button#maintenance-mode-alert:focus {
   background-color: #1d2124 !important; }
 
 .bg-white {
@@ -5856,7 +5859,7 @@ button.bg-dark:focus {
   left: 0;
   z-index: 1030; }
 
-.fixed-bottom {
+.fixed-bottom, #maintenance-mode-alert {
   position: fixed;
   right: 0;
   bottom: 0;
@@ -5944,7 +5947,8 @@ button.bg-dark:focus {
   margin: 0 !important; }
 
 .mt-0,
-.my-0 {
+.my-0,
+#header #static-header.static-header-hero #static-header-text {
   margin-top: 0 !important; }
 
 .mr-0,
@@ -5952,7 +5956,8 @@ button.bg-dark:focus {
   margin-right: 0 !important; }
 
 .mb-0, article pre.prettyprint.linenums ol.linenums, #icon-pack .icon-list .icon label,
-.my-0 {
+.my-0,
+#header #static-header.static-header-hero #static-header-text {
   margin-bottom: 0 !important; }
 
 .ml-0,
@@ -5976,7 +5981,7 @@ button.bg-dark:focus {
 .my-1 {
   margin-bottom: 0.25rem !important; }
 
-.ml-1,
+.ml-1, #maintenance-mode #countdowntimer .periodDisplay,
 .mx-1,
 #twenty-em-subscribe .jumbo-content-inner .input-email,
 #twenty-em-subscribe .jumbo-content-inner .input-send {
@@ -6039,7 +6044,7 @@ article .card-img-overlay .more-link,
 #related-posts {
   margin-top: 1rem !important; }
 
-.mr-3, figure.alignleft, #top-menu .custom-logo-link #site-title,
+.mr-3, figure.alignleft, #top-menu .custom-logo-link #site-title, #maintenance-mode #countdowntimer .displaySection,
 .mx-3,
 #static-header .actions .btn,
 #static-header .actions #commentform .submit,
@@ -6070,7 +6075,7 @@ article #twenty-em-neon .more-link,
 article #twenty-em-github #github-left .more-link {
   margin-right: 1rem !important; }
 
-.mb-3, .gallery .gallery-item, #featured-widget-area .front-page-widget, #featured-widget-area.template-jumbotron .front-page-widget .widget-thumbnail, #featured-widget-area.template-features .widget-thumbnail, article .featured-post-thumbnail, article .entry-excerpt, article .author-info, article .card, #static-header .actions .btn, #static-header .actions #commentform .submit, #commentform #static-header .actions .submit, #static-header .actions #comments .comment-reply-link, #comments #static-header .actions .comment-reply-link,
+.mb-3, .gallery .gallery-item, #featured-widget-area .front-page-widget, #featured-widget-area.template-jumbotron .front-page-widget .widget-thumbnail, #featured-widget-area.template-features .widget-thumbnail, article .featured-post-thumbnail, article .entry-excerpt, article .author-info, article .card, #maintenance-mode #countdowntimer, #static-header .actions .btn, #static-header .actions #commentform .submit, #commentform #static-header .actions .submit, #static-header .actions #comments .comment-reply-link, #comments #static-header .actions .comment-reply-link,
 #static-header .actions #comments #cancel-comment-reply-link,
 #comments #static-header .actions #cancel-comment-reply-link, #static-header .actions article .more-link, article #static-header .actions .more-link, .jumbo-content .actions .btn, .jumbo-content .actions #commentform .submit, #commentform .jumbo-content .actions .submit, .jumbo-content .actions #comments .comment-reply-link, #comments .jumbo-content .actions .comment-reply-link,
 .jumbo-content .actions #comments #cancel-comment-reply-link,
@@ -6165,6 +6170,7 @@ article .entry-content #icon-pack .icon-list .icon-brand,
 
 .mt-5, article .author-info, #static-header .actions, .jumbo-content .actions, #featured-widget-area .front-page-widget-caption h2,
 .my-5,
+#maintenance-mode,
 article#post-0.error404 > header .entry-title,
 article#post-0.error404 #searchform {
   margin-top: 3rem !important; }
@@ -6175,6 +6181,7 @@ article#post-0.error404 #searchform {
 
 .mb-5, #featured-widget-area.template-jumbotron #front-page-widget-one, #featured-widget-area.template-jumbotron #front-page-widget-one .widget-thumbnail, article, .author-info, .widget-container, article .entry-content, #icon-pack .icon-filter,
 .my-5,
+#maintenance-mode,
 article#post-0.error404 > header .entry-title,
 article#post-0.error404 #searchform {
   margin-bottom: 3rem !important; }
@@ -6212,7 +6219,7 @@ article#post-0.error404 #searchform {
 .card-tour .card-body {
   padding-left: 0 !important; }
 
-.p-1, .page-links .page-number {
+.p-1, .page-links .page-number, #maintenance-mode-alert {
   padding: 0.25rem !important; }
 
 .pt-1,
@@ -6306,6 +6313,7 @@ article pre.prettyprint.linenums ol.linenums {
 
 .pt-5,
 .py-5,
+#header #static-header.static-header-hero #static-header-text,
 #twenty-em-features,
 #twenty-em-fun .fun-fact,
 #featured-widget-area {
@@ -6317,6 +6325,7 @@ article pre.prettyprint.linenums ol.linenums {
 
 .pb-5,
 .py-5,
+#header #static-header.static-header-hero #static-header-text,
 #twenty-em-features,
 #twenty-em-fun .fun-fact,
 #featured-widget-area {
@@ -7422,7 +7431,7 @@ article pre.prettyprint.linenums ol.linenums {
 .font-italic {
   font-style: italic !important; }
 
-.text-white, #static-header-text, #twenty-em-neon, #twenty-em-fun .fun-fact, #twenty-em-donate, #icon-pack .icon-list .icon-wrapper:hover .icon, #icon-pack .icon-list .icon-wrapper:focus .icon {
+.text-white, #maintenance-mode-alert, #static-header-text, #twenty-em-neon, #twenty-em-fun .fun-fact, #twenty-em-donate, #icon-pack .icon-list .icon-wrapper:hover .icon, #icon-pack .icon-list .icon-wrapper:focus .icon {
   color: #fff !important; }
 
 .text-primary {
@@ -7461,10 +7470,10 @@ a.text-warning:hover, a.text-warning:focus {
 a.text-danger:hover, #commentform a.required:hover, a.text-danger:focus, #commentform a.required:focus {
   color: #bd2130 !important; }
 
-.text-light, #twenty-em-subscribe, #twenty-em-subscribe .jumbo-content-inner .subscribe-input, article pre:before, #footer * {
+.text-light, #header #static-header.static-header-hero #static-header-text, #maintenance-mode-alert a, #twenty-em-subscribe, #twenty-em-subscribe .jumbo-content-inner .subscribe-input, article pre:before, #footer * {
   color: #f8f9fa !important; }
 
-a.text-light:hover, a#twenty-em-subscribe:hover, #twenty-em-subscribe .jumbo-content-inner a.subscribe-input:hover, #footer a:hover, a.text-light:focus, a#twenty-em-subscribe:focus, #twenty-em-subscribe .jumbo-content-inner a.subscribe-input:focus, #footer a:focus {
+a.text-light:hover, #header #static-header.static-header-hero a#static-header-text:hover, #maintenance-mode-alert a:hover, a#twenty-em-subscribe:hover, #twenty-em-subscribe .jumbo-content-inner a.subscribe-input:hover, #footer a:hover, a.text-light:focus, #header #static-header.static-header-hero a#static-header-text:focus, #maintenance-mode-alert a:focus, a#twenty-em-subscribe:focus, #twenty-em-subscribe .jumbo-content-inner a.subscribe-input:focus, #footer a:focus {
   color: #dae0e5 !important; }
 
 .text-dark {
@@ -9057,6 +9066,10 @@ a .featured-post-thumbnail:hover, a .featured-post-thumbnail:focus {
     order: 12; }
   #header #static-header.static-header-text-left #static-header-text {
     order: 1; } }
+#header #static-header.static-header-hero #static-header-inner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #adb5bd; }
 
 #top-menu h1#site-title {
   line-height: .6; }
@@ -9078,6 +9091,12 @@ a .featured-post-thumbnail:hover, a .featured-post-thumbnail:focus {
     order: 12; }
   #featured-widget-area.template-features .front-page-widget:nth-child(2n) .front-page-widget-caption {
     order: 1; } }
+@media (max-width: 991.98px) {
+  #featured-widget-area.template-cards .card-group {
+    flex-direction: column; }
+    #featured-widget-area.template-cards .card-group .card {
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.15rem; } }
 
 #site-pagination.prev-next a:hover {
   background-color: #e9ecef; }
@@ -11961,6 +11980,7 @@ h1, h2, h3, h4, h5, h6,
 .lead,
 article .entry-excerpt,
 .featured-header-template .entry-content,
+#maintenance-mode #countdowntimer .timerDisplay,
 #static-header .static-header-content,
 .jumbo-content p,
 #featured-widget-area .front-page-widget-caption p,
