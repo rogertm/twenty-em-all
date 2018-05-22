@@ -131,6 +131,14 @@ jQuery(document).ready(function($) {
 		});
 	});
 
+	// Get some <a> elements
+	$('article.doc a').click(function(e){
+		var	item	= $(this);
+		if ( item.attr('href') == '#' ){
+			e.preventDefault();
+		}
+	});
+
 	// 404 || 403
 	$('#post-0.error404 #searchform .input-group').addClass('input-group-lg');
 

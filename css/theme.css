@@ -6138,7 +6138,7 @@ article #twenty-em-github #github-left .more-link {
 .m-4 {
   margin: 1.5rem !important; }
 
-.mt-4, #static-header .static-header-content, article .entry-content h1, article .entry-content h2, article .entry-content h3,
+.mt-4, .child-callout, #static-header .static-header-content, article .entry-content h1, article .entry-content h2, article .entry-content h3,
 article .entry-content .h1,
 article .entry-content .jumbo-content .jumbo-header,
 .jumbo-content article .entry-content .jumbo-header,
@@ -6179,7 +6179,7 @@ article#post-0.error404 #searchform {
 .mx-5 {
   margin-right: 3rem !important; }
 
-.mb-5, #featured-widget-area.template-jumbotron #front-page-widget-one, #featured-widget-area.template-jumbotron #front-page-widget-one .widget-thumbnail, article, .author-info, .widget-container, article .entry-content, #icon-pack .icon-filter,
+.mb-5, #featured-widget-area.template-jumbotron #front-page-widget-one, #featured-widget-area.template-jumbotron #front-page-widget-one .widget-thumbnail, article, .author-info, .widget-container, .child-callout, article .entry-content, #icon-pack .icon-filter,
 .my-5,
 #maintenance-mode,
 article#post-0.error404 > header .entry-title,
@@ -9156,8 +9156,6 @@ article.sticky {
   .child-callout-primary .child-callout-link, .child-callout-primary a {
     color: #32408f;
     border-bottom: dotted 1px; }
-  .child-callout-primary code {
-    color: #2b387c; }
 
 .child-callout-secondary {
   color: #494f54;
@@ -9170,8 +9168,6 @@ article.sticky {
   .child-callout-secondary .child-callout-link, .child-callout-secondary a {
     color: #545b62;
     border-bottom: dotted 1px; }
-  .child-callout-secondary code {
-    color: #494f54; }
 
 .child-callout-success {
   color: #9daa1e;
@@ -9184,8 +9180,6 @@ article.sticky {
   .child-callout-success .child-callout-link, .child-callout-success a {
     color: #b2c022;
     border-bottom: dotted 1px; }
-  .child-callout-success code {
-    color: #9daa1e; }
 
 .child-callout-info {
   color: #0a6ebd;
@@ -9198,8 +9192,6 @@ article.sticky {
   .child-callout-info .child-callout-link, .child-callout-info a {
     color: #0c7cd5;
     border-bottom: dotted 1px; }
-  .child-callout-info code {
-    color: #0a6ebd; }
 
 .child-callout-warning {
   color: #b36a00;
@@ -9212,8 +9204,6 @@ article.sticky {
   .child-callout-warning .child-callout-link, .child-callout-warning a {
     color: #cc7a00;
     border-bottom: dotted 1px; }
-  .child-callout-warning code {
-    color: #b36a00; }
 
 .child-callout-danger {
   color: #d2190b;
@@ -9226,8 +9216,6 @@ article.sticky {
   .child-callout-danger .child-callout-link, .child-callout-danger a {
     color: #ea1c0d;
     border-bottom: dotted 1px; }
-  .child-callout-danger code {
-    color: #d2190b; }
 
 .bg-child-red {
   background-color: #F44336 !important; }

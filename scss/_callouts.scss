@@ -5,6 +5,8 @@
 //
 .child-callout{
 	@extend .alert;
+	@extend .mt-4;
+	@extend .mb-5;
 }
 .child-callout-heading{
 	@extend .alert-heading;
@@ -33,10 +35,6 @@
 	.child-callout-link, a {
 		color: darken($color, 10%);
 		border-bottom: dotted 1px;
-	}
-
-	code{
-		color: darken( $color, 15% );
 	}
 }
 
