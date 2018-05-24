@@ -122,7 +122,7 @@ jQuery(document).ready(function($) {
 	// Add id attr in single entries and anchor'em
 	$(function(){
 		$('article .entry-content > h1, article .entry-content > h2, article .entry-content > h3, article .entry-content > h4, article .entry-content > h5, article .entry-content > h6').each(function(index){
-			var $id = $(this).text().split(' ').join('-').toLowerCase();
+			var $id = $(this).text().split(' ').join('-').split('"').join('').toLowerCase();
 			$(this).attr({
 				'id':$id,
 				'class':'h-anchor'
